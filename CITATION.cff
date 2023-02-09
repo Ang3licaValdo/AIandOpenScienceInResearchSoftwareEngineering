@@ -1,0 +1,33 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Data Visualization obtained with text analysis tools
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Angelica Sofia
+    family-names: Gonzalez Valdovinos
+    email: angelica.gonzalez.valdovinos2@gmail.com
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.7623044
+repository-code: >-
+  https://github.com/Ang3licaValdo/AIandOpenScienceInResearchSoftwareEngineering.git
+abstract: >-
+  My software's purpose is to visualize certain aspects of
+  the content of 10 papers in a way humans can interpret it
+  easily, this info is represented parsing an XML file
+  obtained from a text analysis tool called Grobid and using
+  python for the visualization of the keywords, the number
+  of figures in each paper and a list of all of the links
+  encountered in each paper.
+keywords:
+  - analysis
+  - keywords
+  - visualization
+license: Apache-2.0
+version: 1.0.0
+date-released: '2023-02-08'

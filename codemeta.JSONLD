@@ -1,0 +1,31 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/0BSD",
+    "codeRepository": "git+https://github.com/Ang3licaValdo/AIandOpenScienceInResearchSoftwareEngineering.git",
+    "dateCreated": "2023-02-08",
+    "datePublished": "2023-02-08",
+    "dateModified": "2023-02-08",
+    "name": "Data Visualization obtained with text analysis tools",
+    "version": "1.0.0",
+    "identifier": "10.5281/zenodo.7623044",
+    "description": "My software's purpose is to visualize certain aspects of the content of a text in a way humans can interpret it easily, this info is represented parsing an XML file obtained from a text analysis tool called Grobid.",
+    "applicationCategory": "Visualization tool",
+    "keywords": [
+        "text",
+        "analysis",
+        "visualization",
+        "python"
+    ],
+    "programmingLanguage": [
+        "Python"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Angelica",
+            "familyName": "Gonzalez",
+            "email": "angelica.gonzalez.valdovinos2@gmail.com"
+        }
+    ]
+}
