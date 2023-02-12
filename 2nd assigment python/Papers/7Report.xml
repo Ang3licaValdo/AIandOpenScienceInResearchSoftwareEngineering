@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Early Relationships, Pathologies of Attachment, and the Capacity to Love</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<title level="a" type="main">Early Relationships, Pathologies of Attachment, and the Capacity to Love</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">440FA286A7A287FFC444C7F9785B76BA</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.3-SNAPSHOT" ident="GROBID" when="2023-02-09T21:32+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In both everyday discourse and the relevant psychological literature, one often finds references to an infant's love for her primary caregiver. Yet most philosophical accounts of love would preclude the possibility of genuine infant love. Such accounts characterize love as a sophisticated attitude, requiring mental capacities that are beyond the infant's ken. While I agree that infants are incapable of love, I will argue that the infant-primary caregiver bond can nonetheless inform philosophical accounts of love. By examining our earliest attachments, we can better understand how romantic love often improves us and contributes to our agential identities. Also, our earliest attachments provide insight into both how we acquire the capacity to love in youth and continue to develop it via later attachments in adulthood.</p><p>In sections 1 and 2, I explore several important similarities and differences between infant attachment and romantic love. In sections 3 and 4, I employ an expanded conception of security and literature on pathologies of attachment to show how infant attachment can play an instructive role in elucidating love.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Attachment in Infancy and Adult Romantic Partnerships</head><p>Twentieth century American poet, Margaret Fishback, opens "Love Affair" with the following verse: "Someday he'll think me rather silly/But now he loves me willy-nilly" (1945). Fishback refers here, not to romantic love, but to an infant's love for his mother. Such locutions are not unfamiliar in everyday discourse. We often find it remarkable just how much infants seem to unconditionally adore or love their primary caregivers in the manner that Fishback's poem suggests. Psychological literature on the infant-primary caregiver bond lends support to such brought to you by CORE View metadata, citation and similar papers at core.ac.uk</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Wonderly 2 conceptions of infant love. Sigmund Freud, for example, claimed that the mother serves as the infant's "first and strongest love-object and as the prototype of all later love relations" <ref type="bibr">(1946,</ref><ref type="bibr">70)</ref>. Harry Harlow posited that the "initial love responses of the human being are those made by the infant to the mother…" <ref type="bibr">(1958,</ref><ref type="bibr">673)</ref>. Finally, according to John Bowlby, "for babies to love mothers…is taken for granted as intrinsic to human nature" <ref type="bibr">(1969,</ref><ref type="bibr">242</ref>). Bowlby's research, in particular, played a vital role in establishing a connection between infant-primary caregiver attachments and love relationships in adulthood.</p><p>Bowlby and his colleague, Mary Ainsworth, pioneered the development of "attachment theory."<ref type="foot" target="#foot_0">1</ref> According to attachment theory, between six and twenty-four months of age, infants develop a special attachment to their primary caregivers. The attachment consists in an interrelated pattern of behaviors that serve to provide the infant with a sense of security. The relevant behaviors include: proximity maintenance, secure base, safe haven, and separation protest <ref type="bibr">(Bowlby 1969</ref><ref type="bibr">(Bowlby /1982))</ref>. The infant will attempt to remain in close proximity to her primary caregiver, treat her as a secure base from which to explore unfamiliar surroundings, use her as a safe haven for protection when threatened or hurt, and protest separation from her via various distress responses (e.g., crying).</p><p>Bowlby posited that the infant-primary caregiver attachment plays important roles in facilitating the infant's healthy psychological development and influencing her future relationships. He suggested that the primary caregiver serves to regulate the infant's affective states and that infants learn to become adept at regulating their own affects in the context of attachment relationships <ref type="bibr">(Bowlby 1969</ref><ref type="bibr">(Bowlby /1982;;</ref><ref type="bibr">Schore 1994</ref><ref type="bibr">Schore /2016))</ref>. On his view, through interactions with her principal attachment figure, the infant develops internal working models of the self and others. Secure attachments facilitate working models of the self as worthy of care and self-reliant and working models of the attachment figure as accessible, caring, and responsive <ref type="bibr">(Bowlby 1973;</ref><ref type="bibr" target="#b1">Ainsworth et al 1978;</ref><ref type="bibr">Mikulincer and Shaver 2016)</ref>. These models are thought to shape the development of the child's self-conception and various modes of viewing and interacting with others. Infant attachment security has been "linked with later self-esteem, social competence, prosocial behavior, ego resiliency, and overall adjustment" <ref type="bibr">(Sroufe et al 2000, 82)</ref>. Insecure attachments often lead to working models that contribute to psychopathology and dysfunctional attachment patterns later in life <ref type="bibr">(Mikulincer and Shaver 2016, ch. 13)</ref>.</p><p>While Bowlby and Ainsworth focused on infant attachment, they suggested that attachments occur in adulthood as well, particularly in the case of romantic pair bonds. In the late 1980's, the field of adult attachment emerged, and since then, a great deal of research has been devoted to investigating attachment bonds between romantic partners (Hazan and Shaver 1987). 2   Adult attachment theorists have recognized strong similarities between infant-primary caregiver engagement and romantic adult interaction. In communicating with one another, romantic partners often "coo, sing, talk baby talk" and "use soft maternal tones" <ref type="bibr">(Shaver et al 1988, 75)</ref>. Mikulincer and Shaver note, "Love in both infancy and adulthood includes eye <ref type="bibr">contact, holding, touching, caressing, smiling, crying, clinging…" (2016, p. 18)</ref>. Romantic partners also often display the interrelated pattern of attachment behaviors that typify infantprimary caregiver relationships. Familiarly, adults seek proximity to their romantic partners and protest extended separation from them. According to adult attachment theorists, our romantic partners also serve as secure bases and safe havens for us. When our romantic partners are nearby, we experience greater confidence (and competence) in navigating new environments and taking on challenges. And when distressed or threatened, we tend to turn specifically to our romantic partners for comfort and support <ref type="bibr" target="#b10">(Collins et al 2006;</ref><ref type="bibr">Mikulincer and Shaver 2016)</ref>.</p><p>Attachment-primary caregiver bonds and romantic partnerships share other commonalities as well. Interactions with our romantic partners often help regulate our emotions and continue to shape our internal working models of the self in relation to others. Studies suggest that the mere presence of one's romantic partner can increase positive affect and assuage distress, as indicated by the attached party's reduced blood pressure, heart rate, and galvanic skin responses in stressful situations <ref type="bibr">(Mikulincer and Shaver 2016, 58-59)</ref>. Our adult attachment figures offer external support via soothing contact, empathy, and other comforting behaviors, and they also enhance our abilities to self-soothe <ref type="bibr">(Mikulincer and Shaver 2016;</ref><ref type="bibr" target="#b48">Sroufe et al 2000)</ref>.</p><p>Healthy interactions with adult attachment figures impact our abilities to self-soothe, in part, by facilitating positive internal working models that represent the self as worthy, competent, and lovable and others as caring and dependable. Activating mental representations of supportive romantic attachments can also help one cope with threats <ref type="bibr">(Mikulincer and Shaver 2014, 12, 36)</ref>.</p><p>In sum, the parallels between the infant-primary caregiver bond and long-term romantic attachments are striking, and it is perhaps unsurprising that many have identified both relations as "love." Both involve similar patterns of communication, behavior, and attitudes toward one's attachment figure, where positive interactions with the relevant person help to regulate our emotions, shape our conceptions of ourselves and others, and imbue us with an overall increased sense of security. Despite these parallels, however, philosophical accounts of love generally suggest against construing infant attachments as genuine love -a topic to which I now turn.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Attachment and Love: Important Differences</head><p>While there exist many similarities between infant attachment and romantic love, there are also many significant differences. A chief difference is that romantic love -and indeed, love of all kinds -is commonly thought to involve caring about or valuing one's beloved in a way that is not possible for infants.<ref type="foot" target="#foot_2">3</ref> Also, while romantic partnerships share some common features with infant-primary caregiver attachments, those features are not obviously central to love.</p><p>Let's begin with a few obvious differences between the attachment orientations of infants toward their primary caregivers and those of adults toward their romantic partners. First, while we seek proximity to our romantic partners and protest extended separation from them, mature adults are typically more tolerant of longer separations and less likely to demand attention by crying, throwing tantrums, etc. Also, unlike the infant's interaction with her primary caregiver, attachment behaviors in adult romantic partnerships are reciprocated. In other words, each partner is typically both attached to the other and serves as an attachment figure for the other.</p><p>Psychologists acknowledge that romantic love, in addition to attachment, also involves sex and caregiving <ref type="bibr" target="#b35">(Mikulincer 2006)</ref>. Philosophers of love have attended to both of these features in their accounts. Union views of love, on which love involves a merger of selves or identities (or at least a desire for merger) are well-equipped to capture the sexual element that typifies romantic love <ref type="bibr" target="#b40">(Nozick 1989;</ref><ref type="bibr" target="#b49">Solomon 2001)</ref>. And while philosophers tend to emphasize the attitudes that underlie caregiving behaviors towards one beloved, as opposed to the behaviors themselves, they generally attribute caring or valuing a central role in love.</p><p>Philosophers generally agree that love involves valuing and/or caring about one's beloved for the beloved's own sake. For example, Harry Frankfurt characterizes love as a "mode of caring" that is marked by, among other things, disinterested concern for one <ref type="bibr">'s beloved (1999a; 2004)</ref>. J. David Velleman suggests that love is a kind of "awe" that emerges upon the recognition of a value inhering in the object <ref type="bibr">(1999,</ref><ref type="bibr">(360)</ref><ref type="bibr">(361)</ref>. Richard White claims that love "involves a very deep appreciation for the absolute value of the other person" <ref type="bibr">(2001, p. 5)</ref>. According to Niko Kolodny, love consists in non-instrumentally valuing one's relationship with the beloved (and the beloved herself) <ref type="bibr">(2003,</ref><ref type="bibr">150)</ref>. On Bennett Helm's view, love is a particular kind of caring that involves an identificatory commitment to the object in which the lover shares the beloved's values for her sake <ref type="bibr">(2009a, 52; 2009b, ch. 5</ref>). These theorists represent only a sample of those who posit that to love is, among other things, to care about or value the beloved object. 4 Some theorists regard caring and valuing as the same phenomenon. 5 On most accounts, caring involves certain desires to promote the cared-for object's flourishing and an emotional vulnerability to how that object is faring <ref type="bibr" target="#b46">(Shoemaker 2003;</ref><ref type="bibr">Jaworska 2007a/b;</ref><ref type="bibr">Seidman 2008)</ref>. If an agent cares about an object, she typically wants that object to flourish. She will also, for example, tend to feel joy when it is thriving, sadness when it is faltering, fear when it is in danger and so forth. These features, along with others, have also been identified as central elements of valuing. 6 Theorists typically posit that caring requires cognitive capacities that infants lack.</p><p>Examples include the capacities to grasp the concept of importance, to form higher-order desires and to see others as reasons for action and emotion. 7 4 See also Brown 1987, 24; Badhwar 2003, 56; Jollimore 2013, 26; and Brentlinger 1989, 139.  5 See for example Seidman 2009.  6 Jaworska (1999) emphasizes that valuing involves the valuer thinking herself "correct in wanting what she wants" (p. 155). <ref type="bibr" target="#b5">Bratman (2000)</ref> describes valuing as a special type of self-governing policy. Finally, theorists such as Scanlon (1998), <ref type="bibr" target="#b33">Kolodny (2003)</ref>, <ref type="bibr" target="#b44">Seidman (2009)</ref> and <ref type="bibr" target="#b42">Scheffler (2011)</ref> emphasize the relationship between valuing and reasons for action and/or emotion. 7 Frankfurt makes volition rather than emotion central to his view of caring, affording higher-order desires a crucial role in the attitude. In particular, he describes caring about an object in terms of having and identifying with'' a higher-order desire that her first-order desire for the object ''not be extinguished or abandoned'' <ref type="bibr">(Frankfurt 1999a, 161)</ref>. Jaworska posits that one must have ''the concept of importance'' in order to care <ref type="bibr">(2007b, p. 561)</ref>. Seidman suggests that one must be able to see the object of care as a source of reasons <ref type="bibr">(2008,</ref><ref type="bibr">12)</ref>. On Helm's view, the The preceding discussion suggests that while infants may be attached to their primary caregivers, they cannot care about, or value, them in the sense that love requires. Love, it is commonly supposed, is a complex orientation toward its object that requires cognitively rich ways of seeing, understanding, and engaging with its object. Infant attachment, then, appears to be missing key ingredients for genuine love.</p><p>Not only is the infant incapable of love, but it is not immediately clear how attachment in adults contributes to love. One might concede that most adults are attached to their long-term romantic partners, while denying that attachment plays an integral role in romantic love.</p><p>Consider, for example, Frankfurt's claim that "… lovers often enjoy the company of their beloveds, cherish various types of intimate connection with them, and yearn for reciprocity.</p><p>These enthusiasms are not essential to it" <ref type="bibr">(2004, p. 42)</ref>. Similarly, there may be reason to suspect that attachment, while perhaps a natural concomitant of romantic love, is in no way central to it.</p><p>One might deny attachment a central role in love because the felt need internal to it is undergirded by the attachment figure's impact on the attached person's sense of security. Such a feature might strike some as ill-suited to contribute to love in any significant sense. First, the relevant need seems to be focused on the lover's own comfort and safety, while love is typically thought to be other-regarding, and on some accounts, selfless. 8 Second, it may be difficult to see how needing another for comfort and safety is a good thing, let alone one that makes a positive contribution to love. Well-functioning, mature, and autonomous agents, one might think, should not have security-based needs for their beloveds, and where they do, such orientations are not particular sort of caring involved in love necessitates the capacity to experience certain cognitively sophisticated, "person-focused" emotions such as pride and guilt (2009b, 227). 8 See, for example, <ref type="bibr">Frankfurt 1999 and</ref><ref type="bibr" target="#b16">1999b</ref>. See also Helm's discussion of robust concern views of love <ref type="bibr">(2009b, 16-18)</ref>. obviously related to love. Love, after all, is distinctive for its rich value and depth, and the primitive need for safety seems peripheral to these essential features.</p><p>In sum, while infant-primary caregiver bonds and romantic loving relationships tend to feature somewhat similar attachment orientations, the relevant attachments do not suffice for love. Infants lack the cognitive capacities to care about or value others in the way that love requires, so their attachments cannot constitute love. Furthermore, for all that has been said so far, while romantic partners who love each other are typically also attached to one another, the latter relation may well be orthogonal to the couple's love. Thus, we are left with the question:</p><p>Can the infant-primary caregiver attachment tell us anything interesting about love? In the remaining two sections, I offer an affirmative answer to this question.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Security and Agency: A Role for Attachment in Love</head><p>While infants do not (strictly speaking) love others, their attachment relations in which they stand to their primary caregivers can inform philosophical conceptions of love. Contra the view discussed in the previous section, here I will argue that the type of felt need internal to attachment partly constitutes and enhances some kinds of love. Examining the relevant need can inform extant views of how love impacts our identities and contributes value to our lives.</p><p>Let's begin by revisiting the type of need internal to attachment. In the preceding section, I suggested that security's role in undergirding attachment relationships might engender doubt that attachment could be an important aspect of love. I will now endeavor to assuage such doubts by articulating an expanded conception of security that can illuminate defining features of love, revealing how a security-based need can contribute to love's value.</p><p>While Bowlby and Ainsworth sometimes associate "security" with "feeling safe," they also sometimes gesture at a richer notion of the concept. For example, Ainsworth, drawing on Bowlby's work, offers a conception of security as ''an 'all is well' kind of appraisal of sensory input,'' or ''an 'Okay, go ahead' feeling'' <ref type="bibr">(1988,</ref><ref type="bibr">1)</ref>. In other work, I have described the type of security at issue in attachment as a kind of confidence in one's well-being and agential competence. In colloquial terms, without our attachment objects, we tend to feel off-kilter, out of sorts, no longer "all of a piece" and so forth. Conversely, engaging with our attachment objects helps us to feel empowered, better equipped to take on challenges, etc. <ref type="bibr">(Wonderly 2016, 231</ref>).<ref type="foot" target="#foot_3">9</ref> </p><p>Our attachment figures don't merely help us feel safe, but they can help hold us together during difficult times and improve us more generally. Experiencing another as a felt need in this sense suggests that the other plays a very meaningful role in how one views oneself and is able to get along in the world. To be sure, needing another in this way seems to focus on one's own welfare as opposed to that of the beloved, and it does not suffice for love. One must care about, or value, the other in her own right in order to truly love her. But in some cases, the type of need internal to attachment might -like concern for the other's welfare -play an important, and indeed constitutive, role in love. <ref type="foot" target="#foot_4">10</ref>To see this, imagine that an individual has the opportunity to do something that will be to her overall benefit but will necessitate being separated from, and unreachable by, her (long-term) romantic partner for many years. Imagine further that upon receiving the news, her partner -being selflessly invested in her welfare -responds only with joy, celebrating her good fortune and excitedly offering to help her pack. The departing partner might well be disappointed at such a response, preferring that her beloved not only be motivated by the desire for her flourishing but also by a deeply felt need for her. 11 I suspect that this is not merely an unimportant preference, but that some kinds of love would be impoverished absent some felt need of this kind.</p><p>Of course, one might accept that a felt need of another can be partly constitutive of love, while objecting to the relevant need being tied to the lover's security. Experiencing another as a security-based felt need might strike some as puerile or selfish. Doubtless, few have ever been smitten by a lover who imparted, "Baby, you make me feel so secure." Imagine, though, that the lover instead imparts: "Without you, my life would be less meaningful -less fulfilled. I would not be able to get by as I normally can, but I would feel adrift and no longer all of a piece."</p><p>These sentiments capture the sense of security at issue here, and rather than being childish or unduly self-centered, they seem to reflect a way of relating to another that can be a worthy -and deeply important -aspect of one's love.</p><p>The expanded notion of security that I describe above can also help to illuminate the relationship between attachment and love's contributions to one's agency and identity.</p><p>Philosophical treatments of love often emphasize various ways in which love improves our lives.</p><p>Love (typically) is a source of joy and imbues life with meaning and purpose <ref type="bibr">(Frankfurt 1999b;</ref><ref type="bibr" target="#b3">Badhwar 2003;</ref><ref type="bibr" target="#b51">White 2001)</ref>. But attachment affords us an under-explored, yet instructive framework, for understanding how love can improve us.</p><p>Frequent engagement with an attachment figure tends to increase confidence in one's well-being and one's ability to competently navigate the world. In infancy, this feature manifests in the infant's ability to venture increasingly farther away from her primary caregiver without worry and to interact more comfortably with new environments. In adulthood, positive interactions with our attachment figures often imbue us with a confidence that serves to inspire us, to raise the bar for complacency, and to attenuate our tendencies toward aversion <ref type="bibr">(Feeney 2004;</ref><ref type="bibr" target="#b10">Collins et al 2006;</ref><ref type="bibr">Mikulincer &amp; Shaver 2016)</ref>. Consequently, our attachments can increase our capabilities and help us to achieve in ways that we would be otherwise unable to do. They not only lift us when we are low, but in providing a secure and supportive ground, they can enable us to soar.</p><p>We often recognize such qualities in love. Consider, for example, how love's benefits are often portrayed in popular music. "My love, whenever I was insecure, you built me up and made me sure."<ref type="foot" target="#foot_5">12</ref> "You gave me wings, you made me fly."<ref type="foot" target="#foot_6">13</ref> "…my loving arms around you, I can stand up and face the world. Your love keeps lifting me higher and higher."<ref type="foot" target="#foot_7">14</ref> These lyrics support a picture of love on which one's romantic partner is not only a source of joy and purpose, but also a source of empowerment. Where attachment exists in loving relationships, it may provide an important vehicle through which love can enhance our agency in these ways.</p><p>Relatedly, attending to attachment can also aid our understanding of how love can impact one's identity. On many accounts, love is marked by a kind of depth that is thought to tie the attitude to the agent's identity. How and what (or whom) we love seems to be intimately connected to who we are. Theorists have framed this relation in terms of integrating the beloved into one's identity, identifying one's own interests with those of one's beloved, or a kind of volitional endorsement of one's attitudes toward one's beloved. 15 Attachment offers us still another lens through which to view love's impact on one's identity.</p><p>Our interactions with our attachment figures can play an important role in shaping one's agential identity. 16 Recall from section 1, that in both infancy and adulthood, interactions with our attachment figures continue to influence our "internal working models" of the self. They play crucial roles in how we understand ourselves and our abilities to act competently within the world. Since our specific attachment figures are uniquely positioned to impact our felt security in the ways that they do, they can have especially powerful effects on our self-conceptions, how we relate to others, and how we function more generally as agents.</p><p>Of course, infant attachment, which serves as the context for the attached individual's development into a full-fledged agent, seems to be the best illustration of how attachment bonds can help to shape one's agential identity. Via engagement with her attachment figure, the infant learns to navigate the realm of affects and cognitions that will enable the formation of identityconstituting values and perspectives. The infant's understanding of herself and others grows out of the internal working models that she develops through such interactions, serving as the ground for how she will tend to view and to function within future relationships. In this way, though infant attachment is not synonymous with love, it does shape the infant's future capacity to love. This point is worth exploring in greater detail, as it can tell us something interesting about how attachment, in both infancy and adulthood, can help us learn to love well. 15  <ref type="bibr" target="#b40">Nozick (1989</ref><ref type="bibr" target="#b15">), Frankfurt (1999a;</ref><ref type="bibr" target="#b16">1999b;</ref><ref type="bibr">2004)</ref>, <ref type="bibr" target="#b49">Solomon (2001)</ref>, <ref type="bibr" target="#b51">White (2001), and</ref><ref type="bibr">Helm (2010)</ref> are among the many theorists who have posited a relationship between identity and love. 16 By "agential identity," I do not mean to imply anything particularly mysterious here. I take it that how a person views herself and experiences her agency constitutes an important aspect of her identity as the agent she is.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Attachment and the Capacity to Love</head><p>Research suggests that early attachment experiences tend to exert considerable influence over how one loves in adulthood. Much of this research concerns certain "pathologies of attachment." 17 Bowlby, for example, suggested a causal relationship between early attachment disruption and "affectionless psychopathy" in later years <ref type="bibr">(Bowlby 1944;</ref><ref type="bibr" target="#b4">1973)</ref>. More recent research has indicated that severe disruption in early attachment can, but does not always, contribute to the development of psychopathic characteristics, depression, social phobias, obsessive compulsive disorder, addiction, anxiety disorders and a host of personality disorders <ref type="bibr" target="#b32">(Karen 1998;</ref><ref type="bibr" target="#b14">Flores 2004;</ref><ref type="bibr">Mikulincer and Shaver 2016)</ref>. 18 Yet, what is most relevant for the present discussion is not merely that early attachment disruption has been associated with later psychological disorder, but rather how such disruption is thought to hinder various capacities necessary for valuing. 17 The term, "pathologies of attachment," can refer either to mental disorders for which attachment difficulties are presumed to play a significant causal role and/or psychologically disordered forms of attachment formation or maintenance. Most work on attachment psychopathology focuses on the former. Note that the Diagnostic and Statistical Manual of Mental Disorders does not list attachment disorders as its own category. Reactive attachment disorder, the central feature of which is "absent or grossly underdeveloped attachment between the child and putative caregiving adults," is characterized as a "Trauma/Stressor Disorder" (APA 2013, 266). There are, however, several disorders that explicitly include attachment difficulties, including (but not limited to): Separation Anxiety Disorder, Disinhibited Social Engagement Disorder, and Autism Spectrum Disorder. 18 Psychologists have also linked disruption or dysfunction in early attachment relationships to "insecure attachment styles" that tend to follow infants through their later years and contribute to mental disorder. The system by which insecure attachment styles are classified grew largely out of Ainsworth's empirical study of infant-primary caregiver interaction <ref type="bibr">(1978)</ref>. Ainsworth identified two patterns of insecure infant attachment: avoidant and anxious. In infants, these patterns track certain atypical infant responses to separation and reunion with their primary caregivers. Securely attached infants tend to show some distress upon separation from their primary caregivers, but recover quickly upon reunion, exhibiting joy and a desire to return to exploration and play. Avoidant infants tend to show little distress upon separation from their primary caregivers and to avoid them when they return. Anxious infants are highly distressed during separation from their primary givers and display conflicting behaviors upon the caregiver's return -e.g., alternating patterns of clinging and pulling away <ref type="bibr">(Mikulincer and Shaver 2016, 23-24)</ref>. In adulthood, an avoidant attachment style indicates "discomfort with closeness and dependence" and a strong "preference for emotional distance and self-reliance" <ref type="bibr">(Mikulincer and Shaver 2016, 25</ref>). An anxious attachment style indicates a very strong desire for closeness and intense worries about being abandoned or under-valued by one's partner (ibid.). Though insecure attachment styles themselves are not psychological disorders, they are sometimes labeled "pathogenic," as they can, when combined by other risk factors, lead to psychopathology <ref type="bibr" target="#b37">(Mikulincer and Shaver 2012;</ref><ref type="bibr" target="#b32">Karen 1998;</ref><ref type="bibr" target="#b48">Sroufe et al 2000)</ref>. For more on attachment styles, see Berit Brogaard's entry in this volume. <ref type="bibr">Wonderly 14</ref> Recall that (as I have argued) while attachment plays an important role in some kinds of love, it does not suffice for love. This is because one can be attached without valuing, or caring about, one's attachment object in the way that love requires. Importantly, though, attachment is not silent on the matter of valuing. Attachment relationships (typically) serve to develop and hone one's ability to value, thereby helping to shape one's capacity to love. Research on attachment and psychopathology offers a useful lens through which to view this phenomenon.</p><p>Neuroscientists have suggested that early disruption or dysfunction in attachment can interfere with the development of brain structures that facilitate empathy, socio-emotional learning, and affect regulation. Theorists have proposed that the proper development and function of such structures is "experience-dependent," and in particular, dependent upon healthy attachment interactions between the infant and her primary caregiver <ref type="bibr">(Schore 1994</ref><ref type="bibr">(Schore /2016))</ref>. Early attachment difficulties can leave the infant with impaired abilities to adequately attend to her own emotions and to the emotions and interests of others, rendering her vulnerable to mental disorder and future relationship dysfunction <ref type="bibr">(Schore 1994</ref><ref type="bibr">(Schore /2016;;</ref><ref type="bibr" target="#b48">Sroufe et al 2000)</ref>.</p><p>To see more clearly how attachment can impact one's capacity to love, it will be useful to briefly explore two particular attachment-related forms of psychopathology: psychopathy and addiction. Not only have early attachment problems been suggested as causal contributors to psychopathic personalities and addiction, but these pathologies are also marked by occurrent attachment difficulties. 19 Psychopaths have impaired capacities for forming attachments to other persons <ref type="bibr">(Cleckley 1998;</ref><ref type="bibr" target="#b21">Hare 1993;</ref><ref type="bibr">Blair et al 2005)</ref>. And some addictions can be viewed as, 19 To be sure, not all cases of psychopathic personalities and addiction can be traced to earlier attachment problems. It is also worth noting that some reserve the term "psychopathy" for a pre-existing brain disorder, and use "sociopathy" where similar traits arise as a result of environmental factors (see, for example <ref type="bibr">Hare 1993, 23-24)</ref>. The DSM-V has no entry dedicated to psychopathy, but references it, along with sociopathy, in the entry on antisocial personality disorder <ref type="bibr">(2013,</ref><ref type="bibr">659)</ref>.</p><p>among other things, disordered attachment orientations toward their objects <ref type="bibr" target="#b14">(Flores 2004</ref>). More importantly for our purposes, both psychopaths and addicted agents appear to have difficulties caring about, or valuing, others in the way that loving -or at least loving well -requires.</p><p>Let's start with psychopaths. Psychopathy is a personality disorder that involves a tendency toward antisocial behaviors (e.g., threatening behavior such as verbal abuse or violence, repeated criminal conduct) and certain emotional-interpersonal deficits (e.g., shallow affect, lack of empathy, inability to feel guilt). 20 Typically, philosophers have been interested in the psychopath's moral deficits, which some have argued, might exempt her from moral responsibility. 21 Psychopaths seem to lack the abilities to become emotionally invested in others and to recognize their interests as intrinsically reason-giving <ref type="bibr">(Jaworska 2007;</ref><ref type="bibr">Watson 2011)</ref>.</p><p>These capacities, of course, are relevant not only to moral agency, but also to love.</p><p>Recall that love, as a mode of valuing or caring, involves an emotional vulnerability to how one's beloved is faring and certain desires to promote the beloved's flourishing. 22 The psychological literature on attachment has the resources to explain how early attachment difficulties can contribute to psychopathic personality traits. The child first learns how to recognize and engage with the interests of others through attachment with her primary caregiver.</p><p>If the infant's attachment figure is unresponsive or abusive, the infant may grow to feel uncomfortable with her vulnerability and reliance on others. Consequently, she may resist allowing herself to be vulnerable enough to care about others in the future. 23 In addition, her 20 See for example Cleckley 1998, 338-339; Hare 1993, 34; and Blair et al. 2005, 7.  21 See for example Darwall 2006; Shoemaker 2007; and Watson 2011.  22 For a discussion of how love differs from mere caring, see Jaworska and Wonderly forthcoming. 23 For more on how one's experience of, and attitude toward, one's own vulnerability can impact one's abilities to engage in caring and prosocial behaviors, see <ref type="bibr" target="#b39">Miller 2012 and</ref><ref type="bibr" target="#b20">Gilson 2014.</ref> poor internal working models of others, combined with her lack of learned facility with emotions, may preclude any desire for -or competence with -promoting another's flourishing.</p><p>Theorists have suggested that some addictions represent "attachments" to their objects, albeit disordered ones. <ref type="foot" target="#foot_8">24</ref> Philosophers have been concerned to investigate the impact of addiction on human agency. The addicted agent's strongly felt need for the object tends to consume her attention, "crowding out" other potential interests, values, and cares, narrowing (what she sees as) her field of available actions <ref type="bibr">(Elster 1999, 69;</ref><ref type="bibr" target="#b52">Watson 1999)</ref>. Focused on the addiction object, she may lack the attentional resources to engage non-instrumentally with her beloved's interests. An addicted agent, then, may lack the ability to adequately recognize and respond to her beloved's concerns in a way necessary for properly valuing her and thus loving her well.</p><p>Attachment research can serve to illuminate this phenomenon. Disruptions or dysfunction in early attachment can engender painful working models of the self and others, along with lasting inabilities to properly self-regulate one's affects. As a result, the agent turns to the addiction object for help coping with distress <ref type="bibr" target="#b14">(Flores 2004;</ref><ref type="bibr">Mikulincer and Shaver 2016)</ref>. Insofar as the addiction object helps to restore -however temporarily or superficially -the agent's sense of security, she will feel especially compelled to partake of it. Psychologists have long held that felt security has a kind of priority over other motives. Unless one feels sufficiently secure, one will typically be unable to competently engage in other-directed activities like caregiving, affiliative pursuits, and sex <ref type="bibr">(Mikulincer &amp; Shaver 2016, 15)</ref>. Since the addicted agent may be rigidly focused on her own security-based attachment needs, she may be unable to adequately recognize or respond to the interests of her beloved. <ref type="foot" target="#foot_9">25</ref>Healthy early attachments, then, help shape our capacities to love in multiple ways. First, early attachments initiate the formation of our abilities to self-regulate our affects and to empathically recognize and attend to the emotional needs of others. In addition, healthy attachments facilitate conceptions of the self and others that conduce to comfort with one's own vulnerability and positive dispositions toward the interests of others. Our early attachment experiences serve as our first opportunities to engage with our own vulnerability and to observe models of caring provided by our attachment figures. In well-functioning attachments, one can comfortably inhabit one's own vulnerability because others will be there if needed. Experiencing one's own vulnerability in this way, combined with one's empathic abilities and positive conception of others, disposes us to recognize and respond compassionately toward vulnerabilities in others. Finally, by grounding a general sense of security, healthy early attachments afford us the emotional resources to appropriately recognize others' value and to promote their interests.</p><p>What's more, these qualities are present not only in infant attachment, but in adult attachment as well. Our deeply felt needs of our attachment figures make us keenly aware of our own vulnerability, underscoring their import for us and facilitating our empathic recognition of their vulnerability (and that of others). As our adult attachment figures continue both to aid the regulation of our affects and to support positive internal working models of ourselves and others, they equip us with greater resources and motivation to properly value and care for others. Thus, early attachment helps us to develop our capacities to love, and attachments later in life continue to enhance our abilities to love well.</p><p>Wonderly 18 ~ Infant attachment, then, while not synonymous with love, can nonetheless inform philosophical conceptions of romantic love. In romantic love, the adult analog of infant security plays an important role in explaining how love can empower us to achieve in ways that we otherwise would be unable to do. Similarly, the beloved's ability to impact one's sense of security offers an under-explored insight into how love can affect our identities. One's beloved plays an important role in one's self-conception and her ability to competently navigate the world, features that are central to one's agential identity. Finally, examining certain pathologies of attachment brings to the fore crucial respects in which attachment, in both infancy and adulthood, shapes our capacity to love, by enhancing our abilities to value and care for others.</p></div>			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0">For more on the development of attachment theory, see<ref type="bibr" target="#b1">Ainsworth et al (1978)</ref> andBowlby (1969Bowlby ( /1982Bowlby ( , 1973Bowlby ( , &amp;  1980)).</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="2" xml:id="foot_1">For more on adult attachment, see<ref type="bibr" target="#b45">Shaver et al 1988;</ref><ref type="bibr" target="#b41">Rholes and Simpson 2004;</ref><ref type="bibr" target="#b24">Hazan, Campa, and Gur-Yaish, 2006</ref><ref type="bibr" target="#b36">, Mikulincer and Goodman 2006</ref><ref type="bibr" target="#b13">, Feeney 2008</ref>, and Mikulincer and Shaver 2016.   </note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_2">While I suspect that attachment can inform other varieties of love as well, for the sake of simplicity, I focus here on romantic love.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="9" xml:id="foot_3">For other views that support this notion of felt security, consider the following: Abraham Maslow characterized security as a ''syndrome of feelings,'' that includes, inter alia, feelings of ''being at home in the world,'' ''emotional stability,'' ''self-esteem,'' ''self-acceptance,'' and ''courage''(1942,(334)(335). William Blatz, in developing his ''security theory,'' identified security as ''the state of mind which accompanies the willingness to accept the consequences of one's acts…'' (1966, 13). According to Ainsworth, Blatz, who had been her dissertation advisor, ''seemed to equate feeling secure with feeling competent or effective''(1988, 1).</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="10" xml:id="foot_4">Note that I am not arguing for the stronger claim that attachment is essential for love tout court.</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="12" xml:id="foot_5">These lyrics are from "You Make Me Feel Brand New," by the Stylistics (1974).</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="13" xml:id="foot_6">These lyrics are from Celine Dion's 1996 single, "Because You Loved Me."</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="14" xml:id="foot_7">The lyrics are from Jackie Wilson's 1967 single, "(Your Love Keeps Lifting Me) Higher and Higher."</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="24" xml:id="foot_8">See for exampleFlores 2004, 4-10.   </note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="25" xml:id="foot_9">Note that this picture is meant to supplement and deepen, rather than replace, typical "disordered neural reward signal" models of addiction that pervade much of the scientific and philosophical literature on addiction.</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">On Security</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ainsworth</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">From the Proceedings of the State University of</title>
+				<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Stony Brook Conference on Attachment</publisher>
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D S</forename><surname>Ainsworth</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Blehar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Waters</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wall</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1978">1978</date>
+			<publisher>Erlbaum</publisher>
+			<pubPlace>Hillsdale, NJ</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<monogr>
+		<title level="m" type="main">Diagnostic and Statistical Manual of Mental Disorders</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<publisher>American Psychiatric Association</publisher>
+			<pubPlace>Arlington, VA</pubPlace>
+		</imprint>
+	</monogr>
+	<note>fifth edition: DSM-V</note>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Love</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Badhwar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Practical Ethics</title>
+				<editor>
+			<persName><forename type="first">H</forename><surname>Lafollette</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Oxford</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page" from="42" to="69" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Human Security: Some Reflections</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Blatz</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Attachment and Loss</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<date type="published" when="1966">1966. 1969/1982. 1973. 1980</date>
+			<publisher>Basic Books</publisher>
+		</imprint>
+	</monogr>
+	<note>Attachment and Loss</note>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Valuing and the Will</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Bratman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Noûs</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">s14</biblScope>
+			<biblScope unit="page" from="249" to="265" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+	<note>Wonderly 19</note>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">The Nature of Love</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Brentlinger</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Eros, Agape, and Philia: Readings in the Philosophy of Love</title>
+				<editor>
+			<persName><forename type="first">A</forename><surname>Soble</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Paragon House</publisher>
+			<date type="published" when="1989">1989</date>
+			<biblScope unit="page" from="136" to="148" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<monogr>
+		<title/>
+		<author>
+			<persName><forename type="first">R</forename><surname>Brown</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1987">1987</date>
+			<publisher>Cambridge University Press</publisher>
+			<pubPlace>Analyzing Love, Cambridge</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><surname>Cassidy</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Shaver</surname></persName>
+		</author>
+		<title level="m">Handbook of Attachment: Theory, Research, and Clinical Applications</title>
+				<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Guilford Press</publisher>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+	<note>2nd Ed</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">The Mask of Sanity: An Attempt to Clarify Some Issues About the So Called Psychopathic Personality</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">M</forename><surname>Cleckley</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1988">1988</date>
+			<publisher>Emily S. Cleckley</publisher>
+			<pubPlace>Augusta, Georgia</pubPlace>
+		</imprint>
+	</monogr>
+	<note>5th edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Responding to Need in Intimate Relationships: Normative Processes and Individual Differences</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Collins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Guichard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Ford</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Feeney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Dynamics of Romantic Love: Attachment, Caregiving, and Sex</title>
+				<editor>
+			<persName><forename type="first">M</forename><surname>Mikulincer</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Goodman</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Guilford Press</publisher>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="page" from="149" to="189" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><surname>Darwall</surname></persName>
+		</author>
+		<title level="m">The Second-Person Standpoint: Morality, Respect, and Accountability</title>
+				<meeting><address><addrLine>Cambridge, MA</addrLine></address></meeting>
+		<imprint>
+			<publisher>Harvard University Press</publisher>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Attachment and Psychopathology</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Egeland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Carlson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Attachment Issues in Psychopathology and Intervention</title>
+				<editor>
+			<persName><forename type="first">L</forename><surname>Atkins</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">S</forename><surname>Goldberg</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Mahwah, NJ</addrLine></address></meeting>
+		<imprint>
+			<publisher>Lawrence Erlbaum Associates Publishers</publisher>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="page" from="27" to="48" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Adult Romantic Attachment: Developments in the Study of Couple Relationships</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Elster</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Feeney</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Handbook of Attachment: Theory, Research, and Clinical Applications</title>
+				<editor>
+			<persName><forename type="first">J</forename><surname>Cassidy</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">P</forename><surname>Shaver</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Cambridge; New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Guilford Press</publisher>
+			<date type="published" when="1999">1999. 2008</date>
+			<biblScope unit="page" from="456" to="482" />
+		</imprint>
+	</monogr>
+	<note>Strong Feelings: Emotion, Addiction, and Human Behavior. nd ed.</note>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Addiction as an Attachment Disorder</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Flores</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2004">2004</date>
+			<publisher>Jason Aronson</publisher>
+			<pubPlace>Lanham, MD</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Autonomy, Necessity, and Love</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Frankfurt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">his Necessity, Volition, and Love</title>
+				<meeting><address><addrLine>Cambridge</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="1999">1999a</date>
+			<biblScope unit="page" from="129" to="141" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">On Caring</title>
+		<author>
+			<persName><surname>________</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">his Necessity, Volition, and Love</title>
+				<meeting><address><addrLine>Cambridge</addrLine></address></meeting>
+		<imprint>
+			<publisher>Cambridge University Press</publisher>
+			<date type="published" when="1999">1999b</date>
+			<biblScope unit="page" from="155" to="180" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<monogr>
+		<author>
+			<persName><surname>________</surname></persName>
+		</author>
+		<title level="m">Reasons of Love</title>
+				<meeting><address><addrLine>Princeton</addrLine></address></meeting>
+		<imprint>
+			<publisher>Princeton University Press</publisher>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<monogr>
+		<title level="m" type="main">Look Who&apos;s a Mother</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Fishback</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1945">1945</date>
+			<publisher>Simon &amp; Schuster</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">An Outline of Psycho-Analysis</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Freud</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">James Strachey</title>
+				<editor>
+			<persName><forename type="first">W</forename><forename type="middle">W</forename><surname>Norton</surname></persName>
+		</editor>
+		<editor>
+			<persName><surname>Company</surname></persName>
+		</editor>
+		<meeting><address><addrLine>NY</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1949">1949</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<monogr>
+		<author>
+			<persName><forename type="first">E</forename><surname>Gilson</surname></persName>
+		</author>
+		<title level="m">The Ethics of Vulnerability: A Feminist Analysis of Social Life and Practice</title>
+				<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Routledge</publisher>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<monogr>
+		<title level="m" type="main">Without Conscience: The Disturbing World of the Psychopaths among Us</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">D</forename><surname>Hare</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<publisher>Guilford Press</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Attachment, Autonomy, and the Evaluative Variety of Love</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Harcourt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The Reasons of Love</title>
+				<editor>
+			<persName><forename type="first">E</forename><surname>Kroeker</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">K</forename><surname>Schaubroeck</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Oxford</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">The nature of love</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Harlow</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">American Psychologist</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="673" to="685" />
+			<date type="published" when="1958">1958</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">What is Adult Attachment</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hazan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Campa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Gur-Yaish</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Dynamics of Romantic Love: Attachment, Caregiving, and Sex</title>
+				<editor>
+			<persName><forename type="first">M</forename><surname>Mikulincer</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Goodman</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Guilford Press</publisher>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="page" from="47" to="70" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Love, Identification, and the Emotions</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">W</forename><surname>Helm</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">American Philosophical Quarterly</title>
+		<imprint>
+			<biblScope unit="volume">46</biblScope>
+			<biblScope unit="page" from="39" to="59" />
+			<date type="published" when="2009">2009a</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<monogr>
+		<author>
+			<persName><surname>________</surname></persName>
+		</author>
+		<title level="m">Friendship, and the Self: Intimacy, Identification, and the Social Nature of Persons</title>
+				<meeting><address><addrLine>Oxford</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="2009">2009b</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Caring and Full Moral Standing</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jaworska</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ethics</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="460" to="497" />
+			<date type="published" when="2007">2007a</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Caring and Internality</title>
+		<author>
+			<persName><surname>________</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philosophy and Phenomenological Research</title>
+		<imprint>
+			<biblScope unit="volume">74</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="529" to="568" />
+			<date type="published" when="2007">2007b</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Who Has the Capacity to Participate as a Rearee in a Person-Rearing Relationship?</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jaworska</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Tannenbaum</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ethics</title>
+		<imprint>
+			<biblScope unit="volume">125</biblScope>
+			<biblScope unit="page" from="1096" to="1113" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Love and Caring</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Jaworska</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Wonderly</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Oxford Handbook of the Philosophy of Love</title>
+				<editor>
+			<persName><forename type="first">C</forename><surname>Grau</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">A</forename><surname>Smuts</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Oxford</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<monogr>
+		<title level="m" type="main">Love&apos;s Vision</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Jollimore</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<publisher>Princeton University Press</publisher>
+			<pubPlace>Princeton, NJ</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<monogr>
+		<title level="m" type="main">Becoming Attached: First Relationships and How They Shape Our Capacity to Love</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Karen</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1998">1998</date>
+			<publisher>Oxford University Press</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+	<note>Reprint edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Love as Valuing a Relationship</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Kolodny</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The Philosophical Review</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page" from="135" to="189" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">The Dynamics of Psychological Security-Insecurity</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Maslow</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Personality</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="331" to="344" />
+			<date type="published" when="1942">1942</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Attachment, Caregiving, and Sex within Romantic Relationships: A Behavioral Systems Perspective</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mikulincer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Dynamics of Romantic Love: Attachment, Caregiving, and Sex</title>
+				<editor>
+			<persName><forename type="first">M</forename><surname>Mikulincer</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">G</forename><forename type="middle">S</forename><surname>Goodman</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Guilford Press</publisher>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="page" from="23" to="46" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">Dynamics of Romantic Love: Attachment, Caregiving, and Sex</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mikulincer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Goodman</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<publisher>Guilford Press</publisher>
+			<pubPlace>New York, NY</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">An Attachment Perspective on Psychopathology</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mikulincer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Shaver</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">World Psychiatry</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="11" to="15" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<monogr>
+		<author>
+			<persName><surname>________</surname></persName>
+		</author>
+		<title level="m">Attachment in Adulthood: Structure, Dynamics, and Change</title>
+				<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Guilford Press</publisher>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note>Second Edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<monogr>
+		<title level="m" type="main">The Ethics of Need: Agency, Dignity, and Obligation</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">C</forename><surname>Miller</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<publisher>Routledge. Wonderly</publisher>
+			<biblScope unit="volume">21</biblScope>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Love&apos;s Bond</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Nozick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">his The Examined Life: Philosophical Meditations</title>
+				<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Simon &amp; Schuster</publisher>
+			<date type="published" when="1989">1989</date>
+			<biblScope unit="page" from="68" to="86" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<monogr>
+		<author>
+			<persName><forename type="first">S</forename><surname>Rholes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Simpson</surname></persName>
+		</author>
+		<title level="m">Adult Attachment: Theory, Research, and Clinical Implications</title>
+				<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Guilford Press</publisher>
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Valuing</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Scheffler</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Reasons and Recognition: Essays on the Philosophy of T.M. Scanlon</title>
+				<editor>
+			<persName><forename type="first">R</forename><forename type="middle">Jay</forename><surname>Wallace</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Kumar</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">S</forename><surname>Freeman</surname></persName>
+		</editor>
+		<meeting><address><addrLine>Oxford</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="23" to="42" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<monogr>
+		<title level="m" type="main">Affect Regulation and the Origin of the Self</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">N</forename><surname>Schore</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1994">2016/1994</date>
+			<publisher>Routledge</publisher>
+			<pubPlace>New York, NY</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Valuing and Caring</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Seidman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Theoria</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="272" to="303" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Love as attachment: The integration of three behavioral systems</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">R</forename><surname>Shaver</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hazan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Bradshaw</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The psychology of love</title>
+				<editor>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Sternberg</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Barnes</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New Haven, CT</addrLine></address></meeting>
+		<imprint>
+			<publisher>Yale University Press</publisher>
+			<date type="published" when="1988">1988</date>
+			<biblScope unit="page" from="68" to="99" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Caring, Identification, and Agency</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Shoemaker</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ethics</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="page" from="88" to="118" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Moral Address, Moral Responsibility, and the Boundaries of the Moral Community</title>
+		<author>
+			<persName><surname>________</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ethics</title>
+		<imprint>
+			<biblScope unit="volume">118</biblScope>
+			<biblScope unit="page" from="70" to="108" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Relationships, Development and Psychopathology</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Sroufe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Duggal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Weinfield</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Carlson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Handbook of Developmental Psychology</title>
+				<editor>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Sameroff</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">M</forename><surname>Lewis</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">S</forename><surname>Milller</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2000">2000</date>
+			<biblScope unit="page" from="75" to="92" />
+		</imprint>
+	</monogr>
+	<note>second edition</note>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><surname>Solomon</surname></persName>
+		</author>
+		<title level="m">About Love</title>
+				<meeting><address><addrLine>Ontario</addrLine></address></meeting>
+		<imprint>
+			<publisher>Madison Books</publisher>
+			<date type="published" when="2001">2001</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Love as a Moral Emotion</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Velleman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ethics</title>
+		<imprint>
+			<biblScope unit="volume">109</biblScope>
+			<biblScope unit="page" from="338" to="374" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<monogr>
+		<title level="m" type="main">Love&apos;s Philosophy</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>White</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2001">2001</date>
+			<publisher>Rowman &amp; Littlefield</publisher>
+			<pubPlace>New York</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Disordered Appetites: Addiction, Compulsion and Dependence</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Watson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Addiction: Entries and Exits</title>
+				<editor>
+			<persName><forename type="first">Jon</forename><surname>Elster</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Russell Sage Publications</publisher>
+			<date type="published" when="1999">1999</date>
+			<biblScope unit="page" from="3" to="28" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">The Trouble with Psychopaths</title>
+		<author>
+			<persName><surname>________</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Reasons and Recognition: Essays on the Philosophy of T. M. Scanlon</title>
+				<editor>
+			<persName><forename type="first">R</forename><forename type="middle">Jay</forename><surname>Wallace</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">R</forename><surname>Kumar</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">S</forename><surname>Freeman</surname></persName>
+		</editor>
+		<meeting><address><addrLine>New York</addrLine></address></meeting>
+		<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="307" to="331" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">On Being Attached</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Wonderly</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Philosophical Studies</title>
+		<imprint>
+			<biblScope unit="volume">173</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="223" to="242" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Love and Attachment</title>
+	</analytic>
+	<monogr>
+		<title level="j">American Philosophical Quarterly</title>
+		<imprint>
+			<biblScope unit="volume">54</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="232" to="250" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

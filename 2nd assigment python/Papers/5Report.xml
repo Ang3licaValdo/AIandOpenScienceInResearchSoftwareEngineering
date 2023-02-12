@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A Neural-CBR System for Real Property Valuation</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Adebola</forename><forename type="middle">G</forename><surname>Musa</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Dept. of Software Engineering</orgName>
+								<orgName type="institution">Tshwane University of Technology</orgName>
+								<address>
+									<country key="ZA">South Africa</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff1">
+								<orgName type="department">Dept of Computer Science</orgName>
+								<orgName type="institution">Covenant University</orgName>
+								<address>
+									<country key="NG">Nigeria</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Olawande</forename><surname>Daramola</surname></persName>
+							<affiliation key="aff2">
+								<orgName type="department">Dept of Mathematics</orgName>
+								<orgName type="institution">Covenant University</orgName>
+								<address>
+									<country key="NG">Nigeria</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Alfred</forename><surname>Owoloko</surname></persName>
+							<affiliation key="aff3">
+								<orgName type="department">Dept of Information Technology</orgName>
+								<orgName type="institution">Durban Univ. of Tech</orgName>
+								<address>
+									<country key="ZA">South Africa</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Oludayo</forename><surname>Olugbara</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff4">
+								<orgName type="institution">Covenant University Repository</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A Neural-CBR System for Real Property Valuation</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">AD6FD46C6A88A9C9CE8D4DF9E27C4FD2</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.3-SNAPSHOT" ident="GROBID" when="2023-02-09T21:28+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Case-based reasoning</term>
+					<term>artificial neural networks</term>
+					<term>real property valuation</term>
+					<term>intelligent system</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>In recent times, the application of artificial intelligence (AI) techniques for real property valuation has been on the increase. Some expert systems that leveraged on machine intelligence concepts include rule-based reasoning, case-based reasoning and artificial neural networks. These approaches have proved reliable thus far and in certain cases outperformed the use of statistical predictive models such as hedonic regression, logistic regression, and discriminant analysis. However, individual artificial intelligence approaches have their inherent limitations. These limitations hamper the quality of decision support they proffer when used alone for real property valuation. In this paper, we present a Neural-CBR system for real property valuation, which is based on a hybrid architecture that combines Artificial Neural Networks and Case-Based Reasoning techniques. An evaluation of the system was conducted and the experimental results revealed that the system has higher satisfactory level of performance when compared with individual Artificial Neural Network and Case-Based Reasoning systems.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">INTRODUCTION</head><p>In recent years, the application of artificial intelligence (AI) approaches for real property valuation has been on the increase. Expert systems that leverage machine intelligence concepts such as rule-based reasoning <ref type="bibr" target="#b38">[39,</ref><ref type="bibr" target="#b28">29]</ref>, case-based reasoning (CBR) <ref type="bibr" target="#b29">[30]</ref>, and artificial neural networks (ANN) <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b14">15,</ref><ref type="bibr" target="#b26">27,</ref><ref type="bibr" target="#b42">43,</ref><ref type="bibr" target="#b44">45]</ref> have been used. These AI approaches have been found to outperform traditional statistical approaches such as hedonic regression, logistic regression, and discriminant analysis, and very capable to complement the decision making process <ref type="bibr" target="#b36">[37]</ref>.</p><p>However, these AI approaches have their individual strengths and weaknesses, which inherently affect the quality of performance when used alone for real estate valuation. For example, in order to engage a rulebased expert system approach, optimal weights must be assigned to individual property attributes that are to be used for composing rules of the rule-base, by using standardized regression coefficients. However, a major challenge of a rule-based system is that these optimal weights derived from regression are not generalized, but rather are location dependent, therefore, the rules and weights must be updated regularly in order to sustain the relevance of the system, which is usually a very demanding task <ref type="bibr" target="#b11">[12]</ref>. Data mining offers an alternative approach to developing intelligent systems for real property valuation but their viability is only guaranteed when there is a large pool of transaction data to work with, which may not exist or may be unreliable in some locations <ref type="bibr" target="#b25">[26]</ref>.</p><p>The use of Artificial Neural Networks (ANN) for the appraisal of real estate property is particularly prevalent <ref type="bibr" target="#b43">[44,</ref><ref type="bibr" target="#b1">2]</ref>. ANN could be defined as a group of simple interconnected units, called neurons that function together in parallel for the purpose of performing a common task. It is a model of computation that emulates the operational principles of the biological nervous systems by providing a mathematical equivalent of the combination of neurons connected in a network. The neurons of an ANN are linked with each other through connections. Each connection is assigned a weight that controls the flow of information among the neurons. Whenever data is fed into a neuron through the connections, it is summed up first and then gets transformed by an activation function. The outputs of this activation function are then sent to other neurons (for feed forward networks) or back to itself as input (for recurrent networks) <ref type="bibr" target="#b34">[35]</ref>. ANN has very strong adaptive learning ability from which it derives its strong interpolative capability. This makes it very suitable for prediction, especially in instances of noisy data or incomplete data, which many other alternative prediction models are not able to handle <ref type="bibr" target="#b43">[44]</ref>. However, ANN has very weak explanation mechanism, which makes it difficult to understand the reasoning behind its conclusions <ref type="bibr" target="#b1">[2]</ref>. This is a major limitation particularly in the real estate domain where it is essential to have a strong rationale for making investment decisions.</p><p>CBR is an approach that entails the use of the experience gained in previous problem episodes to arrive at a solution for a new problem <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b20">21]</ref>. It is a machine learning paradigm that closely models the human reasoning process. Solving a problem using CBR involves a number of processes: (1) case matching and retrieval of a relevant case using defined similarity metrics; (2) case adaptation for reuse; (3) case revision for appropriateness and; (4) case retention in the case base <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b0">1]</ref>. The nature of CBR, which relates every new episode to similar past episodes, makes it very suitable for building intelligent systems with effective explanation mechanism. It has proved useful for real property valuation in some locations where transaction data is not readily available or is unreliable. The past experiences of experts have been used as a basis to implement a CBR system for decision support purposes <ref type="bibr" target="#b31">[32]</ref>. CBR systems have very strong explanation mechanism because of the existence of sufficiently similar previous cases that provides good rationale for new solutions obtained. However, the disadvantage of CBR is that the quality of its solutions depends solely on the existence of good cases that are relevant to solving the new case at hand. This brings the tendency to overly rely on previous experiences without validating them in a new situation.</p><p>Our approach in this work, innovates the combination of ANN and CBR in a single system framework leveraging the strengths of the two instancebased learning techniques. The experienced-based problem solving capability of CBR systems and its viable explanation mechanism is combined with the strong interpolative capability of ANN in producing a Hybrid Intelligent System (HIS) for qualitative decision support for real property valuation. This, to the best of our knowledge represents a first attempt at hybridizing these two approaches in a practical scenario for improved decision support in the real estate domain. To achieve this, data from selected input variables of new cases are transformed via a pre-processing procedure into numerical data that are suitable for ANN computation, and the result of the ANN is passed to the CBR component. Thereafter, the CBR component seeks for existing past cases that are sufficiently similar to the input case whose solution and explanation can be adapted to the new context. Hence, this work introduces the novel hybridization of ANN and CBR decision support in real property valuation for improved performance relative to the application of a solitary ANN or CBR approach.</p><p>The remaining part of the paper is described as follows: In section 2 we give an overview of related work, while Section 3 discusses the hybrid architecture of the Neural-CBR system. Section 4 is a case study report of the application of the Neural-CBR system to business data of properties sales obtained from a Nigerian company (Dan Odiete and Co. Ltd. based in Benin City, Nigeria). The paper is concluded in section 5 with a brief note.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">RELATED WORK</head><p>A number of machine learning methods and techniques that are applicable to property appraisal and valuation have been reported in literature. Wilson et al. <ref type="bibr" target="#b43">[44]</ref> reported the implementation of an intelligent system for valuation of residential property. The intelligent system was built using a hybrid of Multi-Layer Perceptron (MLP) ANN and rule-based expert system. The study by Guan et al <ref type="bibr" target="#b16">[17]</ref> describes the design and implementation of an Adaptive Neuro-Fuzzy Inference System-based (ANFIS) approach to estimate prices for residential properties. The paper represents a first attempt to evaluate the feasibility and effectiveness of ANFIS in assessing real estate values. In <ref type="bibr" target="#b21">[22]</ref>, a multi-resolution approach was used to determine real estate price in the Chinese real estate market applying three theories: (1) Unascertained theory, (2) Principal Component Analysis -PCA and (3) Ant Colony Optimization ACO-based ANN. The result forecasted is in good agreement with the actual values, and have been very accurate and meet the actual needs. Lin and Chen <ref type="bibr" target="#b22">[23]</ref> applied Back Propagation Neural Networks (BPN) and Support Vector Regression (SVR) to property valuation in Taiwan. The results of the BPN &amp; SVR were compared. It was found that SVR with trial-and-error method performed the best with MAPE = 4.466% and R2 = 0.8540. That is, stepwise regression is efficient but not the best variable selection method with both BPN and SVR. Also ANN was used as a valuation technique in <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b14">15,</ref><ref type="bibr" target="#b26">27,</ref><ref type="bibr" target="#b42">43,</ref><ref type="bibr" target="#b44">45,</ref><ref type="bibr" target="#b43">44,</ref><ref type="bibr" target="#b7">8,</ref><ref type="bibr" target="#b8">9,</ref><ref type="bibr" target="#b32">33]</ref>.</p><p>Most of the existing CBR systems that have been reported in literature find application in the fields of medicine, law, planning and design. These include CHEF <ref type="bibr" target="#b17">[18]</ref>, PESUADER <ref type="bibr" target="#b40">[41]</ref>, CABOT <ref type="bibr" target="#b10">[11]</ref>, GINA <ref type="bibr" target="#b13">[14]</ref>), and CYRUS <ref type="bibr" target="#b19">[20]</ref>. Relatively few CBR systems have been reported to have application in the real estate domain. However, PROFIT <ref type="bibr" target="#b5">[6]</ref>, is a Fuzzy CBR (FCBR) system for residential property valuation. It is an advanced prototype system developed to estimate residential property values for real estate transactions that was based on the use of CBR techniques with Fuzzy predicates. PROFIT has been successfully tested on thousands of real estate transactions. Also, Pacharavanich et al. <ref type="bibr" target="#b31">[32]</ref> reported the application of a CBR tool for the valuation of residential property in Bangkok, also an evaluation of the CBR tool was conducted. Juan et al. <ref type="bibr" target="#b18">[19]</ref> developed a "pre-sale housing"-based decision support system for the Taiwan real estate market using a hybrid of CBR and Genetic Algorithm (GA). Based on the customer's needs, CBR is used to retrieve relevant housing layout. Out of the retrieved cases, nearest neighbour method was used to calculate similarity of cases. GA was then applied to optimize cost and housing conditions. Hybrid CBR systems are those that combine other forms of knowledge and reasoning methods with CBR. Examples include Fuzzy-CBR <ref type="bibr" target="#b6">[7]</ref>, rule-based and case-based <ref type="bibr" target="#b35">[36,</ref><ref type="bibr" target="#b15">16]</ref>, combining case-based and model-based <ref type="bibr" target="#b33">[34]</ref>, case-based and inductive learning <ref type="bibr" target="#b12">[13,</ref><ref type="bibr" target="#b4">5,</ref><ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b2">3]</ref>. Thus far, relatively few instances of Neural-CBR hybrids have been reported in the literature with no report of its application to the real estate domain. Although, Taffasse <ref type="bibr" target="#b41">[42]</ref> discussed the prospects of Neural-CBR approach to real property appraisal, the paper did not report any implementation experience to practically validate the propositions made. Specifically, a combination of CBR and a Radial basis ANN in the implementation of a Sales-Advisory system was reported in <ref type="bibr" target="#b27">[28]</ref>.</p><p>In <ref type="bibr" target="#b23">[24]</ref> an ongoing work on the development of hybrid Neural-CBR classifiers for building on-line communities was reported. The objective of the work is to identify communities of use in the context of an organized group of people. The process involves mining users bookmark files in order to identify communities that share the same information interests. An intelligent agent is used to observe user behavior in order to learn the user bookmark classification strategy before hybrid neural case-based reasoning component is used as incremental classifier. Also, Bajo et al. <ref type="bibr" target="#b3">[4]</ref> reported the implementation of a Case-Based Planner for Monitoring Patients (CBPMP) system. It is an autonomous deliberative casebased planner designed to plan the nurses' working time dynamically, to maintain the standard working reports about the nurses' activities, and to guarantee that the patients assigned to the nurses are given the right care. The CBPMP was integrated with a Routing Problems with Time Windows (RPTW) neural network component in order to realize an intelligent environment for monitoring patients' health care in execution time in hospital environments. Hence, the contribution of this work stems from the novel hybridization of MLP-ANN and CBR in the implementation of a Neural-CBR decision support system in real estate property valuation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">THE HYBRID NEURAL-CBR SYSTEM</head><p>The Neural-CBR system is a hybrid modular architecture of two components with five user interfaces. The two components are the ANN component and the CBR component (see Figure <ref type="figure" target="#fig_0">1</ref>). </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">The Multi-Layer Perceptron ANN Component</head><p>The multi-layer perceptron (MLP) ANN is a powerful neural network model that can be used for solving approximation, estimation, classification and prediction problems. Generally, it consists of an input layer, an output layer and one hidden layer. The hidden layer(s) and the output layer are the processing layers in the network where activation takes place. The knowledge of the network is encoded in the weights connecting the neurons. Each neuron in an inner layer acts as a linear combiner whose summation function is given as:</p><formula xml:id="formula_0">Sum =    n j i i x w w 1 0 (1)</formula><p>Where w 0 is the bias weight, w i and x i are the weight and input vectors respectively. The activation at each neuron is given by the sigmoid function:</p><formula xml:id="formula_1">f(a) = ) 1 ( 1 sum e   (2)</formula><p>The sigmoid function is continuous and differentiable in the interval [0, 1], and is one of mostly used activation function for the MLP. The MLP is trained using the back propagation algorithm <ref type="bibr" target="#b34">[35]</ref>, which is a form of supervised learning, by presenting sample input-output pairs to the network. The error difference between the network's output and the expected target output are fed back into the network for updating the weights connecting the hidden-output layers and the input-hidden layers.</p><p>In our Neural-CBR system, symbolic data obtained from case instances are transformed into numerical data through pre-processing and fed as input into the MLP. The data pre-processing is therefore, a necessary precursor to the operations of the MLP-ANN component of the Neural-CBR system.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">The CBR Component</head><p>The set of input variable values and the predicted output obtained from the MLP component is passed to the CBR component. The CBR component has a case base indexed on unique case identity field (case_id) and the computed similarity score of each case. The typical structure of a case consists of the following:</p><p> Case_id -which is an auto-generated primary key of the table;  Case_simscore -which is the computed similarity score of a case in the case base relative to a particular case instance;  Case_attributesset -input values of individual attributes stored as a string separated by delimiters;  Case_sellingprice -the predicted valuation of a case instance;  Case_weightSet -the set of weights associated with each attribute variable such that w i represents the weight of the i th attribute.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2.1">Similarity Analysis</head><p>Similarity analysis was done using the nearest neighbour algorithm. The similarity measure used was the inverse of weighted normalized Euclidian distance. A similarity score is computed by:</p><formula xml:id="formula_2">SIM(X, Y) = 1-DIST(X,Y) (3) DIST(X, Y) = (<label>4</label></formula><formula xml:id="formula_3">)</formula><p>Where X and Y are the new and stored case respectively with n number of attributes while and are the normalized values for the i th attribute. A normalized weight w i is assigned to each attribute based on contextual experts' knowledge of the location concerned. This calculation is repeated for every stored case in the case base. The cases with the highest similarity score (that is up to or above the similarity benchmark value) are picked as candidates for adaptation in providing explanation for the new case scenario. The algorithm of the Neural-CBR system is given in Figure <ref type="figure" target="#fig_1">2</ref>. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Algorithm of Neural-CBR System</head><p>In this section, we present the algorithm of the Neural-CBR systems that details how it reaches its conclusions (see Figure <ref type="figure" target="#fig_1">2</ref>). Given an input C new and the existence of the case base CB. A variable Sim Benchmark is set as the minimum acceptable value for sufficient similarity between cases. The algorithm selects the SimBenchmark value to be in the interval [0.75, 1.0], such that the value 0.75 implies a degree of similarity in the upper quartile while the value 1.0 denotes perfect similarity. Likewise, the value 0.5 connotes an average similarity score. Step 4, 5, 6 in the algorithm represents the pre-processing, ANN training and ANN prediction phases of the system's operation. In Step 7, a one pass scan of the case base (CB) was carried out to compute similarity between C new and the existing cases in the case base using the Weighted Euclidean distance (see equations 1, 2). If cases with similarity score up to or above the SimBenchmark exist (i.e. similarity ≥ SimBenchmark) then case adaptation is conducted as follows:</p><p>i. Rank all cases found by their similarity score; ii. Group the retrieved cases based on their solution values P cbr (case selling price) into different categories, g 1 , g 2 , g 3 ..., g k , with their corresponding P cbr as P 1 , P 2 ,.., P k ; iii. Take count of the number of cases retrieved in each category g i (i = 1...k) and store them as t 1 , t 2 ...t k ); iv. Choose category g i with the highest frequency; v. If there exist only one category g i with highest frequency then take P cbr of a case in g i as P value (i.e. final output) else, if there is more than one category g i with highest frequency, such as g i1 , g i2 ... g im then compute average value P ave of all P im in g i as P value (final output) and as P cbr for C new . vi. Next, use descriptions of case attributes (Case_attributesset) in category g i as explanation for C new (line 9-12).</p><p>If cases with similarity score of at least 0.5, but less than SimBenchmark exists then the Neural-CBR system uses the neural computed P neural (ANN predicted output) in case adaptation thus:</p><p>1) Use retrieved cases to retrain ANN-MLP in order to determine P neural ; 2) Assign P neural as solution for P cbr and also as P value in this case; 3) Use descriptions of attributes of retrieved cases that are closest to corresponding C new variables for explanation. Where no sufficiently similar case is found, then restate description attributes of C new for explanation (see line <ref type="bibr" target="#b14">[15]</ref><ref type="bibr" target="#b15">[16]</ref><ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref> i.e. for all retrieved cases C r = {c 1 , c 2 …c n ) where f i (i=1...15) is a specific attribute feature of C k  C r , f j a corresponding attribute feature of C new , w i , the weight associated with attribute feature f i , compute SIM(f i , f j ) = │w i f i -w i f j │ and rank cases where SIM(f i , f j ) ≤ 0.5. Pick as explanation for C new highest ranked f i in C r , for each instance where SIM(f i , f j ) ≤ 0.5 is not found use the description of f j in C new as explanation for C new . end for If sufficiently similar cases do not exist then the system takes P neural as P value . However in this case it restates the features of C new as explanation for output (line 20-21).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">THE CASE STUDY</head><p>A prototype system was developed using data collected from a real estate firm (Dan Odiete and Co. Ltd) in Nigeria <ref type="bibr" target="#b30">[31]</ref>. The instance data used in the case study is for the periods of 2002 to 2005, a sample is shown in Table <ref type="table">1</ref>. Data associated with fifteen core attribute features used in the appraisal of residential properties were extracted and used to train the neural network component to yield an estimate of the price of the property. The features, description and range of values obtained from the training set used are given in Table <ref type="table">2</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 1: Bedroom Bungalow BQ optional</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 2: Description of features for real property valuation</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Data-Preprocessing</head><p>The raw input data (see Table <ref type="table">1</ref>) were normalized based on min-max normalization <ref type="bibr" target="#b39">[40]</ref> to values between 0 and 1 using the data-preprocessing interface of the Neural-CBR system. The rescaled values of the attribute features extracted from the data are as shown in Table <ref type="table" target="#tab_0">3</ref>. All the values are numerical except the following: borehole, BQ, fenced_round, neighbourhood_group and accessibility. These five were category inputs, therefore were represented as A (available) or B (not available), which are assigned vales 1 for A and 0 for B. In the case of neighbourhood_group, A (high), B (medium), or C (low) are assigned values 1, 0.5 and 0 respectively. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Training the MLP-ANN</head><p>The configuration of the MLP-ANN model used for our training instance is a 15-16-1 MLP in which the number of core attribute variables (15 of them) corresponds to the number of input neurons with one hidden layer containing 16 neurons and 1 neuron in the output layer, which returns as output the predicted sales price estimate. The Neural-CBR system environment allows for the specification of a desired configuration for the MLP network, which is then dynamically created. The MLP was trained using the back propagation algorithm with three sets of data, the training set, the validation set (to verify correctness during training) and the test set. The summary of the ANN experiments that was conducted with the Neural-CBR system framework in order to arrive at the 15-16-1 MLP configuration and other optimal training parameters such as number of neurons in the hidden layer, learning rate and threshold are presented in Tables 4, 5 and 6. In each occasion recordings were taken and the average computed to determine the optimum value in each case. After the training experiment, the MLP configuration was 15-16-1, with 1.0 learning rate and 0.005 threshold value. This was used for predicting the sale price of a property and the predicted result passed to the CBR component.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 4: Variation of neurons in the hidden layer of MLP</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Implementation of the Neural-CBR System</head><p>The Borland C++ Builder version 6.0 software was used as the programming platform to realize the Neural-CBR system. The case base was implemented as SQL Server database table of records (cases) indexed on case_id and the computed weighted Case_simscore fields. The CBR component does similarity analysis and uses parameterized SQL statements to determine the best-case matches. The procedure employed by the Neural-CBR system to reach its final conclusion is based on the algorithm shown in figure <ref type="figure" target="#fig_1">2</ref>. Figures <ref type="figure">3</ref><ref type="figure">4</ref><ref type="figure" target="#fig_3">5</ref>show  </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4">Performance Evaluation of Neural-CBR System</head><p>Evaluation is process of determining the appropriateness of a specific system relative to its functional requirements and objectives. Validation of an expert system is conducted by determining whether the system's outcome is consistent with the conclusions of the human experts. Validation focuses on evaluating the outcomes rather than the process by which the outcomes are determined. In our specific case, the output of the Neural-CBR system was validated by using a direct method <ref type="bibr" target="#b37">[38]</ref>. In the direct method of expert system validation a human expert does a quantitative assessment of the expert system software by engaging it to perform a simple benchmark problem over a specified period. The expert then responds to a set of questions about the software based on past experience. The questions are quantitative and are based on a 0 (very false) to 5 (very true) numerical scales. Thereafter, a single numerical factor results called the Satisfaction Level that ranges from 0 (least satisfied user) to 5 (most satisfied user) is computed, which is used to rank the expert system software in terms of its likelihood to satisfy a prospective end user.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4.1">Description of the Evaluation Experiment</head><p>The objective of the validation experiment was to determine the level of users' satisfaction with the hybrid Neural-CBR system relative to CBR alone and ANN alone systems. In order to do this, a real property valuation system was created that allows the user to alternate between three system modalities, Neural-CBR, CBR and ANN, such that, if one of the modality is activated the other two modalities are automatically disabled. A comparative assessment of the three system modalities was then undertaken using some selected human experts from the real estate industry for the evaluation. The participants in the experiment were persons with significant professional experience in the real property valuation. Fifteen <ref type="bibr" target="#b14">(15)</ref> real estate experts drawn from two firms, Dan Odiete &amp; Co. and Ajeb Associates (both located in Benin City, Nigeria) with varying professional experience ranging from 2 (lowest) to 15 (highest) years were selected to participate in the user-based system usability experiment. Each received a copy of a questionnaire instrument and had the system to be evaluated installed for them. The participants who were people with tangible knowledge of the use of software were given one-week training on how to make use the system prior to the commencement of the experiment. Details of how to switch modalities and to engage the system in specific modality for operations such as data preprocessing, training, and prediction were clearly outlined. In addition, the participants had the license to engage the system in as many trial sessions as deemed convenient commencing with the actual assessment. Moreover, one IT support staff was temporarily assigned to each company for the trial period of three weeks. The human experts were asked to give a rating of 0 to 5 of their assessment of the performance of the three (Neural-CBR, CBR, ANN) system modalities covering seven aspects and a total of sixteen questions. Each question has specific weight assigned to it, which had the mutual consent of human experts that participated in the experimental process. Table <ref type="table" target="#tab_3">7</ref> shows a sample of a typical response to the questionnaire test instrument and how the satisfaction score for an evaluator is computed. </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5">Results and Discussion</head><p>At the end of the evaluation experiment, the mean satisfaction level as computed from the assessments of the fifteen real estate expert evaluators for the three systems are as shown in Table <ref type="table">8</ref>. The Neural-CBR system had a mean score of 3.83/5.0 (viz. 3.83 out of the possible maximum score of 5.0); CBR system had 3.64/5.0; and ANN system 3.75/5.0; all which are indicative of good performance.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Table 8: Result of Evaluation Experiment</head><p>However, in order to determine the best of the three systems; we compared the computed mean satisfaction level of the three systems to determine whether the differences in the mean values are statistically significant. To achieve this we formulated the following hypothesis: Hypothesis one H 0 : There is no significant difference in the mean satisfaction level of the CBR, Neural-CBR, and ANN systems, and hence the three systems are at par performance wise.</p><p>H 1 : There is significant difference in the mean satisfaction level of the CBR, Neural-CBR, and ANN system, and the Neural-CBR systems is better than the other two systems.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Testing the hypothesis</head><p>In order to test the hypothesis that was formulated, the Analysis of Variance (ANOVA) statistic was employed to compare the three sets of data obtained from the evaluation experiment. The coefficient of variation (CV) (see Table <ref type="table" target="#tab_5">10</ref>) of the sets of data was computed in order to determine the system with the best rating distribution. This is given as:</p><p>Where σ = standard deviation of the data distribution, µ = mean of the data distribution At 1% significance level (i.e. p &lt; 0.01), it was found that the mean satisfaction levels of the three systems (ANN, Neural-CBR and CBR) systems are significantly different because the p-value of 0.008305 from the ANOVA test is less than 0.01 (see Table <ref type="table" target="#tab_4">9</ref>). In addition, the coefficient of variation (CV) for the hybrid Neural-CBR system is the lowest when compared to the other two systems, which is indicative of a relatively better user rating. Therefore, H 0 is rejected and H 1 accepted, which states that there is significant difference in the mean satisfaction level of ANN, Neural-CBR and CBR systems and the Neural-CBR system is better than the other two systems. Generally the observations from the case study reveal potential benefits of the novel hybridization of ANN and CBR. First, the output of the system shows the interpolative power of ANN especially in instances where other predictive models may be deficient. Second, the results from the system reveal how well the ANN component could make up for the limitation of the CBR component in instances when there is lack of sufficiently similar old cases in the case base for a new case. At the same time the Neural-CBR system leverages the existence of a case base, in providing justifiable explanation for results instead of being a black box like a typical ANN. Additionally, the provisioning of rich GUI interfaces for preprocessing and training of ANN enables real-time acquisition of expert knowledge in the process of solving a problem such as being able to assign weights to specific real property attribute variables, which makes the system very adaptive and suitable as a decision support tool.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.">CONCLUSION</head><p>In this work, a novel hybridization of ANN and CBR techniques for real estate property valuation has been demonstrated. A prototype Neural-CBR system was developed and evaluated in a case study to confirm the viability of the concept. The result obtained revealed that the Neural-CBR combination offers more acceptable level of usability and performance satisfaction relative to solitary ANN systems and CBR systems. Also, the system showed significant strength in key areas of weaknesses usually associated with solitary ANN and CBR intelligent systems, which gives merit to the hybridization. In future work, we intend to investigate the applicability of hybrid Neural-CBR systems to other business application domains such as education, health, and finance where the potential of Neural-CBR is yet to be fully explored.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig 1 :</head><label>1</label><figDesc>Fig 1: A Schematic View of the hybrid Neural-CBR Architecture</figDesc><graphic coords="3,50.40,398.76,236.88,134.64" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Fig 2 :</head><label>2</label><figDesc>Fig 2: Neural-CBR System's Operational Procedure</figDesc><graphic coords="4,50.40,187.20,236.88,248.04" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig 3 :Fig 4 :</head><label>34</label><figDesc>Fig 3: Feature Extraction Interface of the Neural-CBR System</figDesc><graphic coords="7,50.76,306.36,236.16,135.48" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Fig 5 :</head><label>5</label><figDesc>Fig 5: Prediction and Explanation Interface of the Neural-CBR System</figDesc><graphic coords="7,50.76,483.84,236.16,154.08" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="5,50.40,118.20,504.00,165.36" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="5,53.76,318.00,487.68,315.84" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="6,65.16,106.68,465.00,165.36" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0"><head></head><label></label><figDesc></figDesc><graphic coords="8,106.68,129.72,381.84,318.12" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 3 :</head><label>3</label><figDesc>Showing normalized feature values from Table1</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 5 :</head><label>5</label><figDesc>Variation of learning rate</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 6 :</head><label>6</label><figDesc>Variation of threshold</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 7 :</head><label>7</label><figDesc>A Typical System Evaluation Template</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>Table 9 :</head><label>9</label><figDesc>ANOVA Table for Mean Satisfaction Level Comparison</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 10 :</head><label>10</label><figDesc>Coefficient of Variation for three Systems</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">http://www.cisjournal.org</note>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0" />			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Case-based reasoning: foundational issues, methodological variations, and system approaches</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aamodt</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Plaza</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">AI Communications</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="39" to="59" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Intelligent systems for the valuation of residential property</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Almond</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Lewis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Jenkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gronow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Ware</forename><forename type="middle">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">RICS Cutting Edge, Conference</title>
+				<imprint>
+			<date type="published" when="1997-09-06">Dublin 5-6 September. (1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Integrating induction in a case-based reasoned</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Armengol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Plaza</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings Second European Workshop on Case-Based Reasoning</title>
+				<meeting>Second European Workshop on Case-Based Reasoning</meeting>
+		<imprint>
+			<date type="published" when="1994">1994</date>
+			<biblScope unit="page" from="243" to="252" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Integrating case-based planning and RPTW neural networks to construct an intelligent environment for health care</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bajo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">F</forename><surname>De Paz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>De Paz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Corchado</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="5844" to="5858" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Integration of casebased reasoning and inductive learning methods</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bamberger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Goos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings First European Workshop on Case-Based Reasoning</title>
+				<editor>
+			<persName><forename type="first">Wess</forename><surname>Richter</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Althoff</forename><surname>Maurer</surname></persName>
+		</editor>
+		<meeting>First European Workshop on Case-Based Reasoning</meeting>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="296" to="300" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Fuzzy Case-Based Reasoning for Residential Property Valuation</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bonissone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Cheetham</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Handbook on Fuzzy Computing (G 15.1)</title>
+				<imprint>
+			<publisher>Oxford University Press</publisher>
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Fuzzy Case-Based Reasoning Systems</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Bonissone</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Mantaras</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Handbook of Fuzzy Computing Section F4</title>
+				<editor>
+			<persName><forename type="first">Ruspini</forename><surname>Bonissone</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Pedrycz</forename></persName>
+		</editor>
+		<imprint>
+			<publisher>Institute of Physics Publishers</publisher>
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Artificial Neural Networks: The Next Modeling/Calibration Technology for the Assessment community?</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Borst</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Property Tax Journal</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="69" to="94" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">A Method for the Valuation of Residential Properties using Artificial Neural Networks in Conjunction with Geographical Information Systems</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Borst</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IAAO Conference</title>
+				<meeting><address><addrLine>Dublin.</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Artificial neural networks in mass appraisal</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Borst</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Property Tax Assessment &amp; Administration</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="5" to="15" />
+			<date type="published" when="1995">1995</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">CABOT: An adaptive approach to case-based Search</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Callan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">E</forename><surname>Fawcett</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">L</forename><surname>Rissland</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings IJCA</title>
+		<imprint>
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Learning by example</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">C</forename><surname>Churbuck</surname></persName>
+		</author>
+		<idno>6/8/92</idno>
+		<imprint>
+			<date type="published" when="1992">1992</date>
+			<biblScope unit="volume">149</biblScope>
+			<biblScope unit="page" from="130" to="132" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Learning representation by integrating case-based and inductive learning</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Connolly</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Christey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings AAAI Case-Based Reasoning Workshop: 157</title>
+				<meeting>AAAI Case-Based Reasoning Workshop: 157<address><addrLine>Washington, DC.</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Using experiencebased learning in game playing</title>
+		<author>
+			<persName><forename type="first">De</forename><surname>Jong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">A</forename><surname>Schultz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">C</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of Fifth International Conference on Machine Learning</title>
+				<meeting>Fifth International Conference on Machine Learning<address><addrLine>Ann Arbor, MI</addrLine></address></meeting>
+		<imprint>
+			<publisher>Morgan Kaufmann</publisher>
+			<date type="published" when="1988">1988</date>
+			<biblScope unit="page" from="284" to="290" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Artificial Neural Networks: an Application to Residential Valuation in the UK</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Evans</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">James</forename><forename type="middle">H</forename></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Collins</forename><forename type="middle">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Property Valuation &amp; Investment</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="195" to="204" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Rule-Based and Case-Based Reasoning in Housing Prices</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Gayer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Gilboa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Lieberman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The B.E. Journal of Theoretical Economics</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">An Adaptive Neuro-Fuzzy Inference System Based Approach to Real Estate Property Assessment</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Guan</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Zurada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Levitan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Real Estate Research</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Learning to anticipate and avoid problems through the explanation of failures</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Hammond</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of Fifth International Conference on Artificial Intelligence:556-560</title>
+				<meeting>Fifth International Conference on Artificial Intelligence:556-560<address><addrLine>Philadelphia, PA.</addrLine></address></meeting>
+		<imprint>
+			<publisher>Morgan Kaufmann</publisher>
+			<date type="published" when="1986">1986</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Decision support for housing customization: A hybrid approach using case-based reasoning and genetic algorithm</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Juan</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Shih</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Perng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Systems with Applications</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="83" to="93" />
+			<date type="published" when="2006">2006</date>
+			<publisher>Elsevier</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Maintaining organization in a dynamic long-term memory</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Koldoner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Cognitive Science</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="281" to="328" />
+			<date type="published" when="1983">1983</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">An introduction to case-based reasoning</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Koldoner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artificial Intelligence Review</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="3" to="34" />
+			<date type="published" when="1992">1992</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Applying Unascertained Theory, Principal Component Analysis and ACO-based Artificial Neural Networks for Real Estate Price Determination</title>
+		<author>
+			<persName><forename type="first">Li</forename><forename type="middle">W</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Software</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1672" to="1679" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Predicting Price of Taiwan Real Estates By Neural Networks and Support Vector Regression</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc of the 15th WSEAS international Conference</title>
+				<meeting>of the 15th WSEAS international Conference</meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<author>
+			<persName><forename type="first">M</forename><surname>Malek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kanawati</surname></persName>
+		</author>
+		<ptr target="www.aic.nrl.navy.mil/papers/2001/AIC-01-003/ws5/ws5toc8.PDF." />
+		<title level="m">A Cooperating Hybrid Neural-CBR Classifiers for Building On-line Communities</title>
+				<imprint>
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Induction and reasoning from cases</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Manago</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Althoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Auriol</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Traphoner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Wess</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Conruyt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Maurer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings First European Workshop on Case-Based Reasoning</title>
+				<editor>
+			<persName><forename type="first">Wess</forename><surname>Richter</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Althoff</forename><surname>Maurer</surname></persName>
+		</editor>
+		<meeting>First European Workshop on Case-Based Reasoning</meeting>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="313" to="318" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">621 of residential properties</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Mccluskey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Anand</surname></persName>
+		</author>
+		<ptr target="http://www.cisjournal.org" />
+	</analytic>
+	<monogr>
+		<title level="m">The application of intelligent hybrid techniques for the mass appraisal Journal of Emerging Trends in Computing and Information Sciences ©2009-2013 CIS Journal. All rights reserved</title>
+				<imprint>
+			<date type="published" when="1999">1999</date>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="218" to="238" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Mass Appraisal for Property Taxation: An Artificial Intelligence Approach</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Mccluskey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Dyson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Mcfall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Anand</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Land Economic Review</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="25" to="32" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Combining casebased reasoning with neural networks</title>
+		<author>
+			<persName><forename type="first">Murray-Smith R</forename><surname>Thakar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">AAAI Workshop on AI in Service and support</title>
+				<meeting><address><addrLine>Washington</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Expert system development for the mass appraisal of commercial property in Malaysia</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">H</forename><surname>Nawawi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Jenkins</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gronow</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Society of Surveying Technicians</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="66" to="72" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">A case based reasoning approach to the selection of comparable evidence for retail rent determination</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>O'roarty</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Patterson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">S</forename><surname>Mcgreal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Adair</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert System with Application</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="417" to="428" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<monogr>
+		<title level="m" type="main">Neural Networks: A data mining technique for property appraisal</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">A</forename><surname>Owoloko</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<pubPlace>Nigeria</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>University of Benin</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">M.Sc. Thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">The Development of a Case-Based Reasoning System as a Tool Residential Valuation in Bangkok</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Pacharavanich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Wongpinunwatana</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proc. of the 6th Annual Pacific-Rim Real Estate Society Conference</title>
+				<meeting>of the 6th Annual Pacific-Rim Real Estate Society Conference<address><addrLine>Sydney</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2000">2000</date>
+			<biblScope unit="page" from="1" to="14" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Neural Network Hedonic pricing models in mass real estate appraisal</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Peterson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Flanagan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Real Estate Research</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="147" to="164" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Using case-based reasoning to focus model-based diagnostic problem solving</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Portinale</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Torasso</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Ortalda</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Giardino</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings First European Workshop on Case-Based Reasoning</title>
+				<editor>
+			<persName><forename type="first">Wess</forename><surname>Richter</surname></persName>
+		</editor>
+		<editor>
+			<persName><forename type="first">Althoff</forename><surname>Maurer</surname></persName>
+		</editor>
+		<meeting>First European Workshop on Case-Based Reasoning</meeting>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="335" to="340" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Artificial Intelligence 2 nd ed</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Rich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Knight</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1991">1991</date>
+			<publisher>McGraw-Hill, Inc</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">CABARET: Rule interpretation in a hybrid architecture</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Rissland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Skalak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. of Man-Machine Studies</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="839" to="887" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Accuracy Issues for Automated and Artificial Intelligent Residential Valuation Systems</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Rossini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">International Real Estate Society Conference</title>
+				<meeting><address><addrLine>Kuala Lumpur</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="1999">January 26-30. (1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">A method for evaluating expert system shells for classroom instruction</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">D</forename><surname>Salim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Villavicencio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Timmerman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Industrial Technology</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="1" to="11" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Valuation expertise: its nature and application</title>
+		<author>
+			<persName><forename type="first">I</forename><surname>Scott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gronow</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Valuation</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="362" to="375" />
+			<date type="published" when="1989">1989</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Data Mining: A Preprocessing Engine</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">A</forename><surname>Shalabi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Shaaban</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Kasasbeh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Computer Science</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="735" to="739" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Using case-based reasoning for plan adaptation and repair</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">P</forename><surname>Sycara</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of DARPA workshop on case-based reasoning</title>
+				<meeting>DARPA workshop on case-based reasoning<address><addrLine>San Mateo, Calif</addrLine></address></meeting>
+		<imprint>
+			<publisher>Morgan Kaufmann</publisher>
+			<date type="published" when="1988">1988</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Case-based reasoning and neural networks for real estate valuation</title>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">Z</forename><surname>Taffese</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 25th IASTED International Multi-Conference: artificial intelligence and applications</title>
+				<meeting>the 25th IASTED International Multi-Conference: artificial intelligence and applications<address><addrLine>Innsbruck, Austria</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="98" to="104" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Intelligent Mass Appraisal</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Tay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ho</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Property Tax Assessment &amp; Administration</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="5" to="25" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Residential property price time series forecasting with neural networks</title>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">D</forename><surname>Wilson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">D</forename><surname>Paris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Ware</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">H</forename><surname>Jenkins</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Knowledge Based Systems</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">5-6</biblScope>
+			<biblScope unit="page" from="335" to="341" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">An Exploration of neural networks and its application to real estate valuation</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Worzala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lenk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Silva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Real Estate Research</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="185" to="201" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
