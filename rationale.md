@@ -7,6 +7,8 @@ This is the file that'll be used to describe the making of the second assigment 
 2. Create a visualization showing the number of figures per article.
 3. Create a list of links found in each paper.
 
+To complete this task GROBID was used to obtain the xml file of each pdf that is being analyzed for this assigment, each pdf and each corresponding xml can be found in the 'Papers' folder.
+
 ## Where to find the Python files
 
 Each of these files can be found in the folder called '2nd assigment python'.
