@@ -11,7 +11,7 @@ To complete this task GROBID was used to obtain the xml file of each pdf that is
 
 ## Where to find the Python files
 
-Each of these files can be found in the folder called '2nd assigment python'.
+Each of these files can be found in the folder called '2ndAssigment'.
 
 ## Requirements
 - Having Python installed. 
