@@ -1,0 +1,1076 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">A Hybrid Approach to Audio-to-Score Alignment</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author role="corresp">
+							<persName><forename type="first">Ruchit</forename><surname>Agrawal</surname></persName>
+							<email>&lt;r.r.agrawal@qmul.ac.uk&gt;.</email>
+							<affiliation key="aff0">
+								<orgName type="department">Centre for Digital Music</orgName>
+								<orgName type="institution">Mary University of London</orgName>
+								<address>
+									<region>Queen</region>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Simon</forename><surname>Dixon</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Centre for Digital Music</orgName>
+								<orgName type="institution">Mary University of London</orgName>
+								<address>
+									<region>Queen</region>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">A Hybrid Approach to Audio-to-Score Alignment</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">49A9245DAC2C74F0DEFB895A0FDAB9D8</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.3-SNAPSHOT" ident="GROBID" when="2023-02-09T21:19+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Audio-to-score alignment aims at generating an accurate mapping between a performance audio and the score of a given piece. Standard alignment methods are based on Dynamic Time Warping (DTW) and employ handcrafted features. We explore the usage of neural networks as a preprocessing step for DTW-based automatic alignment methods. Experiments on music data from different acoustic conditions demonstrate that this method generates robust alignments whilst being adaptable at the same time.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1.">Introduction and Motivation</head><p>Audio-to-score alignment is the task of finding the optimal mapping between a performance and the score for a given piece of music. Dynamic Time Warping <ref type="bibr" target="#b37">(Sakoe &amp; Chiba, 1978)</ref> has been the de facto standard for this task, typically incorporating handcrafted features <ref type="bibr" target="#b7">(Dixon, 2005;</ref><ref type="bibr" target="#b0">Arzt, 2016)</ref>. Recent advances in Music Information Retrieval have demonstrated the efficacy of Deep Neural Networks (DNNs) to a variety of tasks like music generation <ref type="bibr" target="#b12">(Eck &amp; Schmidhuber, 2002)</ref>, audio classification <ref type="bibr" target="#b25">(Lee et al., 2009)</ref>, onset detection <ref type="bibr" target="#b29">(Marolt et al., 2002)</ref>, music transcription <ref type="bibr" target="#b28">(Marolt, 2001;</ref><ref type="bibr" target="#b15">Hawthorne et al., 2017)</ref> as well as music alignment <ref type="bibr" target="#b10">(Dorfer et al., 2018a)</ref>. The primary advantage of DNNs is that they can learn directly from data in an end-to-end manner, thereby eschewing the need for complex feature engineering. However, DNNs struggle with modelling long-term dependencies <ref type="bibr" target="#b4">(Bengio et al., 1994)</ref> in temporal sequences. End-to-end alignment is a challenging task since it incorporates dealing with multiple inputs of different modalities, in addition to handling of very long term dependencies. This paper is an endeavor towards employing neural networks for music alignment. We present a hybrid approach to audio-to-score alignment, which consists of a neural network based preprocessing step as a precursor to Dynamic Time Warping. This approach involves computing a frame similarity matrix which is then passed on to a DTW algorithm that computes the optimal warping path through this matrix. The advantage of our method is that the preprocessing step is trainable, thereby making our method adaptable to a particular acoustic setting, unlike traditional DTW-based methods which employ handcrafted features.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2.">Related Work</head><p>Early works on feature learning for MIR tasks employ algorithms like Hidden Markov Models <ref type="bibr" target="#b21">(Joder et al., 2013)</ref> or deep belief networks <ref type="bibr" target="#b40">(Schmidt et al., 2012)</ref>. Recently, a number of works have explored feature learning for MIR using deep neural networks <ref type="bibr" target="#b41">(Sigtia &amp; Dixon, 2014;</ref><ref type="bibr" target="#b34">Oramas et al., 2017;</ref><ref type="bibr" target="#b42">Thickstun et al., 2016;</ref><ref type="bibr" target="#b24">Lattner et al., 2018;</ref><ref type="bibr" target="#b1">Arzt &amp; Lattner, 2018;</ref><ref type="bibr" target="#b23">Korzeniowski &amp; Widmer, 2016)</ref>. Work specifically on learning features for audio-to-score alignment has mainly focused on an evaluation of current feature representations <ref type="bibr" target="#b19">(Joder et al., 2010)</ref>, learning of the mapping for several common audio representations based on a best-fit criterion <ref type="bibr" target="#b20">(Joder et al., 2011)</ref> and learning transposition-invariant features <ref type="bibr" target="#b1">(Arzt &amp; Lattner, 2018)</ref> for alignment. <ref type="bibr" target="#b14">(Hamel et al., 2013)</ref> propose transfer learning for MIR tasks by learning learn a shared latent representation across related tasks of classification and similarity detection. Weaknesses in standard approaches to choosing similarity thresholds has been explored in <ref type="bibr" target="#b22">(Kinnaird, 2017)</ref>. <ref type="bibr" target="#b18">( İzmirli &amp; Dannenberg, 2010)</ref> propose the idea of learning features for aligning two sequences of music, as opposed to employing a standard chroma-based feature representation. <ref type="bibr" target="#b33">(Nieto &amp; Bello, 2014)</ref> present a novel algorithm to capture music segment similarity using two-dimensional Fourier-magnitude coefficients. <ref type="bibr" target="#b23">(Korzeniowski &amp; Widmer, 2016</ref>) explore frame-level audio feature learning for chord recognition using artificial neural networks.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.">Experiments and Results</head><p>The standard feature representation choice for music alignment is a time-chroma representation generated from the log-frequency spectrogram. Since this representation only relies on pitch class information, it ignores variations in timbre and instrumentation, and is not adaptable to different acoustic settings. Using neural networks helps us to override the manual feature engineering whilst providing the capability to adapt to different settings. Rather than extracting a feature representation from the inputs, we focus on the task of constructing a frame-similarity matrix. This matrix is then passed on to a DTW-based algorithm to generate the alignments. We employ a "Siamese" Convolutional Neural Network <ref type="bibr" target="#b5">(Bromley et al., 1994)</ref> for this task. This framework has shown promising results in the field of computer vision for computing image similarity <ref type="bibr" target="#b44">(Zagoruyko &amp; Komodakis, 2015)</ref>, as well as in the field of natural language processing, for learning sentence similarity <ref type="bibr" target="#b31">(Mueller &amp; Thyagarajan, 2016</ref>) and speaker identification <ref type="bibr" target="#b26">(Lukic et al., 2016)</ref> amongst others. We train our Siamese CNN model to determine if two patches, one from the audio and one from the synthesized MIDI "match" or not. A similar approach has been used by <ref type="bibr" target="#b18">( İzmirli &amp; Dannenberg, 2010)</ref>, however they use a Multi-Layer Perceptron (MLP) framework to compute if two frames are the same or not. In addition to using an enhanced framework which is optimal for this task, our work differs from them in that we also compute similarity labels (non-binary) and use this distance matrix further for alignment. We explain the preprocessing steps below: In order to keep the modality constant, we first convert the MIDI files to audio using FluidSynth <ref type="bibr" target="#b16">(Henningsson &amp; Team, 2011)</ref>. We then transform the frame-level audio patches to image spectrograms using librosa <ref type="bibr" target="#b30">(McFee et al., 2015)</ref>, a Python library for audio and music analysis. We conduct experiments using both the Short-Time Fourier transform (STFT) as well as the Constant-Q transform (CQT) transformations of the raw audios. We briefly explain our choice of loss function below: The objective of our Siamese CNN model is not to classify the inputs, but to differentiate between them. Hence, a contrastive loss function is much better suited to this task than a standard classification loss function like cross entropy. The contrastive loss function is computed as follows:</p><p>where D w is the Euclidean Distance between the outputs of the two Siamese twin networks. More formally, D w can be expressed as follows:</p><p>where G w is the output of each of the twin networks and X 1 and X 2 are the two inputs.</p><p>We train the model on the MAPS database <ref type="bibr" target="#b13">(Emiya et al., 2010)</ref>, where we have MIDI-aligned audio for a range of acoustic settings. We only select the subset containing the recordings played using a real piano, and discard the ones which are software-synthesized. We compute the similarity matrix using two mechanisms:</p><p>• Using binary labels: For this we employ the output labels of our Siamese CNN. 0's imply similar pairs, 1's imply dissimilar pairs.</p><p>• Using distances: For this we calculate D w . The distance directly corresponds to the dissimilarity between the two inputs. Higher the value of D w , higher the dissimilarity.</p><p>We then generate an alignment path through this matrix using fast-DTW <ref type="bibr" target="#b38">(Salvador &amp; Chan, 2007)</ref>, through a readily available DTW implementation in Python<ref type="foot" target="#foot_0">1</ref> . We test the performance of our model on a subset of the Mazurka dataset <ref type="bibr" target="#b39">(Sapp, 2007)</ref> which contains recordings from various acoustic settings. The results obtained using both methods are given in Table <ref type="table" target="#tab_1">1</ref>. Our results suggest that this method is a promising approach to alignment, especially in non-standard acoustic conditions; since the pre-processing Siamese Network is trainable on such data, unlike the manually handcrafted features used by standard DTW-based algorithms.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.">Conclusion and Future Work</head><p>We demonstrated that our hybrid approach to audio-to-score alignment is capable of generating robust alignments across various acoustic conditions. The advantage of our method is that it is adaptable to a particular acoustic setting without requiring a large amount of labeled training data. In the future, we would like to conduct an exhaustive evaluation of this approach on musically relevant parameters and analyze its limitations. We would also like to work on learning the features as well as the alignments in a completely end-to-end manner.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 1 .</head><label>1</label><figDesc>Alignment accuracy (in %)</figDesc><table><row><cell cols="3">Type of matrix STFT CQT</cell></row><row><cell>Binary</cell><cell>76.3</cell><cell>78.6</cell></row><row><cell>Distance</cell><cell>78.1</cell><cell>81.4</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="1" xml:id="foot_0">https://pypi.org/project/fastdtw/</note>
+		</body>
+		<back>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<monogr>
+		<title level="m" type="main">Flexible and robust music tracking</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arzt</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+			<pubPlace>Linz</pubPlace>
+		</imprint>
+		<respStmt>
+			<orgName>Universität Linz</orgName>
+		</respStmt>
+	</monogr>
+	<note type="report_type">PhD thesis</note>
+	<note>Ph. D. thesis</note>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">Audio-to-score alignment using transposition-invariant features</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arzt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lattner</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1807.07278</idno>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Adaptive distance normalization for real-time music tracking</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arzt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Widmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Dixon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2012 Proceedings of the 20th European Signal Processing Conference</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="2689" to="2693" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Learning visual similarity for product design with convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Bell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Bala</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ACM Transactions on Graphics (TOG)</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page">98</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Learning longterm dependencies with gradient descent is difficult</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Simard</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Frasconi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE transactions on neural networks</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="157" to="166" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">Signature verification using a&quot; siamese&quot; time delay neural network</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bromley</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Guyon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lecun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Säckinger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Shah</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in neural information processing systems</title>
+				<imprint>
+			<date type="published" when="1994">1994</date>
+			<biblScope unit="page" from="737" to="744" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<monogr>
+		<title level="m" type="main">An audio to score alignment framework using spectral factorization and dynamic time warping</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Carabias-Orti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">J</forename><surname>Rodríguez-Serrano</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vera-Candeas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ruiz-Reyes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">J</forename><surname>Cañadas-Quesada</surname></persName>
+		</author>
+		<editor>ISMIR</editor>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="742" to="748" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">An on-line time warping algorithm for tracking musical performances</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Dixon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IJCAI</title>
+				<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="page" from="1727" to="1728" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<monogr>
+		<title level="m" type="main">Towards score following in sheet music images</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dorfer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arzt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Widmer</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1612.05050</idno>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<monogr>
+		<title level="m" type="main">Learning audio-sheet music correspondences for score identification and offline alignment</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dorfer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arzt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Widmer</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1707.09887</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">Learning audio-sheet music correspondences for crossmodal retrieval and piece identification</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dorfer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hajič</surname><genName>Jr</genName></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Arzt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Frostel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Widmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Transactions of the International Society for Music Information Retrieval</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<date type="published" when="2018">2018a</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<title level="m" type="main">Learning to listen, read, and follow: Score following as a reinforcement learning game</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dorfer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Henkel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Widmer</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1807.06391</idno>
+		<imprint>
+			<date type="published" when="2018">2018b</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<monogr>
+		<title level="m" type="main">A first look at music composition using lstm recurrent neural networks. Istituto Dalle Molle Di Studi Sull Intelligenza Artificiale</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Eck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Schmidhuber</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+			<biblScope unit="volume">103</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Maps-a piano database for multipitch estimation and automatic transcription of music</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Emiya</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Bertin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>David</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Badeau</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<monogr>
+		<title level="m" type="main">Transfer learning in mir: Sharing learned latent representations for music audio classification and similarity</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Hamel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Davies</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yoshii</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Goto</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<monogr>
+		<author>
+			<persName><forename type="first">C</forename><surname>Hawthorne</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Elsen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Song</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Roberts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Simon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Raffel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Engel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Oore</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Eck</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1710.11153</idno>
+		<title level="m">Onsets and frames: Dual-objective piano transcription</title>
+				<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Fluidsynth real-time and thread safety challenges</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Henningsson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">D</forename><surname>Team</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 9th International Linux Audio Conference</title>
+				<meeting>the 9th International Linux Audio Conference</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="123" to="128" />
+		</imprint>
+		<respStmt>
+			<orgName>Maynooth University, Ireland</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Polyphonic audio matching and alignment for music retrieval</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Hu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Dannenberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Tzanetakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Applications of Signal Processing to Audio and Acoustics</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2003">2003. 2003</date>
+			<biblScope unit="page" from="185" to="188" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Understanding features and distance functions for music sequence alignment</title>
+		<author>
+			<persName><forename type="first">Ö</forename><surname>İzmirli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">B</forename><surname>Dannenberg</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ISMIR</title>
+				<imprint>
+			<publisher>Citeseer</publisher>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="411" to="416" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">A comparative study of tonal acoustic features for a symbolic level music-toscore alignment</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Joder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Essid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Richard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2010 IEEE International Conference on Acoustics, Speech and Signal Processing</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="409" to="412" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Optimizing the mapping from a symbolic to an audio representation for musicto-score alignment</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Joder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Essid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Richard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2011 IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WAS-PAA)</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="121" to="124" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Learning optimal features for polyphonic audio-to-score alignment</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Joder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Essid</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Richard</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Audio, Speech, and Language Processing</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="2118" to="2128" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Examining musical meaning in similarity thresholds</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Kinnaird</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ISMIR</title>
+				<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="635" to="641" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<monogr>
+		<title level="m" type="main">Feature learning for chord recognition: The deep chroma extractor</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Korzeniowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Widmer</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1612.05065</idno>
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<monogr>
+		<title level="m" type="main">Learning transposition-invariant interval features from symbolic music and audio</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Lattner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Grachten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Widmer</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1806.08236</idno>
+		<imprint>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Unsupervised feature learning for audio classification using convolutional deep belief networks</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Lee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Pham</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Largman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Y</forename><surname>Ng</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in neural information processing systems</title>
+				<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="1096" to="1104" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Speaker identification and clustering using convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Lukic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Vogt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Dürr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Stadelmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE 26th international workshop on machine learning for signal processing</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2016">2016. 2016</date>
+			<publisher>IEEE</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Support vector machine active learning for music retrieval</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">I</forename><surname>Mandel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Poliner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Ellis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Multimedia systems</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="3" to="13" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Transcription of polyphonic piano music with neural networks</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Marolt</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Sonic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Workshop on Current Research Directions in Computer Music</title>
+				<imprint>
+			<date type="published" when="2001">2001</date>
+			<biblScope unit="page" from="217" to="224" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Neural networks for note onset detection in piano music</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Marolt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Kavcic</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Privosnik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2002 International Computer Music Conference</title>
+				<meeting>the 2002 International Computer Music Conference</meeting>
+		<imprint>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">librosa: Audio and music signal analysis in python</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mcfee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Raffel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Liang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Ellis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Mcvicar</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Battenberg</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Nieto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 14th python in science conference</title>
+				<meeting>the 14th python in science conference</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="18" to="25" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Siamese recurrent architectures for learning sentence similarity</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Mueller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Thyagarajan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Thirtieth AAAI Conference on Artificial Intelligence</title>
+				<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Making chroma features more robust to timbre changes</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Muller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ewert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kreuzer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2009 IEEE International Conference on Acoustics, Speech and Signal Processing</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="1877" to="1880" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Music segment similarity using 2d-fourier magnitude coefficients</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Nieto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">P</forename><surname>Bello</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2014 IEEE International Conference on Acoustics, Speech and Signal Processing</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="664" to="668" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<monogr>
+		<title level="m" type="main">Multi-label music genre classification from audio, text, and images using deep features</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Oramas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Nieto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><surname>Barbieri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Serra</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1707.04916</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">On the evaluation of perceptual similarity measures for music</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Pampalk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Dixon</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Widmer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">of: Proceedings of the sixth international conference on digital audio effects (DAFx-03)</title>
+				<imprint>
+			<date type="published" when="2003">2003</date>
+			<biblScope unit="page" from="7" to="12" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<monogr>
+		<title level="m" type="main">End-to-end learning for music audio tagging at scale</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Pons</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><surname>Nieto</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Prockup</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Schmidt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Ehmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Serra</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1711.02520</idno>
+		<imprint>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<monogr>
+		<title level="m" type="main">Dynamic programming algorithm optimization for spoken word recognition. IEEE transactions on acoustics, speech, and signal processing</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Sakoe</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Chiba</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1978">1978</date>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="43" to="49" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Toward accurate dynamic time warping in linear time and space</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Salvador</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Chan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Intelligent Data Analysis</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="561" to="580" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Comparative analysis of multiple musical performances</title>
+		<author>
+			<persName><forename type="first">C</forename><forename type="middle">S</forename><surname>Sapp</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ISMIR</title>
+				<imprint>
+			<date type="published" when="2007">2007</date>
+			<biblScope unit="page" from="497" to="500" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Feature learning in dynamic environments: Modeling the acoustic structure of musical emotion</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">M</forename><surname>Schmidt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">J</forename><surname>Scott</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">E</forename><surname>Kim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">ISMIR</title>
+				<imprint>
+			<publisher>Citeseer</publisher>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="325" to="330" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Improved music feature learning with deep neural networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sigtia</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Dixon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2014 IEEE International Conference on</title>
+				<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2014">2014</date>
+			<biblScope unit="page" from="6959" to="6963" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><surname>Thickstun</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Harchaoui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kakade</surname></persName>
+		</author>
+		<idno type="arXiv">arXiv:1611.09827</idno>
+		<title level="m">Learning features of music from scratch</title>
+				<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">arXiv preprint</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Matching networks for one shot learning</title>
+		<author>
+			<persName><forename type="first">O</forename><surname>Vinyals</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Blundell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Lillicrap</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Wierstra</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Advances in neural information processing systems</title>
+				<imprint>
+			<date type="published" when="2016">2016</date>
+			<biblScope unit="page" from="3630" to="3638" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Learning to compare image patches via convolutional neural networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Zagoruyko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Komodakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE conference on computer vision and pattern recognition</title>
+				<meeting>the IEEE conference on computer vision and pattern recognition</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+			<biblScope unit="page" from="4353" to="4361" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
