@@ -55,7 +55,9 @@ Pip is a package manager for installing and managing Python software packages
 
 ## First task
 
-The first task is about finding the keywords of each one of the papers and pressenting them in a keyword cloud, the code that does this is in a Python file called 'cloud.py' 
+The first task is about presenting the most important words found in the abstarct of each article in a word cloud, for this to happen, thanks to GROBID we have an xml from each of the pdfs chosen, to find what we need it's easy to analyze and xml with the Python library called BeautifulSoup, to get the text from the 'abstract' tag, first i had to find the tag with the method called 'find_all' and afterwards with the BeautifulSoup constructor and .text we got a string free of xml tags, then that string is used as a parameter for the method generate(string) that belongs to the wordcloud python library, that's the one in charge of creating the word cloud.
+
+The code that does all of the things above is in a Python file called 'cloud.py' 
 
 For executing the 'cloud.py' file:
 ```bash
@@ -66,7 +68,7 @@ As an output you'll get eleven .png files, ten of them are a cloud with the keyw
 
 ## Second task
 
-For this task we have to represent in some way how many figures there are in each paper, for that i used a bar graph, that you'll get when you execute the Python file called 'visualization.py 
+For this task we have to represent in some way how many figures there are in each paper, for that i used a bar graph which data comes from finding all of the 'figure' tags with the method 'find_all' from BeautifulSoup and then counting the number of tags per paper and appending that number to a list. You'll get the bar graph aas soons as you execute the Python file called 'visualization.py' 
 
 For executing the 'visualization.py' file:
 ```bash
@@ -77,7 +79,9 @@ As an output you'll get a bar graph, each bar represents how many figures there 
 
 ## Third task
 
-For this task we have list the links encountered in each paper, this is done by the file called 'link.py' 
+For this task we have list the links encountered in each paper, i did it by first checking the xml and observing how GROBID identified the links, cause some of them were found inside paragraph, others were DOI and others were identified with the tag 'ptr' which belong to the references that have links where the information came from, after realizing this, i used the method 'find_all' from the BeautifulSoup library and obtained the attribute of the tag which contained the url or simply the text in case of the DOI and all of it was written into a file.
+
+The code to obtain the .txt that contains the links to each paper is called 'link.py' 
 
 For executing the 'link.py' file:
 ```bash
