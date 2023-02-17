@@ -7,7 +7,7 @@ def verifyXML(XMLName):
     if '.xml' in XMLName:
         return 1
     else:
-        return "Not an XML file"
+        return "not an XML file"
 
 def openXML(xmlName):
     if verifyXML(xmlName) == 1:
