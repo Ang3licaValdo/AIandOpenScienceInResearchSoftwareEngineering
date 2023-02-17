@@ -1,8 +1,38 @@
 from bs4 import BeautifulSoup
-import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
 import numpy as np
 from PIL import Image
+
+def verifyXML(XMLName):
+    if '.xml' in XMLName:
+        return 1
+    else:
+        return "not an XML file"
+
+def openXML(xmlName):
+    if verifyXML(xmlName) == 1:
+        with open(list_of_xml[paper], 'r') as f:
+            data =  f.read()
+        return data
+
+def createWordcloud(cloudText):
+    #FOR THE WORDCLOUD OF EACH PAPER
+
+    #frequent words that dont need to be included
+    stopwords = STOPWORDS
+    stopwords.add("et")
+    stopwords.add("al")
+    #image for the cloud shape
+    mask = np.array(Image.open("cloud_image.webp"))
+
+    #object for the wordcloud
+    wc = WordCloud(background_color='white',stopwords=stopwords,height = 600,width=400, mask=mask)
+
+    #generating the wordcloud
+    wc.generate(cloudText)
+
+    #creating an image of the wordcloud
+    wc.to_file('wordcloud_paper' + str(i) + '.png')
 
 
 concat = ""
@@ -15,12 +45,9 @@ list_of_xml = ['Papers/1Report.xml','Papers/2Report.xml','Papers/3Report.xml','P
 
 
 for paper in range(len(list_of_xml)):
-    #Opening the file with the data i want to read
-    with open(list_of_xml[paper], 'r') as f:
-        data =  f.read()
-
+    
     #Storing the returned information
-    parser_data = BeautifulSoup(data, "xml")
+    parser_data = BeautifulSoup(openXML(list_of_xml[paper]), "xml")
 
     #Finding all instaces of the indicated tag
 
@@ -34,24 +61,8 @@ for paper in range(len(list_of_xml)):
         concat_def = BeautifulSoup(concat_ind, "lxml").text
 
         if paragraph+1 == len(find_tag):
-            #FOR THE WORDCLOUD OF EACH PAPER
-
-            #frequent words that dont need to be included
-            stopwords = STOPWORDS
-            stopwords.add("et")
-            stopwords.add("al")
-
-            #image for the cloud shape
-            mask = np.array(Image.open("cloud_image.webp"))
-
-            #object for the wordcloud
-            wc = WordCloud(background_color='white',stopwords=stopwords,height = 600,width=400, mask=mask)
-
-            #generating the wordcloud
-            wc.generate(concat_def)
-
-            #creating an image of the wordcloud
-            wc.to_file('wordcloud_paper' + str(i) + '.png')
+            #creating the wordcloud for each paper
+            createWordcloud(concat_def)
 
             i = i+1
 
@@ -60,21 +71,5 @@ for paper in range(len(list_of_xml)):
 #For removing xml tags:
 concat_definite = BeautifulSoup(concat, "lxml").text
 
-#FOR THE WORDCLOUD
-
-#frequent word that dont need to be included
-stopwords = STOPWORDS
-stopwords.add("et")
-stopwords.add("al")
-
-#image for the cloud shape
-mask = np.array(Image.open("cloud_image.webp"))
-
-#object for the wordcloud
-wc = WordCloud(background_color='white',stopwords=stopwords,height = 600,width=400, mask=mask)
-
-#generating the wordcloud
-wc.generate(concat_definite)
-
-#creating an image of the wordcloud
-wc.to_file('wordcloud_output.png')
+#creating a wordcloud of all of the pdf abstracts
+createWordcloud(concat_definite)
