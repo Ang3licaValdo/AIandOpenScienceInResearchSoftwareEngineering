@@ -54,7 +54,10 @@ Pip is a package manager for installing and managing Python software packages
 ```bash
   pip install numpy
 ```
-
+### Installing WordCloud
+```bash
+  pip install wordcloud
+```
 ## First task
 
 The first task is about presenting the most important words found in the abstarct of each article in a word cloud, for this to happen, thanks to GROBID we have an xml from each of the pdfs chosen, to find what we need it's easy to analyze and xml with the Python library called BeautifulSoup, to get the text from the 'abstract' tag, first i had to find the tag with the method called 'find_all' and afterwards with the BeautifulSoup constructor and .text we got a string free of xml tags, then that string is used as a parameter for the method generate(string) that belongs to the wordcloud python library, that's the one in charge of creating the word cloud.
