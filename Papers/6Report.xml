@@ -1,0 +1,2113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Precision Medicine and Artificial Intelligence: A Pilot Study on Deep Learning for Hypoglycemic Events Detection based on ECG</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Springer Science and Business Media LLC</publisher>
+				<availability status="unknown"><p>Copyright Springer Science and Business Media LLC</p>
+				</availability>
+				<date type="published" when="2020-01-13">2020-01-13</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Mihaela</forename><surname>Porumb</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">School of Engineering</orgName>
+								<orgName type="institution">University of Warwick</orgName>
+								<address>
+									<postCode>CV4 7AL</postCode>
+									<settlement>Coventry</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Saverio</forename><surname>Stranges</surname></persName>
+							<affiliation key="aff1">
+								<orgName type="department" key="dep1">Department of Epidemiology and Biostatistics</orgName>
+								<orgName type="department" key="dep2">Schulich School of Medicine &amp; Dentistry</orgName>
+								<orgName type="institution">Western University</orgName>
+								<address>
+									<region>Ontario</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff2">
+								<orgName type="department" key="dep1">Department of Family Medicine</orgName>
+								<orgName type="department" key="dep2">Schulich School of Medicine &amp; Dentistry</orgName>
+								<orgName type="institution">Western University</orgName>
+								<address>
+									<region>Ontario</region>
+									<country key="CA">Canada</country>
+								</address>
+							</affiliation>
+							<affiliation key="aff3">
+								<orgName type="department">Department of Population Health</orgName>
+								<orgName type="institution">Luxembourg Institute of Health</orgName>
+								<address>
+									<settlement>Luxembourg</settlement>
+									<country key="LU">Luxembourg</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Antonio</forename><surname>Pescapè</surname></persName>
+							<affiliation key="aff4">
+								<orgName type="department">Department of Electrical Engineering</orgName>
+								<orgName type="institution">University of Napoli &quot;Federico II&quot;</orgName>
+								<address>
+									<settlement>Naples</settlement>
+									<country key="IT">Italy</country>
+								</address>
+							</affiliation>
+						</author>
+						<author role="corresp">
+							<persName><forename type="first">Leandro</forename><surname>Pecchia</surname></persName>
+							<email>l.pecchia@warwick.ac.uk</email>
+							<idno type="ORCID">0000-0002-7900-5415</idno>
+							<affiliation key="aff0">
+								<orgName type="department">School of Engineering</orgName>
+								<orgName type="institution">University of Warwick</orgName>
+								<address>
+									<postCode>CV4 7AL</postCode>
+									<settlement>Coventry</settlement>
+									<country key="GB">UK</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff5">
+								<orgName type="laboratory">Warwick Research Archives Portal Repository</orgName>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Precision Medicine and Artificial Intelligence: A Pilot Study on Deep Learning for Hypoglycemic Events Detection based on ECG</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Scientific Reports</title>
+						<title level="j" type="abbrev">Sci Rep</title>
+						<idno type="eISSN">2045-2322</idno>
+						<imprint>
+							<publisher>Springer Science and Business Media LLC</publisher>
+							<biblScope unit="volume">10</biblScope>
+							<biblScope unit="issue">1</biblScope>
+							<date type="published" when="2020-01-13" />
+						</imprint>
+					</monogr>
+					<idno type="MD5">19D439839BB9E8BC6D6B336BF45AB705</idno>
+					<idno type="DOI">10.1038/s41598-019-56927-5</idno>
+					<note type="submission">Received: 2 September 2019; Accepted: 18 December 2019;</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.3-SNAPSHOT" ident="GROBID" when="2023-02-09T21:30+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Tracking the fluctuations in blood glucose levels is important for healthy subjects and crucial diabetic patients. Tight glucose monitoring reduces the risk of hypoglycemia, which can result in a series of complications, especially in diabetic patients, such as confusion, irritability, seizure and can even be fatal in specific conditions. Hypoglycemia affects the electrophysiology of the heart. However, due to strong inter-subject heterogeneity, previous studies based on a cohort of subjects failed to deploy electrocardiogram (ECG)-based hypoglycemic detection systems reliably. The current study used personalised medicine approach and Artificial Intelligence (AI) to automatically detect nocturnal hypoglycemia using a few heartbeats of raw ECG signal recorded with non-invasive, wearable devices, in healthy individuals, monitored 24 hours for 14 consecutive days. Additionally, we present a visualisation method enabling clinicians to visualise which part of the ECG signal (e.g., T-wave, ST-interval) is significantly associated with the hypoglycemic event in each subject, overcoming the intelligibility problem of deep-learning methods. These results advance the feasibility of a real-time, non-invasive hypoglycemia alarming system using short excerpts of ECG signal.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>There is considerable heterogeneity among different patients or patient groups that trials based on patients cohorts may fail to capture, resulting in inaccurate conclusions about the effectiveness of diagnostics or interventions in individuals <ref type="bibr" target="#b0">[1]</ref><ref type="bibr" target="#b1">[2]</ref><ref type="bibr" target="#b2">[3]</ref><ref type="bibr" target="#b3">[4]</ref> . Some drugs have been reported to be effective only in 1 out of 24 patients because of these inaccuracies <ref type="bibr" target="#b3">4</ref> . This has triggered unprecedented interest in personalised medicine (or precision medicine), for informing the design of more effective diagnostics and treatments based on high-quality evidence gathered from individuals, rather than cohorts, considering their personal history, genome, environment, lifestyle, physiology and behaviours. Discussion on how to overcome existing barriers for designing proper precision medicine studies is still going on, and overcoming current limitations of traditional trials requires different strategies for therapeutic <ref type="bibr" target="#b3">4</ref> and diagnostics <ref type="bibr" target="#b4">5</ref> , drugs <ref type="bibr" target="#b5">6,</ref><ref type="bibr" target="#b6">7</ref> and medical devices <ref type="bibr" target="#b7">8</ref> .</p><p>For the latter, moving towards the paradigm of precision medicine can be even more critical. Medical devices effectiveness is dependent upon several factors including the environment in which are utilised (e.g., sterilised or not, temperature, humidity, dust), the experience of the operators, maintaining, servicing and preparing the medical device <ref type="bibr" target="#b8">9</ref> . For instance, recent studies demonstrated that even the positioning of applied parts (e.g., probes, sensors) in a trial might affect the significance of the results <ref type="bibr" target="#b9">10</ref> . Therefore, pursuing a precision medicine approach in trialling deep learning (DL)-based medical technologies requires particular attention in the way the study is designed, executed and its results analysed <ref type="bibr" target="#b10">[11]</ref><ref type="bibr" target="#b11">[12]</ref><ref type="bibr" target="#b12">[13]</ref> .</p><p>The study presented in this paper aims at exploring the efficacy of a personalised DL-based system for the automatic detection of lower levels of glucose in real-life settings. To the best of authors' knowledge, this is a novel approach providing promising results, overcoming the limitations of previous attempts not based on personalised approaches and not employing DL methods.</p><p>Tracking the fluctuations in the blood glucose level is relevant for both healthy individuals and diabetic patients. High glucose levels (hyperglycemia) result in long-term complications and can damage the kidneys, nerves, blood vessels in the eye and can bring many other complications <ref type="bibr" target="#b13">14</ref> . Low blood glucose levels (hypoglycemia) may result in acute short-term alterations of health status such as confusion, irritability, palpitations, feeling shaky and sweaty and can even result in severe loss of attention, coma or death <ref type="bibr" target="#b14">15</ref> . In fact, hypoglycemia can be particularly dangerous during specific activities requiring great attention (e.g. while driving, performing complicated surgeries). Thus, technologies for non-invasive, continuous monitoring of glucose concentration aiming at early-detecting hypoglycemic events are highly required.</p><p>The most diffuse methods for blood glucose testing consist of analysing a drop of blood resulted from a finger prick. However, this method does not allow continuous monitoring, is invasive, cumbersome, expensive, and it has been demonstrated that it affects patient compliance with the glucose measurements <ref type="bibr" target="#b15">16</ref> . As an alternative, Continuous Glucose Monitoring Devices (CGMs) can infer the blood glucose levels in real-time based on the glucose in the interstitial fluid. These devices significantly empowered diabetic patients, but still, they present some limitations that make them unattractive for pre-diabetic patients and diabetics. Commercially available CGMs can be worn for a limited number of days, usually between 7 and 14 days. Most of the CGMs require finger prick calibration; some studies reported that the reliability of CGMs is limited <ref type="bibr" target="#b16">[17]</ref><ref type="bibr" target="#b17">[18]</ref><ref type="bibr" target="#b18">[19]</ref> during low blood glucose level events and they sample from the interstitial fluid which still requires a cannula to be inserted in the subcutaneous tissue, which makes them still invasive.</p><p>Moreover, CGMs are quite expensive, which may further limit their use for continuous daily glucose monitoring, especially in pre-diabetic patients. However, despite these potential caveats, recent research revealed that CGM systems overcome the limitations of the self-monitoring of blood glucose (SMBG) using glucometers by providing a complete glucose profile and a detailed history of the nocturnal glucose levels. Therefore CGMs are improving glucose control in diabetic patients <ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr">[21]</ref><ref type="bibr" target="#b20">[22]</ref> . International standards for reliability of the SMBGs have been designed (i.e., ISO 15197:2013), while similar standards for CGMs have not been published yet. A number of metrics have been proposed to characterise the accuracy of the CGMs and one, in particular, has emerged as being the most recurrent measure for the sensor accuracy, which is the mean absolute relative difference (MARD). Different studies reported MARD values of 9.5% to 19% for different CGM sensors <ref type="bibr" target="#b16">17,</ref><ref type="bibr" target="#b18">[19]</ref><ref type="bibr" target="#b19">[20]</ref><ref type="bibr">[21]</ref><ref type="bibr" target="#b20">[22]</ref><ref type="bibr" target="#b21">[23]</ref><ref type="bibr" target="#b22">[24]</ref><ref type="bibr" target="#b23">[25]</ref><ref type="bibr" target="#b24">[26]</ref> , which are close to the values reported for glucometers (5.6% and 20.8%) <ref type="bibr" target="#b25">27</ref> .</p><p>Several non-invasive (e.g., without skin penetration) technologies have been proposed; usually, they are referred to as non-invasive continuous glucose monitors. These devices leverage techniques such as raman spectroscopy <ref type="bibr" target="#b26">28</ref> , fluorescence technology <ref type="bibr" target="#b27">29</ref> , optical coherence tomography <ref type="bibr" target="#b28">30</ref> , optical polarimetry <ref type="bibr" target="#b29">31</ref> , all aiming to exploit the changes in the chemical and physical tissues properties determined by the glucose variations. Recent reviews <ref type="bibr" target="#b29">[31]</ref><ref type="bibr" target="#b30">[32]</ref><ref type="bibr" target="#b31">[33]</ref> of these devices showed that they are promising, although the underlying technology might be improved, making them more accurate, more comfortable to wear, operate, maintain and calibrate.</p><p>Finally, the majority of CGMs technologies are not yet inner designed to combine glucose measurements with other physiological signals or activity measures, which may reflect the subject physical and emotional conditions.</p><p>The increased number of wearable non-invasive sensors developed for tracking activity or cardiac signal (e.g., ECG) are creating new and unexplored opportunities for early detection of hypoglycemic events. New strategies have been proposed to overcome the limitations of the CGM devices such as: combining direct glucose data with physiological parameters to improve the accuracy of the readings (i.e., enhanced-direct CGM) <ref type="bibr" target="#b32">[34]</ref><ref type="bibr" target="#b33">[35]</ref><ref type="bibr" target="#b34">[36]</ref><ref type="bibr" target="#b35">[37]</ref><ref type="bibr" target="#b36">[38]</ref> . Other studies combined physiological parameters, vital signs, food intake for the estimation or prediction of either glucose levels or hypoglycemia/hyperglycemia events (i.e. indirect CGMs) <ref type="bibr" target="#b37">39,</ref><ref type="bibr" target="#b38">40</ref> .</p><p>The use of ECG data to detect or predict hypoglycemia (i.e., minimally-invasive indirect CGM) <ref type="bibr" target="#b39">[41]</ref><ref type="bibr" target="#b40">[42]</ref><ref type="bibr" target="#b41">[43]</ref><ref type="bibr" target="#b42">[44]</ref> has also been proposed; however, only using non-personalised approaches. The ECG-based systems for hypoglycemia detection are very promising as ECG can be recorded, transmitted and processed quite easily and ECG sensors can be embodied in every-day-use objects (e.g., car steering, the backrest of an office chair, or smartwatches). Moreover, ECG-based glucose detection can be more cost-effective and attractive for pre-diabetic individuals or patients suffering from other comorbidities, who may be familiar with ECG monitoring applications both for clinical and consumer (e.g., sport, fitness) applications.</p><p>Associations between ECG parameters (e.g., mainly the QT interval duration) and glucose levels have been investigated in both healthy and diabetic subjects <ref type="bibr" target="#b43">[45]</ref><ref type="bibr" target="#b44">[46]</ref><ref type="bibr" target="#b45">[47]</ref><ref type="bibr" target="#b46">[48]</ref><ref type="bibr" target="#b47">[49]</ref><ref type="bibr" target="#b48">[50]</ref> in the past years. It is known that blood glucose concentration can affect the electrical activity of the heart, although the mechanisms behind these changes are not yet completely understood, according to Lipponen et al. <ref type="bibr" target="#b46">48</ref> . Two reported mechanisms are hypokalemia and the disruption of the neural regulation system. Hypokalemia increases potassium conductivity in the myocardial tissue resulting in shorten action potentials. This is known to affect the ECG, causing ST depression, biphasic T-wave (first positive, then negative) followed by a positive U-wave <ref type="bibr" target="#b49">51</ref> . Both hypokalemia and neural regulation are fast, and thus changes in the ECG should be coincident with the occurrence of the low blood glucose levels <ref type="bibr" target="#b46">48</ref> . A third possible cause is that low blood glucose levels affect the hormonal secretion, which will determine a delay in the cardiac changes with respect to the onset of hypoglycemia <ref type="bibr" target="#b46">48</ref> .</p><p>A variety of methods have been proposed to detect low-glucose levels using different combinations of ECG features, including principal component analysis (PCA) <ref type="bibr" target="#b50">52</ref> , genetic algorithms <ref type="bibr" target="#b42">44</ref> , particle swarm optimization <ref type="bibr" target="#b51">53</ref> , neural networks <ref type="bibr" target="#b52">54</ref> . However, none of those studies proposed a model, tool or method to detect low-glucose levels using the raw ECG waveform automatically. Commonly, the used ECG features include QT interval, RT-amplitude ratio and heart rate (HR) <ref type="bibr" target="#b41">43</ref> . HR, QT interval, change of HR and change of QT were used as inputs in a system for hypoglycemia detection in type 1 diabetic children based on extreme learning machine (ELM) methodology <ref type="bibr" target="#b39">41</ref> .</p><p>ECG feature extraction suffers from high sensitivity to ECG anomalies such as significant changes in the T-wave morphology (e.g., flat or inverted) as a reliable measurement of QT is not straightforward <ref type="bibr" target="#b41">43,</ref><ref type="bibr" target="#b50">52,</ref><ref type="bibr" target="#b53">55</ref> . Moreover, the majority of the studies investigating ECG-blood glucose associations have been carried out in a controlled clinical setting and not in real-life conditions. Several studies which investigated the hypoglycemia effects on ECG recruiting healthy participants induced low-glucose levels using the clamping technique <ref type="bibr" target="#b54">56</ref> , in order to bring the blood glucose concentration to values between 3 mmol/L and 3.5 mmol/L <ref type="bibr" target="#b41">43,</ref><ref type="bibr" target="#b43">45,</ref><ref type="bibr" target="#b46">48,</ref><ref type="bibr" target="#b50">52</ref> . Also, those studies reported as main limitations the difficulty of handling ECG anomalies (mainly changes in the T-wave morphology) and the small number of participants, especially in relation to high differences in individual ECGs <ref type="bibr" target="#b55">57,</ref><ref type="bibr" target="#b56">58</ref> . Besides, all these approaches required heavy crafting on data preprocessing and feature extraction, selection and prioritisation.</p><p>Recently, significant effort has been spent on exploiting deep neural networks, mainly convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for time series classification as a general task, including multi-channel CNNs for multivariate time series classification <ref type="bibr" target="#b57">59</ref> , multi-scale CNN for univariate time series classification <ref type="bibr" target="#b58">60</ref> , a fully CNN for time series classification <ref type="bibr" target="#b59">61</ref> . Those applications consistently demonstrated improved results over traditional machine-learning methods that rely on predefined, manually-extracted features <ref type="bibr" target="#b60">62</ref> . Consequently, DL applications for physiological time series are growing exponentially. Among the most successful applications that exploit the ECG signal with DL are the ECG classification, arrhythmia detection, screening for proximal atrial fibrillation or cardiac contractile dysfunction <ref type="bibr" target="#b61">[63]</ref><ref type="bibr" target="#b62">[64]</ref><ref type="bibr" target="#b63">[65]</ref><ref type="bibr" target="#b64">[66]</ref><ref type="bibr" target="#b65">[67]</ref><ref type="bibr" target="#b66">[68]</ref> .</p><p>This paper presents the results of a pilot project aiming to develop a personalised DL system for automatic nocturnal low glucose level detection in healthy individuals, based only on ECG acquired with wearable devices in every-day living conditions. This study followed a personalised medicine approach in response to the existing literature that shown that hypoglycemia detection systems trained on cohorts of participants failed to capture the inter-subject variability in the ECG and the ECG changes induced by hypoglycemia. Finally, the proposed method helps clinicians visualising the peculiar ECG changes that are the most informative for automatic detection of low glucose levels in each individual, making the proposed method intelligible</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>Classification of ECG signal that corresponds to normal/low glucose values. We aimed to detect the low glucose levels in healthy individuals based on the ECG signals and actigraphy, recorded continuously during a nominal period of 14 nights for each subject. ECG, actigraphy and CGM were recorded using commercial wearable sensors. A total number of 8 healthy participants were recruited, of which 4 met the inclusion criteria (i.e., at least 2 hypoglycemic events lasting more than 5 minutes in at least 2 nights). In fact, 4 participants did not experience any hypoglycemic events during the recording period, which was not surprising as participants were healthy subjects. A CNN network was trained on the isolated heartbeats extracted from the raw ECG signal, as detailed in the Methods section. The proposed system is a person-specific one in which data recorded for a participant during the first days, were used for training the model, which was tested using data from the same subject acquired in the remaining days. However, there were a few exceptions when the occurrence of low glucose events was not balanced during the recording period, so the days considered for training and testing were not consecutive. In this study, we assumed that the cardiac changes occurred in the same time as low blood glucose levels, and we did not account for other lag except for the 5-minute delay in glucose levels readings introduced by the CGM, as reported by the manufacturer. Actigraphy was measured using commercial sensors embodied in the body-worn ECG device. Activity levels were estimated from the 3-axis accelerations and computed as</p><formula xml:id="formula_0">= + + VMU x y z 2 2</formula><p>2 where x, y and z are the averages of the three-axial acceleration over the previous 1 second. Thus, the detection algorithm was mathematically formulated as following:</p><formula xml:id="formula_1">= GlucoseLevel f ECG beat Activity level ( _ , _ )</formula><p>The low glucose detection problem was cast to a classification problem in which the inputs represent the extracted heartbeats together with an additional covariate -the activity level and output -normal/low glucose level. To test the feasibility of heartbeat classification by glucose levels, we propose two different approaches: a CNN based system as presented in Fig. <ref type="figure" target="#fig_0">1</ref> and a CNN + RNN system, shown in Fig. <ref type="figure">2</ref>, models described in more details the Methods section. The reason behind the CNN choice lies in their capability of learning hierarchical, abstract representations of the input space that are relevant to performing specific tasks. The CNN + RNN model was built considering RNN's ability of learning sequences, in our case sequences of consecutive heartbeats, which were supposed important for detecting low glucose events. In this combined model, the CNN module was used for learning the heartbeat representation, while the RNN component was responsible for learning the heartbeats sequence in the considered 5 minutes ECG intervals. Following personalised medicine approach, we trained the two models (CNN, CNN + RNN) from scratch for each participant using a variable number of recording nights out of which at least 2 nights should contain low blood glucose events. The number of final heartbeats included in the training/validation and testing was reported in the Methods section.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>CNN based system.</head><p>For the CNN based system, we considered two evaluation strategies, one in which we classified all the individual heartbeats corresponding to the test days and a second strategy used was to employ a majority-voting scheme for the heartbeats in a 10-minute window of time. Results are reported in Table <ref type="table" target="#tab_2">1</ref> for all the eligible participants on the testing and training datasets. Figure <ref type="figure" target="#fig_1">3</ref> presents the same results for training (a) and testing (c), but visualised as predicted events over the night, in direct comparison to the baseline CGM glucose values. This visualisation provides insightful information about the predicted glucose events otherwise disregarded, including what time certain events occurred, what time the misclassified events occurred, the connection between misclassified events and the considered low glucose threshold, the lag between CGM glucose readings and predictions. Moreover, Fig. <ref type="figure" target="#fig_1">3</ref> reveals the certainty of the model's predictions, indicated by different colour intensities (dark green/red for most certain prediction), CGM readings uncertainty (grey shadow around the continuous line) and proximity to the glucose level threshold. As expected, the majority of misclassification events and the less-certain classifications (light green/orange) occurred when the glucose levels were close to the threshold with the grey shadow crossing it. The results presented in Table <ref type="table" target="#tab_2">1</ref> reveal that even when the number of normal glucose heartbeats greatly exceeded the number of low glucose heartbeats (10 times more), the proposed system was still providing a good result, suggesting that DL was resilient to the unbalanced dataset. This was the case for participants 2 and 3 (Table <ref type="table" target="#tab_2">1</ref>).</p><p>cnn + RNN based system. The CNN + RNN system was evaluated on 5-minutes input ECG excerpts. The first extracted 200 heartbeats in the 5 minutes ECG were considered as input sequences for the CNN, the output representation of the CNN was fed into a stack of RNN cells, which produced the final prediction, as shown in Fig. <ref type="figure">2</ref>. To evaluate the model, a majority voting was performed for 10 minutes ECG segments, similar to the voting employed for the CNN-based model. The voting strategy ensured that the prediction frequency was similar to the resolution of the CGMs, which is usually between 5 and 15 minutes, and and it aims to correct the annotation of certain isolated ECG heartbeats. Results are reported in Table <ref type="table" target="#tab_5">2</ref> for the test and training days, respectively. Figure <ref type="figure" target="#fig_1">3(b,</ref><ref type="figure">d</ref>) presents the classification results, showing the CNN + RNN model predictions over the analysed timeframe for a sample night for two of the subjects. To detect the low glucose levels using the ECG signal, we set three objectives: (OBJ 1) was to build a classifier (using a CNN network) for the low glucose levels detection task. Secondly, the chosen method for performing the classification (i.e., CNN) enables to investigate further the learned representation of the input heartbeats (OBJ 2), representation (embedding) that can be used in for data visualisation/clustering in lower-dimensional space. The method used for the nonlinear dimension reduction is t-SNE <ref type="bibr" target="#b69">71</ref> . The third objective (OBJ 3) was to investigate the important regions in the input time series (the heartbeat signal) that contribute the most to the final classification result (Grad-CAM method).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Figure 2.</head><p>Proposed CNN + RNN system for low blood glucose detection in a 5-minute window of time. The individual heartbeats were firstly isolated, then grouped into 5-minute segments. Each considered 5-minutes segment was chosen if it contained at least 200 heartbeats. This condition also implies that the glucose event (low/normal) should last for at least 5 minutes, thus each 5-minute ECG segment was associated with a single label: low/normal glucose. Each heartbeat was firstly transformed into a feature representation using a CNN network, representation that was fed as input to the sequence model (RNN cells). The outputs of the final RNN are the inputs to a linear layer with a softmax producing a distribution P over the two possible outputs: normal or low glucose values.</p><p>Localisation of the discriminative subsequences in the input time series, using Grad-CAM. Grad-CAM, as presented in Selvaraju et al. <ref type="bibr" target="#b67">69</ref> allowed visualisation of class-discriminative sequences in the input heartbeat, without requiring modifications to the CNN architecture or retraining. Figure <ref type="figure" target="#fig_3">4</ref> presents the histograms of the important sample points in the input heartbeats when Grad-CAM was employed. The highlighted subsequences in the input heartbeats were essential information transmitted through the network, enabling the inspection of the class-discriminative information in the input time-series. Therefore, Fig. <ref type="figure" target="#fig_3">4</ref> illustrates the subsequences in the input heartbeats that were the most important for the CNN in the classification. As expected, the onset and the offset of the T wave was mainly highlighted as important in all subjects. P wave was indicated as important especially when the amplitude of the P wave was lower for the low glucose beats than for the normal glucose beats, in subjects 3 and 4. Moreover, the QRS onset and offset were marked as important in subjects 2-4.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Dimensionality reduction -CNN based system.</head><p>The assumption that deeper convolutional layers capture higher-level features, thus that the last convolutional layer should contain the most informative features was extensively explored in previous studies <ref type="bibr" target="#b68">70</ref> . However, the activation space of CNN's last layer was too high dimensional for visual investigation and human interpretation. Accordingly, we used a non-linear dimension reduction method to visualise the learned embeddings (i.e., the last CNN layer activations) in lower-dimensional space. Specifically, we employed t-distributed stochastic neighbour embedding(t-SNE) <ref type="bibr" target="#b69">71</ref> method for dimensionality reduction. In our study, t-SNE was applied to a balanced subset of the heartbeats included in the test dataset (the normal glucose heartbeats were randomly downsampled without replacement to match the number of the low glucose heartbeats). Figure <ref type="figure" target="#fig_4">5</ref> presents the t-SNE visualisation of the test heartbeats corresponding to one of the subjects (subject 3) applied to the activation space of the CNN's last layer. In this space, as reported in Fig. <ref type="figure" target="#fig_4">5</ref>, it can be observed that the heartbeats are organised in two clear clusters that correspond to the low and normal glucose levels. Moreover, Fig. <ref type="figure" target="#fig_4">5b</ref>. shows that heartbeats corresponding to lower (i.e., dark red) or higher (dark green) glucose values are clustered in smaller regions. This could be interpreted as an inner validation of the method proposed and a demonstration of the discrimination power of the network's learned features, which evidently allowed the unsupervised separation of the heartbeats in two different groups that are also in agreement with the corresponding glucose value magnitude.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical analysis.</head><p>The Mann-Whitney rank test revealed that for all the extracted ECG features corresponding to low and normal glucose heartbeats there were significant differences (p-value &lt; 0.01), detailed results presented in the Supplementary material, Fig. <ref type="figure" target="#fig_1">3</ref>. The inter-subject statistical tests showed that the ECG features extracted from low and normal glucose heartbeats were also significantly different between subjects, as shown in Figs. <ref type="figure" target="#fig_0">1</ref> and<ref type="figure">2</ref> in the Supplementary material. Comprehensive results of this analysis can be found in the Supplementary material, Table <ref type="table" target="#tab_8">3</ref> and Figs. <ref type="figure" target="#fig_0">1</ref> and<ref type="figure">2</ref>, and confirmed the hypothesis that a personalised approach was required.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>The results of this study have shown that hypoglycemic events can be automatically detected using a few ECG heartbeats recorded with wearable devices in free-living conditions using personalised classifiers based on deep-learning artificial intelligence algorithms. Those results confirmed that heartbeat morphology and the sequence of heartbeats can be used effectively for low glucose detection during the night, in everyday-life conditions. These findings are aligned with clinical studies that presented the predilect cardiac changes occurring during low blood glucose levels, in both healthy and diabetic: prolonged QT interval, increase in the R/T amplitude <ref type="bibr" target="#b43">45,</ref><ref type="bibr" target="#b46">48,</ref><ref type="bibr" target="#b47">49,</ref><ref type="bibr" target="#b70">72</ref> . Moreover, comparing the performance of the personalised DL system described in this study with previous cohort-based attempts supported the hypothesis that DL can be used to foster precision medicine. The proposed system can automatically learn patterns in the ECG heartbeat, discriminating between heartbeats recorded during low or normal glucose levels in the same subject. The use of personalised approaches overcame the limits of conventional cohort-based methods accounting for the inter-subject variability in ECG morphology.</p><p>As emphasised in the Methods, we restricted our analysis to nighttime recordings, where detection of hypoglycemic events is more useful and also to minimise the influence the circadian rhythm of the cardiac repolarisation that usually lengthens during the night <ref type="bibr" target="#b71">73</ref> . Our results demonstrate that the proposed CNN based system could accurately detect 10-minutes long low-glucose events with high specificity (average 81.7%) and sensitivity (average 87.5%), as presented in Table <ref type="table" target="#tab_2">1a</ref>. These results advance the idea that no manually extracted features are required to perform this task since deep-learning methods (i.e. CNN) are able to learn automatically highly discriminative features from the raw ECG signals. This is extremely important in the proposed task since feature-based methods are highly dependent upon the correct heartbeat segmentation, where a precise determination of the QT interval would require ECG recording with a high signal-noise ratio that is difficult to measure in real-life and can only be obtained in controlled environments <ref type="bibr" target="#b50">52</ref> . Thus, the method presented in the current study seems to be particularly useful for real-life settings.  <ref type="bibr" target="#b17">18,</ref><ref type="bibr" target="#b18">19</ref> as it has been reported in previous studies. The colour of the points indicates the predicted class: red for the predicted low-glucose levels and green for the predicted normal-glucose levels. Moreover, dark colours indicate more certain predictions: dark red points accounted for low-glucose predictions with the predicted probability &gt; 0.7, while light red accounted for low-glucose prediction with predicted probability ≤ 0.7; dark green accounted for normal-glucose prediction with predicted probability &gt; 0.7 and light green accounted for normal-glucose prediction with a probability ≤ 0.7. Images a and b present the glucose levels predictions for a sample training day, while columns c and d present the glucose predictions for the same sample test day. The missing heartbeats are due to one of the following reasons: participant removing the sensor, artifact due to movement; missing glucose data, ECG pre-processing.    In addition, extra information regarding the sequence of the heartbeats can be captured and presented by combining a CNN with an RNN. The CNN was used to transform the input ECG beats into embeddings that were further aggregated over time by an RNN cell. The predictions for this setup were generated every 5-minutes as the input to the CNN + RNN were the extracted heartbeats in a 5-minute ECG excerpt. The results over 10 min showed that the CNN + RNN model performed on average better than the simple CNN based system, considering (Table <ref type="table" target="#tab_5">2a</ref>) sensitivity (average 84.7%), specificity (average 84.5%) and from the visual inspection of the prediction plots presented in Fig. <ref type="figure" target="#fig_1">3</ref>. Filtering out the glucose events shorter than 5 minutes might also contribute to the improved performance over the CNN-based system. Disregarding low glucose events shorter than 5 minutes is in agreement with findings that a low glucose event should last for 10 minutes to be considered a true hypoglycemic event and that very short falls in glucose levels do not reveal the related changes in the ECG <ref type="bibr" target="#b46">48,</ref><ref type="bibr" target="#b72">74</ref> signal. Moreover, from the visual inspection of the predictions during the night (Fig. <ref type="figure" target="#fig_1">3</ref>) suggested that the regions affected by higher uncertainty (i.e. closer to the threshold of 4 mmol/L) were better classified by the CNN + RNN model, which therefore was considered more resilient.</p><p>To the best of our knowledge, this is the first study proposing a personalised system to detect low glucose levels in real-life settings, using the raw ECG signal. Thus, a direct comparison of the obtained results with existing literature is not straightforward. Other studies attempted to detect hypoglycemia through non-invasive monitoring using features extracted from the ECG signal. Studies co-authored by Prof. Hung T. Nguyen <ref type="bibr" target="#b39">41,</ref><ref type="bibr" target="#b40">42,</ref><ref type="bibr" target="#b42">44,</ref><ref type="bibr" target="#b51">53,</ref><ref type="bibr" target="#b52">54,</ref><ref type="bibr" target="#b73">75,</ref><ref type="bibr" target="#b74">76</ref> involved nocturnal hypoglycemia detection in 15 type 1 diabetic children using different machine learning techniques (extreme learning <ref type="bibr" target="#b39">41</ref> , hybrid swarm optimization <ref type="bibr" target="#b51">53</ref> , neural networks <ref type="bibr" target="#b52">54</ref> , genetic algorithms <ref type="bibr" target="#b42">44</ref> , and a few others), using as inputs different ECG parameters computed from 5 or 10 minutes ECG excerpts, and achieving promissing sensitivity and specificity. For example, the more recent studies, proposed models based on a neural logic approach 76 , obtaining 79.07% sensitivity and 53.64% specificity, deep belief network approach <ref type="bibr" target="#b75">77</ref> , achieving 80% sensitivity and 50% specificity, models based on extreme learning approach, obtaining 78% sensitivity and 60% specificity. As we already emphasised, direct performance comparison with those studies is not viable as the model we proposed is person-specific, which, in our opinion, explains why the proposed method outperforms the results achieved in previous studies. In fact, as demonstrated in Fig. <ref type="figure" target="#fig_3">4</ref>, individual ECG response to low-glucose levels varies significantly among different subjects. This affects the classification performance significantly when trying to build a model that can generalise the discriminative features for different individuals. Also, our study concerned the detection of nocturnal non-induced low glucose levels in healthy individuals; several clinical studies showed that cardiac changes could have different intensities in healthy, type 1 and type 2 diabetic persons <ref type="bibr" target="#b46">48</ref> .</p><p>Another advantage of using CNNs based system for the heartbeats classification is the possibility of producing visual explanations for the network's decisions, thus making the CNN more transparent. We showed that employing a CNN in conjunction with different techniques such as CAM or Grad-CAM could produce a coarse localisation map by using the gradient of the target class with respect to the feature maps of the last convolutional layer, highlighting the important regions or subsequences in the input time series for making a certain prediction. This was important in order to show to our clinical partners, which segment of the ECG excerpt contained the key information utilised by the proposed DL system. Revealing and explaining how the proposed models reached certain conclusions not only makes the models more transparent but can also disclose interesting information about the underlying physiological data.</p><p>Previous studies observed the heartbeat changes associated with hypoglicemic events, but mainly during hyperinsulinemic clamps, allowing thresholds for both normal and low glucose levels to be entirely controlled and set to specific values. For instance, Marques et al. <ref type="bibr" target="#b76">78</ref> considered 3 mmol/l as hypoglycemic level and 5 mmol/l as euglycemic level in type 1 diabetic subjects, Laitinen et al. <ref type="bibr" target="#b43">45</ref> considered the same limits but in healthy subjects. The common, statistically significant finding in both studies was the lengthening of the QT interval during hypoglycemia. The results presented in Fig. <ref type="figure" target="#fig_3">4</ref> can be interpreted in agreement with this finding, as in all 4 subjects the T-wave was coloured as being important for both classification tasks (i.e. detecting low or normal levels). T-wave flattening was found to be another significant characteristic of hypoglycemia in Laitinen et al. <ref type="bibr" target="#b43">45</ref> and few other studies <ref type="bibr" target="#b41">43,</ref><ref type="bibr" target="#b46">48,</ref><ref type="bibr" target="#b50">52</ref> . Our results reveal that the changes in the T wave amplitude are personal. Subjects 3 and 4 presented a mean T-wave amplitude even higher for low glucose heartbeats than for normal glucose heartbeats. We believe that the reasons for this finding are manifold. Firstly, the considered subjects in the current study were healthy and the experiment was carried out in free-living conditions, thus in very sparse occasions, the glucose levels dropped below 3.8 mmol/l. In connection to this, it has been shown that during spontaneous nighttime hypoglycemia in type 1 diabetic patients, the cardiac repolarisation changes are not that intense as during induced hypoglycemia <ref type="bibr" target="#b71">73</ref> . Also, the CGM device used in our study to record the ground truth glucose levels were shown to have an overall absolute error difference of 11.4% against capillary blood glucose reference <ref type="bibr" target="#b18">19</ref> ; thus some of the heartbeats could have been annotated incorrectly due to the error in CGM readings. Another limitation introduced by the CGM is the glucose reading lag which was reported to be 4.5 ± 4 min, however, in the current study, we accounted for the reading lag 5 minutes independent of the time, activity or food intake. Further research could be carried out to investigate whether drops in potassium levels are coincident with spontaneous glucose falls in healthy, as it is has been shown that low potassium can also determine the flattening of the T-wave <ref type="bibr" target="#b43">45,</ref><ref type="bibr" target="#b45">47,</ref><ref type="bibr" target="#b71">73</ref> . Interestingly, Fig. <ref type="figure" target="#fig_3">4</ref> reveals that during low glucose levels, the P-wave is more pronounced in some of the subjects (subject 1 and 4) and that P-wave might be important for low glucose detection. This intra-and intra-subject variation in ECG morphology reinforced the idea that there is a clear need for adopting personalised approaches for ECG-based glucose level detections.</p><p>The unsupervised clustering of the heartbeats corresponding to low and normal glucose levels using the t-SNE method, presented in Fig. <ref type="figure" target="#fig_4">5</ref>, indicates that the CNN network is capable of automatically learning high-dimensional discriminative features. These results demonstrate that the learned feature space can be used to visualise and organise the input data. Data visualisation techniques such as t-SNE can help to inspect the input data and the model, as the similarity of inputs in the original space (thus of the input heartbeats) is also preserved in the obtained low-dimensional space. Figure <ref type="figure" target="#fig_4">5</ref> shows that the learned embedding can separate the heartbeats according to the glucose level. Moreover, the heartbeats corresponding to the glucose extremes: low and high form clear-defined clusters, showing that for heartbeats confidently associated with a certain class the heartbeats are correctly, further separated.</p><p>The statistical tests confirmed the need for the development of personalised hypoglycemia detection systems. Moreover, the results provided additional evidence for the less accurate systems developed in the past, that used a pool of ECG features extracted from a cohort of subjects(~15 subjects) to develop different statistical models for hypoglycemia detection. As expected, the results from our statistical analysis showed that the inter-subjects ECG features differences were statistically significant. Therefore, we argue that accurate hypoglycemia alarming systems based on ECG analysis can be developed using personalised ECG-based representation learning methods. Moreover, the personalised approaches proposed in this study showed significant performance improvement in detecting low glucose events over the previous, non-personalised systems.</p><p>Given the compelling performance on detecting nocturnal lower glucose levels events in healthy individuals using the ECG signal, we expect that the deep learning based methods similar to the proposed ones in this study to help advance the understanding of electrocardiographic changes induced by the glucose levels variations. Analysis, as demonstrated here, can lead to a better understanding of the underlying processes that determine specific changes in the input heartbeat during low glucose levels. Our results show strong evidence that ECG alterations are feasible to be used for building a real-time alarming system for low glucose events that occur during the night. The obtained results demonstrate superior performance in detecting low glucose levels in comparison to other similar studies, although due to protocol differences, the results cannot be directly compared.</p><p>The person-specific framework we propose for detecting low glucose levels in healthy subjects may be utilised in real-life applications as it involved a few preprocessing steps, and it did not require any expert annotations or feature engineering. Our results showed that leveraging deep learning methodologies for the analysis of ECG in order to detect low glucose events can open new possibilities to develop innovative alarming technologies that might help individuals, especially diabetic patients to better control their blood glucose concentrations. Alerting the user in real-time when glucose levels fall below a critical threshold value will facilitate the management of hypoglycemia events and can prevent the development of other severe, life-threatening episodes. Therefore, the proposed system creates the potential for long-term improvements in clinical outcomes, especially in diabetic patients.</p><p>Finally, our pilot study must also be seen in the light of its limitations, which also represent important calls for future research avenues. Firstly, additional tests should be performed on a larger population, including diabetic patients, to validate our results further. Secondly, the proposed framework can be easily extended to include other physiological signals that might influence the glucose variation such as activity levels, temperature, skin conductivity or nutrition information that might further improve the performance of the system. For diabetic patients, that will use finger pricks to check their actual blood glucose levels, implementing online training techniques is essential, as the system should be able to also learn continuously, from new data.</p><p>The findings presented in this manuscript have been further investigated in a study by the same authors </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head><p>Protocol. Eight healthy volunteers that were not taking any medication, were monitored without any constraints on diet or lifestyle between 8 and 14 consecutive days. More information about the participants' demographics and their glucose profiles can be found in the Supplementary material, Tables <ref type="table" target="#tab_2">1</ref> and<ref type="table" target="#tab_5">2</ref>. Four participants were excluded from the study, due to a shortage or lack of hypoglycemic events, as defined in the exclusion criteria presented in the following paragraphs. The study protocol was approved by the Ethics Committee of the University of Warwick, UK (REGO-2018-2205), and each person enrolled gave written informed consent to participate. The authors confirm that all the experiments were performed in accordance with relevant guidelines and regulations.</p><p>Nominal 24 h ECG was recorded with wearable commercial devices (Medtronic Zephyr BioPatch ™ HP 80 ). This CE Marked device works with 250 Hz sampling frequency and ECG amplitude between 0.25 and 15 mV. We used this wearable sensor in previous study for similar monitoring (i.e., 24 hours for several consecutive days). Moreover, the Zephyr Biopatch has been used in several clinical trials, assessing its performance as a remote patient monitoring device <ref type="bibr" target="#b79">81,</ref><ref type="bibr" target="#b80">82</ref> . The ECG monitor can store up to 3 days of ECG recordings, its battery can last for 36 hours and can be fully charged in less than one hour. Therefore, each volunteer was given two devices and instructed to change it approximately each 24-hours before showering. The Zephyr records also 3-axis accelerations and breathing waveform. Based on the raw accelerations an activity parameter was computed and logged by the device @1 Hz, measured in vector magnitude units (VMU), a parameter that was also included in the proposed framework in addition to the ECG signal.</p><p>Continuous glucose levels were measured using FreeStyle Libre Flash glucose monitoring system <ref type="bibr" target="#b81">83</ref> , which measures the interstitial glucose every 15 minutes. Each glucose sensor can be used for up to 2-weeks, also while showering, and according to the producer does not require any calibration with finger pricks. The recent development in CGM technology <ref type="bibr" target="#b18">19,</ref><ref type="bibr" target="#b82">84</ref> , enabled us to use the factory-calibrated flash glucose monitoring system (FreeStyle Libre) as baseline glucose levels readings in this study, given the real-life requirement. The FreeStyle Libre system is clinically proven to be accurate, stable and consistent over 14 days compared to blood glucose testing without the need for finger-prick calibration <ref type="bibr" target="#b18">19,</ref><ref type="bibr" target="#b24">26,</ref><ref type="bibr" target="#b83">85,</ref><ref type="bibr" target="#b84">86</ref> . In a clinical study involving 72 type 1 and type 2 diabetic patients, the FreeStyle Libre system achieved 11.4% Mean Absolute Relative Difference (MARD) compared to blood glucose testing and 99.7% of glucose results fall within Zone A and Zone B of the Consensus Error Grid, when compared against blood glucose testing <ref type="bibr" target="#b18">19</ref> . A comparative study assessing 17 point-of-care glucose meters, showed that the accuracy varied widely from 5.6% to 20.8% MARD, therefore providing evidence that the CGM accuracy is comparative to the accuracy of the point-of-care glucose meters. Moreover, in July 2018 the Food and Drug Administration (FDA) approved the FreeStyle Libre device, the decision came after Abbott published a clinical trial involving 95 subjects, which found that patients who used the scanner frequently had improved glycemic control and less hypoglycemia, reporting an overall MARD of 10.1% compared to blood glucose testing <ref type="bibr">21</ref> . Moreover, the CGM readings in this study were used to assess whether the glucose levels dropped below a threshold. Therefore, the CGM readings were used to make a dichotomic decision and not for determining the precise glucose values, which enabled us to use a CGM readings as baseline for the ECG classification. To further account for the potential CGM readings inaccuracies, the heartbeats corresponding to a glucose level &gt; hypoglycemia threshold and &lt;hypoglycemia threshold + 0.5% were not considered during training.</p><p>During the 24 hours, the ECG sensor was typically removed during showering and during high-intensity activity (usually training/workout) which may cause the electrodes to loosen due to sweat or movement of the sensor which can also introduce extra noise in the ECG recordings. Therefore, the available ECG data is variable for each participant during a 24 hours window of time. Some glucose readings might also be missing as the sensor requires to be scanned at least once every 8 hours, in case of a missing scan, the data that exceeded 8 h was not logged. Moreover, the first and the last days of recordings were disregarded from the analysis as studies that investigated the CGM performance showed that the accuracy of the glucose recordings is the lowest in the first day and that it also decreases towards the end of the recording period <ref type="bibr" target="#b18">19</ref> .</p><p>Furthermore, as mentioned earlier, this study concerns the detection of nocturnal (midnight to 9 AM) low glucose events, although the continuous ECG and glucose recordings were collected almost continuously during a 24 h period. There are two main arguments for this choice. Firstly, only in few participants (two), the recorded glucose levels dropped below the considered low threshold during the daytime, but still the available low events were not enough in order to develop and validate the proposed system. Secondly, it is known that the cardiac repolarisation has a circadian cycle that usually lengthens during the night <ref type="bibr" target="#b71">73,</ref><ref type="bibr" target="#b85">[87]</ref><ref type="bibr" target="#b86">[88]</ref><ref type="bibr" target="#b87">[89]</ref> , therefore it is essential to consider whether the ECG changes reflect some circadian physiological alterations or they are indeed induced by the lower blood glucose concentrations. Therefore, due to the expected ECG circadian changes and the shortage of low glucose events during the day, we decided to consider for the analysis only the data that was recorded during the night. To ensure that the low glucose detection model does not capture just the associated circadian ECG changes, we limited the analysis in this study to the night period.</p><p>Dataset. ECG excerpts of 15 minutes were annotated as corresponding to normal or low glucose according to the CGM readings. Since our study focused on healthy participants monitored in real life (i.e., no induced low levels via clamping), lower glucose level (i.e., LGL) episodes were defined as glucose concentration values lower than 4 mmol/L. A normal glucose level (NGL) was defined as a glucose concentration between 4 mmol/L and 7.5 mmol/L, as per international guidelines <ref type="bibr" target="#b88">90</ref> . For a subject to be included in the analysis, at least 10% of their recorded glucose values were expected to be less than the LGL threshold plus a small error of ~0.2 mmol/L (to account for the CGM reading error), thus less than 4.2 mmol/L. Moreover, the glucose value that corresponds to the 80 th percentile of the recorded glucose values was expected to be less than the NGL threshold. Thus, the percentiles condition represents an additional check that the person is healthy, and that the majority of the glucose levels recorded during consecutive nights lie between the expected values.</p><p>The complete dataset comprises of ECG and glucose recordings for 8 participants that worn the two sensors between 8 and 14 days. Four participants were excluded from the analysis because their glucose levels did not go below the established threshold of 4 mmol/L for the low glucose (subjects 5, 6, 7), essentially, they did not experience low glucose events or very few that were not enough to satisfy the condition that at least 10% of the recorded values should be &lt;4.2 mmol/L (subject 8). Moreover, after being enrolled in this study subjects 5 and 6 were diagnosed as being pre-diabetic, finding that is also reflected by the high glucose values recorded by the CGM. Therefore, the remaining 4 subjects included in the analysis were subject with IDs 1, 2, 3 and 4.</p><p>CNN based system dataset. The final dataset used for building and testing the CNN based system comprised of a list of ECG heartbeats each having associated 2 additional parameters: an activity level and the corresponding glucose value used as output. To account for the reported average lag time of the FreeStyle Libre system readings, which is known to be approximately 5 minutes <ref type="bibr" target="#b18">19</ref> , each heartbeat was associated the glucose value that corresponded to the current timestamp of the heartbeat plus 5 minutes. Moreover, the heartbeats that corresponded to glucose levels between 4 and 4.2 mmol/L were not considered during training. This measure ensured that no consecutive heartbeats would be considered as both low and normal, therefore reducing overfitting and accounting for the CGM error close to the chosen threshold for hypoglycemia. For each participant, the recording nights were split into 2 separate datasets for training and testing the model, ensuring that every dataset contained nights with low blood glucose events. An additional validation dataset was created by randomly resampling without replacement 20% of the heartbeats included in the training dataset. The final number of extracted heartbeats for each participant corresponding to the normal and low blood glucose levels is presented in Table <ref type="table" target="#tab_8">3</ref>. When the number of low glucose beats was less than 25% of the number of normal ones during training, the majority class was randomly downsampled without replacement. No other specific methodology (such as oversampling, cost-sensitive learning) was employed for balancing the dataset. The validation dataset was used to monitor the training and to early stop, in case the Area under the ROC curve (AUC) evaluated at every 100 steps did not improve in the next 10 evaluations. The best model as assessed on the validation set was saved during the optimisation process.</p><p>RNN based system dataset. The same recording nights were used for building and testing the CNN + RNN system. Instead of considering the individual heartbeats as inputs, the inputs into the RNN network represent the sequence of the first 200 consecutive heartbeats from a 5-minute non-overlapping ECG excerpt. To ensure that each 5-minute ECG excerpt corresponded to a glucose event: either low or normal, the glucose events that did not last for 5 minutes were filtered out. A low glucose event shorter than 10 minutes, was most probably caused by an inaccurate glucose reading (thus most probably an outlier). Moreover, to ensure that the HR in the 5-minute ECG excerpts &gt; 40 bpm, only those 5-minutes ECG intervals that contained at least 200 heartbeats were included in the analysis. Similarly, the heartbeats corresponding to glucose values between 4 and 4.2 mmol/L were not considered for training the model (CGM reading + 5% error). Table <ref type="table" target="#tab_9">4</ref> presents the final number of 5-minutes ECG segments that were selected and included in the training and testing datasets.</p><p>Data pre-processing. Since this study investigated the association between ECG beat morphology and glucose levels, the first step was to isolate each heartbeat. This was achieved by detecting a fiducial point (i.e., the R   peak) and then selecting a window of time of 640 ms around the fiducial point, in analogy to <ref type="bibr" target="#b62">64</ref> and accounting for the sampling frequency. The fiducial point for each heartbeat was detected using a QRS detection algorithm as proposed in <ref type="bibr" target="#b89">91</ref> . Since the ECG were sampled at 250 Hz, a window of time of 640 ms was isolated counting 160 ECG samples around the R fiducial point (i.e., 60 samples preceding the R peak and 100 samples following the R peak). Two parameters logged by the Zephyr BioPatch were used to filter the noisy ECG segments: heart rate confidence and the ECG noise. According to the device's specification, The HR confidence takes into account a worn detection indication and the signal-to-noise ratio of the ECG signal. In the current study, ECG excerpts with 100% HR confidence and ECG noise &lt; 0.001 were extracted and considered for the beat extraction and further for the analysis. After the heartbeats were isolated, they were z-normalized and downsampled, keeping only the kth sample (with k = 3). Thus, the final length of the heartbeat time series was 53 sample points.</p><p>CNN network. The proposed CNN network was implemented in TensorFlow <ref type="bibr" target="#b90">92</ref> , it comprises of 15 convolutional layers with a fixed number of 50 filters in each layer, in agreement with previously published models <ref type="bibr" target="#b62">64</ref> and one fully connected (FC) layer of 30 neurons. The activity level information that was associated with each heartbeat was also included in the CNN network as an additional neuron in the FC layer, as presented in Fig. <ref type="figure" target="#fig_0">1</ref>.</p><p>The network was trained from scratch, initialising the weights of the convolutional layer as in <ref type="bibr" target="#b91">93</ref> using the Xavier initialiser. The sizes of the filters used were kept constant being set to 3, that represents around 5% of the input time series length (53 samples). The employed loss function was the cross-entropy between the estimated class probabilities and the target classes. The chosen optimizer was AdamOptimizer <ref type="bibr" target="#b92">94</ref> with an initial learning rate of 1e-4. Batch normalisation was employed after each convolution and before the ReLU 95 activation. No pooling operation was used except a 0.5 rate dropout after the fully connected layer. The maximum number of training iterations was set to 2.5e + 4, which represents at least 45 epochs considering a mini-batch of 200 input beats, for all the participants. Due to the high flexibility of the CNN structure and the high number of hyper-parameters, we evaluated a combination of architecture and hyper-parameters in an iterative process, using grid-search and manual tuning. Regarding the architecture structure, we searched over the number of convolutional layers (3 to 20), different filter sizes (from 3 to 20) and the number of filters in each convolutional layer (20 to maximum 100). The learning rate was manually tuned in order to achieve a faster convergence; the considered values were {10 −1 to 10 −5 }. The results presented in this manuscript were obtained on the final CNN architecture that achieved the highest performance on the validation dataset, that also minimised the number of parameters.</p><p>cnn + RNN network. The proposed CNN + RNN based system leverages the representation power of the CNNs and connects the obtained representations to a recurrent neural network in order to also capture temporal dependencies between the input heartbeats. Specifically, due to the known exploding or vanishing gradients problems in the RNNs, the recurrent block comprises of long short-term memory (LSTM) cells. The CNN + RNN model works by passing each input (individual heartbeat, b i ) through a feature transformation φ V with parameters V, which in our case is a CNN network, to obtain a fixed-length vector representation. The outputs of φ V (b i )) are then passed into a recurrent sequence learning module (i.e. an LSTM network). The recurrent network in a very general form, has parameters W and maps an input b t and a previous hidden state h t−1 to an output z t and an updated hidden state h t . The final system is instantiated with a sequential input (the consecutive heartbeats extracted from a 5-minute ECG excerpts) and has a static output generated only at the last sequence step, which is the glucose event associated with every 5-minute interval (</p><formula xml:id="formula_2">… → b b b y , , , )<label>1 2 200</label></formula><p>(low/normal glucose). To predict a distribution over the outcomes y, at time step t, the outputs z t of the sequential model are passed through a linear prediction layer, outputs of which are passed through a softmax function to obtain the final class probabilities.</p><p>The CNN module comprises 5 convolutional layers each having 50 filters of size 3. The LSTM module comprises a single LSTM layer with 400 units in each LSTM cell and 200-time steps. The weights initialiser for both CNN and LSTM parameters was Xavier initialiser and all biases were initialised to 0. We trained the CNN + RNN network end-to-end through backpropagation and we found that a higher dropout (0.6) was needed to avoid overfitting. The batch size was 30, the initial learning rate was set to 1e-4 and the used optimiser was AdamOptimizer.</p><p>Performance evaluation. The performance measures used for both models (CNN and CNN + RNN) assessment were accuracy, sensitivity, specificity, and AUC. In addition, from the clinical perspective, sensitivity is considered more relevant than specificity as it shows how well the event was identified (in our case the low glucose events), thus when comparing different models, specificity was considered more important.</p><p>When training the model, the inputs of the CNN represent the isolated heartbeats, however, the CNN based model we proposed does not account for the sequence of beats in a specific timeframe. In case of a real-time alarming system, predicting a class for every heartbeat will be undesirable and it might be difficult to follow, instead, generating a prediction every 10 minutes is more feasible and closer to the resolution of the CGM devices. For this reason, we also evaluated the model's performance in a 10-minute window of time, by taking the majority class of the heartbeat predictions in that specific timeframe. The same voting strategy was also applied to the CNN + RNN model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Localisation of the contributing ECG beat subsequences with Grad-CAM.</head><p>In order to obtain the class-discriminative localisation map in a generic CNN architecture, we employed the Grad-CAM method as described in <ref type="bibr" target="#b67">69</ref> . The technique implies the computation of the gradient of y c with respect to feature maps A (in our case the feature maps of the last conv layer) that are global-average-pooled to obtain the weights capture the importance of feature map k for a target class c. The Grad-CAM heatmap is obtained as a weighted combination of feature maps. It has been shown <ref type="bibr" target="#b67">69</ref> that Grad-CAM is a generalisation of CAM and can be used in conjunction with any CNN architecture with fully-connected layers.</p><p>Visualisation of the data in lower-dimensional space. We used a nonlinear dimension reduction method to visualise the data in a lower-dimensional space, in particular, t-distributed stochastic neighbour embedding (t-SNE <ref type="bibr" target="#b69">71</ref> ). We applied t-SNE to the heartbeat embeddings as obtained from the fully connected neurons in the CNN based model.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Statistical analysis.</head><p>A series of key ECG parameters were extracted for all the heartbeats included in the train and test datasets. The extracted parameters included: the amplitude of the Q, R, T waves, the QT interval (measured from peak to peak), the RT amplitude (as a ratio of R-wave and T-wave) and the T wave slope (slope of the line that intersects T wave peak and T wave offset point). As T wave could not be accurately detected for all the extracted heartbeats, the heartbeats that could not be fully segmented were excluded from the analysis. Furthermore, we balanced the number of low and normal heartbeats, by randomly downsampling the heartbeats corresponding to the majority class. The total number of heartbeats included in the statistical analysis for each subject were (N = 29732, 14276, 40642, 30998) corresponding to (subject 1, subject 2, subject 3 and subject 4).</p><p>Two non-parametric statistical tests (the condition for normality checked using the Shapiro-Wilk test was violated) were performed to assess both intra-and inter-subject ECG features variability. Therefore, Mann-Whitney rank test was conducted to test the changes in the individual ECG features between low and normal glucose levels. To test the changes in the ECG parameters between subjects, a multi-way Kruskal-Wallis H-test was performed for each ECG parameter for low and normal glucose condition separately. A significant four-way interaction between the four subjects indicated that the ECG feature changed significantly for one or more subjects, without specifically indicating between which subjects the ECG features were significantly different. Therefore, to further investigate the pairwise differences between subjects, a post hoc comparison was performed with a two-way Kruskal-Wallis H-test and Dunn's test. A p-value &lt; 0.05 was accepted as evidence of statistical significance. </p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Figure 1 .</head><label>1</label><figDesc>Figure1. Proposed CNN based system illustrating the study objectives. To detect the low glucose levels using the ECG signal, we set three objectives: (OBJ 1) was to build a classifier (using a CNN network) for the low glucose levels detection task. Secondly, the chosen method for performing the classification (i.e., CNN) enables to investigate further the learned representation of the input heartbeats (OBJ 2), representation (embedding) that can be used in for data visualisation/clustering in lower-dimensional space. The method used for the nonlinear dimension reduction is t-SNE<ref type="bibr" target="#b69">71</ref> . The third objective (OBJ 3) was to investigate the important regions in the input time series (the heartbeat signal) that contribute the most to the final classification result (Grad-CAM method).</figDesc><graphic coords="4,155.64,46.50,396.00,165.60" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>Figure 3 .</head><label>3</label><figDesc>Figure 3. Hypoglycemia detection during the night using the heartbeat majority voting in the 10-minute window of time. The black waveform represents the glucose values recorded by the CGM, considered as ground truth glucose level in this study. The grey shaded regions illustrate a ± 10% error boundary for the CGM glucose readings<ref type="bibr" target="#b17">18,</ref><ref type="bibr" target="#b18">19</ref> as it has been reported in previous studies. The colour of the points indicates the predicted class: red for the predicted low-glucose levels and green for the predicted normal-glucose levels. Moreover, dark colours indicate more certain predictions: dark red points accounted for low-glucose predictions with the predicted probability &gt; 0.7, while light red accounted for low-glucose prediction with predicted probability ≤ 0.7; dark green accounted for normal-glucose prediction with predicted probability &gt; 0.7 and light green accounted for normal-glucose prediction with a probability ≤ 0.7. Images a and b present the glucose levels predictions for a sample training day, while columns c and d present the glucose predictions for the same sample test day. The missing heartbeats are due to one of the following reasons: participant removing the sensor, artifact due to movement; missing glucose data, ECG pre-processing.</figDesc><graphic coords="6,155.64,46.50,396.00,339.12" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head></head><label></label><figDesc>The 5-min column presents the results for the 5-minutes ECG segments used during training, whereas the 10-minute voting column shows the results when taking the majority class corresponding to all heartbeats in a 10-minute window of time.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_3"><head>Figure 4 .</head><label>4</label><figDesc>Figure 4. Identification of the most relevant heartbeat segments for hypoglycemia detection using Grad-CAM method. The solid lines represent the mean of all the heartbeats that correspond to each subject in the training dataset: green during normal glucose levels, red during hypoglycemic events. The comparison among 4 different subjects highlighted the fact that each subject may have a different ECG waveform during hypoglycemic events for instance Subjects 1 and 2 present a visibly longer QT interval during hypoglycemic events, differently from subjects 3 and 4. The error bands represent the standard deviation of the considered heartbeats. The vertical bars represent the histograms of the sample points that were &gt;0.9 in the normalised heatmaps obtained from applying Grad-CAM methods on all the training heartbeats.</figDesc><graphic coords="7,155.64,288.01,396.00,328.20" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_4"><head>Figure 5 .</head><label>5</label><figDesc>Figure 5. t-SNE visualisation of the test heartbeats corresponding to subject 3 in the activation space representation. The red heartbeats correspond to a low glucose level (&lt;4.0 mmol/L) and the green heartbeats that correspond to normal glucose levels. a. t-SNE visualisation when the heartbeats are coloured according to the glucose annotation(class) b. t-SNE visualisation using a colour map that shows the glucose value associated with each heartbeat, the darker the colour the higher the glucose value for normal beats and the lower for low glucose beats.</figDesc><graphic coords="8,155.64,46.50,396.00,137.40" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_5"><head></head><label></label><figDesc>α k c similar to the weights w k c computed with the CAM method. The weights α k c</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_6"><head>Programming.</head><label></label><figDesc>The deep learning models were developed in Python employing different libraries such as TensorFlow, Numpy, Pandas, and trained on an Intel Core i7 processor with 32GB RAM. To speed up the training, we also used High-Performance Computing facilities i.e. 4 GPU nodes (each having 2 × NVIDIA Tesla K80 GPU cards) provided by the Centre for Scientific Computing (CSC) at University of Warwick.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Individual beat 10 min voting Individual beat 10 min voting Individual beat 10 min voting NN based system classification results, evaluated on testing data for each participant</head><label></label><figDesc></figDesc><table><row><cell></cell><cell>Sensitivity %</cell><cell></cell><cell>Specificity %</cell><cell></cell><cell>Accuracy %</cell><cell></cell><cell>Number of</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>correctly predicted</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>10 minutes</cell></row><row><cell>Subject id</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>intervals/total</cell></row><row><cell>Subject 1</cell><cell>74.2</cell><cell>78.0</cell><cell>71.2</cell><cell>77.1</cell><cell>72.3</cell><cell>77.4</cell><cell>106/141 = 75.2%</cell></row><row><cell>Subject 2</cell><cell>66.0</cell><cell>79.8</cell><cell>69.5</cell><cell>77.1</cell><cell>69.3</cell><cell>77.3</cell><cell>146/187 = 78.1%</cell></row><row><cell>Subject 3</cell><cell>82.2</cell><cell>100</cell><cell>87.4</cell><cell>91.9</cell><cell>87.1</cell><cell>92.4</cell><cell>168/183 = 91.8%</cell></row><row><cell>Subject 4</cell><cell>81.1</cell><cell>91.5</cell><cell>76.3</cell><cell>80.5</cell><cell>77.2</cell><cell>82.6</cell><cell>128/156 = 82.1%</cell></row><row><cell>Average</cell><cell>75.9 ± 7.4</cell><cell>87.5 ± 10.3</cell><cell>76.1 ± 8.0</cell><cell>81.7 ± 7.0</cell><cell>76.5 ± 7.7</cell><cell>82.4 ± 7.0</cell><cell>81.8%</cell></row><row><cell cols="2">CNN based system</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>classification results, evaluated on training data for each participant.</head><label></label><figDesc></figDesc><table><row><cell>Subject 1</cell><cell>91.3</cell><cell>94.6</cell><cell>79.7</cell><cell>80.4</cell><cell>84.8</cell><cell>86.5</cell><cell>118/136 = 86.8%</cell></row><row><cell>Subject 2</cell><cell>93.1</cell><cell>100</cell><cell>87.5</cell><cell>93.2</cell><cell>88.5</cell><cell>94.5</cell><cell>174/184 = 94.6%</cell></row><row><cell>Subject 3</cell><cell>97.5</cell><cell>100</cell><cell>88.4</cell><cell>89.7</cell><cell>89.9</cell><cell>91.5</cell><cell>247/270 = 91.5%</cell></row><row><cell>Subject 4</cell><cell>75.0</cell><cell>83.5</cell><cell>81.3</cell><cell>85.5</cell><cell>78.3</cell><cell>84.6</cell><cell>138/163 = 84.7%</cell></row><row><cell>Average</cell><cell>89.2 ± 9.8</cell><cell>94.5 ± 7.7</cell><cell>84.2 ± 4.3</cell><cell>87.2 ± 5.5</cell><cell>85.4 ± 5.1</cell><cell>89.3 ± 4.5</cell><cell>89.4%</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 1 .</head><label>1</label><figDesc>CNN based model classification results, evaluated for each participant(testing dataset and training dataset). The individual beat column presents the results for each heartbeat classification, whereas the 10-minute voting column shows the results when taking the majority class corresponding to all heartbeats in a 10-minute window of time.</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>min ECG 10 min voting 5-min ECG 10 min voting Classification results evaluated on the testing days</head><label></label><figDesc></figDesc><table><row><cell></cell><cell>Sensitivity %</cell><cell></cell><cell>Specificity %</cell><cell></cell><cell>Accuracy %</cell><cell></cell><cell>Number of correctly</cell></row><row><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>predicted 10 minutes</cell></row><row><cell cols="4">Subject id 5-Subject 1 5-min ECG 10-min voting 79.7 80.5 69.4</cell><cell>73.3</cell><cell>73.3</cell><cell>76</cell><cell>intervals/total 61/82 = 74.4%</cell></row><row><cell>Subject 2</cell><cell>81.8</cell><cell>81.8</cell><cell>82.2</cell><cell>88.0</cell><cell>82.2</cell><cell>87.5</cell><cell>154/178 = 86.5%</cell></row><row><cell>Subject 3</cell><cell>82.4</cell><cell>76.5</cell><cell>89.6</cell><cell>94.6</cell><cell>89.2</cell><cell>93.7</cell><cell>166/179 = 92.7%</cell></row><row><cell>Subject 4</cell><cell>100</cell><cell>100</cell><cell>81.1</cell><cell>82.0</cell><cell>84.8</cell><cell>85.6</cell><cell>128/153 = 83.6%</cell></row><row><cell>Average</cell><cell>86.0 ± 9.4</cell><cell>84.7 ± 10.4</cell><cell>80.6 ± 8.3</cell><cell>84.5 ± 9.0</cell><cell>82.4 ± 6.7</cell><cell>85.7 ± 7.3</cell><cell>84.3%</cell></row><row><cell>CNN + RNN</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_4"><head>classification results evaluated on the training days.</head><label></label><figDesc></figDesc><table><row><cell>Subject 1</cell><cell>74.8</cell><cell>75.2</cell><cell>84.6</cell><cell>88.6</cell><cell>80.0</cell><cell>82.3</cell><cell>78/95 = 82.1%</cell></row><row><cell>Subject 2</cell><cell>85.9</cell><cell>84.1</cell><cell>92.8</cell><cell>96.3</cell><cell>91.4</cell><cell>94.1</cell><cell>170/180 = 94.4%</cell></row><row><cell>Subject 3</cell><cell>100</cell><cell>100</cell><cell>84.6</cell><cell>89.2</cell><cell>87.2</cell><cell>91.1</cell><cell>240/267 = 89.9%</cell></row><row><cell>Subject 4</cell><cell>92.6</cell><cell>90.2</cell><cell>91.9</cell><cell>94.6</cell><cell>92.2</cell><cell>92.6</cell><cell>145/158 = 91.8%</cell></row><row><cell>Average</cell><cell>88.3 ± 10.6</cell><cell>87.4 ± 10.4</cell><cell>88.5 ± 4.4</cell><cell>92.2 ± 3.8</cell><cell>87.7 ± 5.5</cell><cell>90.0 ± 5.2</cell><cell>89.6%</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_5"><head>Table 2 .</head><label>2</label><figDesc>CNN + RNN classification results, evaluated on test days for each participant (Testing dataset and training dataset).</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_6"><head></head><label></label><figDesc>79 , carried out in a calorimeter room at the University Hospitals Coventry &amp; Warwickshire on eight, healthy, elderly participants. Moreover, the work presented in this research is subject to a patent application Number GB1912487.4, date 30 August 2019. (M. Porumb &amp; L. Pecchia, 'Electrocardiogram-based blood glucose level monitoring').</figDesc><table /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_7"><head>Subject ID Number of heartbeats Number of recording nights (nights with low glucose events)</head><label></label><figDesc></figDesc><table><row><cell></cell><cell>Training</cell><cell></cell><cell>Testing</cell><cell></cell><cell>Training</cell><cell>Testing</cell></row><row><cell></cell><cell>Normal</cell><cell>Low</cell><cell>Normal</cell><cell>Low</cell><cell></cell><cell></cell></row><row><cell>1</cell><cell>37042</cell><cell>38798</cell><cell>35991</cell><cell>22216</cell><cell>3 (3)</cell><cell>3 (3)</cell></row><row><cell>2</cell><cell>51026</cell><cell>18266</cell><cell>68941</cell><cell>6321</cell><cell>4 (3)</cell><cell>4 (3)</cell></row><row><cell>3</cell><cell>92261</cell><cell>21844</cell><cell>69533</cell><cell>5053</cell><cell>6 (2)</cell><cell>4 (1)</cell></row><row><cell>4</cell><cell>28342</cell><cell>34491</cell><cell>46345</cell><cell>13544</cell><cell>4 (3)</cell><cell>4 (2)</cell></row><row><cell>Average</cell><cell>52168</cell><cell>28350</cell><cell>55203</cell><cell>11784</cell><cell>4.3 (2.8)</cell><cell>3.8 (2.3)</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_8"><head>Table 3 .</head><label>3</label><figDesc>Number of extracted heartbeats from the nighttime ECG recordings for each eligible participant enrolled in the study and their distribution in training and testing datasets.</figDesc><table><row><cell></cell><cell cols="3">Number of 5-minute ECG excerpts</cell><cell></cell></row><row><cell></cell><cell>Training</cell><cell></cell><cell>Testing</cell><cell></cell></row><row><cell>Subject ID</cell><cell>Normal</cell><cell>Low</cell><cell>Normal</cell><cell>Low</cell></row><row><cell>1</cell><cell>130</cell><cell>119</cell><cell>118</cell><cell>69</cell></row><row><cell>2</cell><cell>275</cell><cell>64</cell><cell>315</cell><cell>22</cell></row><row><cell>3</cell><cell>409</cell><cell>86</cell><cell>317</cell><cell>17</cell></row><row><cell>4</cell><cell>149</cell><cell>122</cell><cell>217</cell><cell>53</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_9"><head>Table 4 .</head><label>4</label><figDesc>Total number of extracted 5-minute ECG excerpts from the nighttime ECG recordings for each eligible participant enrolled in the study and their distribution in the training and testing datasets.</figDesc><table /></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" xml:id="foot_0">Scientific RepoRtS |(2020) 10:170 | https://doi.org/10.1038/s41598-019-56927-5</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Acknowledgements</head><p>L.P. and M.P. acknowledge economic support received via the EPSRC (EP/N026985/1) project titled "Closed loop control systems for optimisation of treatment (Cyclops Healthcare Network)". The authors would also like to thank Luis Montesinos Silva for the QRS detector implementation in Matlab.</p></div>
+			</div>
+
+
+			<div type="availability">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data availability</head><p>The data sets used in this study and the code are available from the corresponding authors on request.</p></div>
+			</div>
+
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Author contributions</head><p>M.P. collected the data, developed the D.L. models, performed the data analysis, wrote the manuscript. S.S. reviewed and commented on the study protocol, the medical aspects of the study and the manuscript. A.P. reviewed the manuscript and provided valuable feedback that improved the quality of the manuscript. L.P. supervised the project, oversaw the data collection protocol, the data analysis, reviewed the manuscript.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing interests</head><p>The authors declare no competing interests.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Additional information</head><p>Supplementary information is available for this paper at https://doi.org/10.1038/s41598-019-56927-5.</p><p>Correspondence and requests for materials should be addressed to L.P.</p><p>Reprints and permissions information is available at www.nature.com/reprints. Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Randomized clinical trials and personalized medicine</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Schork</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Soc. Sci. Med</title>
+		<imprint>
+			<biblScope unit="volume">210</biblScope>
+			<biblScope unit="page" from="71" to="73" />
+			<date type="published" when="1982">1982. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<title level="m" type="main">Understanding and Misunderstanding Randomized Controlled Trials</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Deaton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Cartwright</surname></persName>
+		</author>
+		<idno type="DOI">10.3386/w22595</idno>
+		<ptr target="https://doi.org/10.3386/w22595" />
+		<imprint>
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Precision Medicine Is Not Just Genomics: The Right Dose for Every Patient</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Peck</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Rev. Pharmacol. Toxicol</title>
+		<imprint>
+			<biblScope unit="volume">58</biblScope>
+			<biblScope unit="page" from="105" to="122" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Personalized medicine: Time for one-person trials</title>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">J</forename><surname>Schork</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. News</title>
+		<imprint>
+			<biblScope unit="volume">520</biblScope>
+			<biblScope unit="page">609</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Are innovation and new technologies in precision medicine paving a new era in patients centric care?</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Seyhan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Carini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Transl. Med</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<title level="a" type="main">N-of-1 trials for assessing the effects of deprescribing medications on short-term clinical outcomes in older adults: a systematic review</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">J</forename><surname>Clough</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">N</forename><surname>Hilmer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Naismith</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">D</forename><surname>Kardell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Gnjidic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Clin. Epidemiol</title>
+		<imprint>
+			<biblScope unit="volume">93</biblScope>
+			<biblScope unit="page" from="112" to="119" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Drug development in the era of precision medicine</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">A</forename><surname>Dugger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Platt</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">B</forename><surname>Goldstein</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Rev. Drug Discov</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="183" to="196" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">K</forename><surname>Yetisen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Martinez-Hurtado</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Ünal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Khademhosseini</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Butt</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/adma.201706910</idno>
+		<ptr target="https://doi.org/10.1002/adma.201706910" />
+	</analytic>
+	<monogr>
+		<title level="m">Wearables in Medicine</title>
+				<imprint>
+			<date type="published" when="2018">e1706910. 2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Health technology assessment methods guidelines for medical devices: how can we address the gaps? The international federation of medical and biological engineering perspective</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Polisena</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Technol. Assess. Health Care</title>
+		<imprint>
+			<biblScope unit="volume">34</biblScope>
+			<biblScope unit="page" from="276" to="289" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Wearable Inertial Sensors for Fall Risk Assessment and Prediction in Older Adults: A Systematic Review and Meta-Analysis</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Montesinos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Castaldo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Pecchia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Neural Syst. Rehabil. Eng</title>
+		<imprint>
+			<biblScope unit="volume">26</biblScope>
+			<biblScope unit="page" from="573" to="582" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">From hype to reality: data science enabling personalized medicine</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Fröhlich</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMC Med</title>
+		<imprint>
+			<biblScope unit="volume">16</biblScope>
+			<biblScope unit="page">150</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<analytic>
+		<title level="a" type="main">From Big Data to Precision Medicine</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Hulsen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Front. Med</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">The role of artificial intelligence in precision medicine</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Mesko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Expert Rev. Precis. Med. Drug Dev</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="239" to="241" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<analytic>
+		<title level="a" type="main">Hyperglycemia and the pathobiology of diabetic complications</title>
+		<author>
+			<persName><forename type="first">D</forename><surname>Aronson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Adv. Cardiol</title>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="page" from="1" to="16" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Epidemiology of severe hypoglycemia in the diabetes control and complications trial. The DCCT Research Group</title>
+	</analytic>
+	<monogr>
+		<title level="j">Am. J. Med</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<biblScope unit="page" from="450" to="459" />
+			<date type="published" when="1991">1991</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Invasiveness as a barrier to self-monitoring of blood glucose in diabetes</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wagner</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Malchoff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Abbott</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Technol. Ther</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="612" to="619" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">A comparative effectiveness analysis of three continuous glucose monitors: the Navigator, G4 Platinum, and Enlite</title>
+		<author>
+			<persName><forename type="first">E</forename><forename type="middle">R</forename><surname>Damiano</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="699" to="708" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Performance of the FreeStyle Libre Flash glucose monitoring system in patients with type 1 and 2 diabetes mellitus</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Fokkert</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">BMJ Open Diabetes Res. Care</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page">e000320</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">The Performance and Usability of a Factory-Calibrated Flash Glucose Monitoring System</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Bailey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">W</forename><surname>Bode</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Christiansen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">J</forename><surname>Klaff</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Alva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Technol. Ther</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="787" to="794" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Evaluation of FreeStyle Libre Flash Glucose Monitoring System on Glycemic Control, Health-Related Quality of Life, and Fear of Hypoglycemia in Patients with Type 1 Diabetes</title>
+		<author>
+			<persName><forename type="first">Al</forename><surname>Hayek</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Robert</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">A</forename><surname>Al Dawish</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clin. Med. Insights Endocrinol. Diabetes</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="1" to="6" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Effect of Continuous Glucose Monitoring on Glycemic Control in Adults With Type 1 Diabetes Using Insulin Injections: The DIAMOND Randomized Clinical Trial</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">W</forename><surname>Beck</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">JAMA</title>
+		<imprint>
+			<biblScope unit="volume">317</biblScope>
+			<biblScope unit="page">371</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Accuracy of flash glucose monitoring and continuous glucose monitoring technologies: Implications for clinical practice</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Ajjan</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diab. Vasc. Dis. Res</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="175" to="184" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Accuracy of two continuous glucose monitoring systems: a head-to-head comparison under clinical research centre and daily life conditions</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kropff</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Obes. Metab</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="page" from="343" to="349" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Head-to-head comparison between flash and continuous glucose monitoring systems in outpatients with type 1 diabetes</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Bonora</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Maran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Ciciliot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Avogaro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">P</forename><surname>Fadini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Endocrinol. Invest</title>
+		<imprint>
+			<biblScope unit="volume">39</biblScope>
+			<biblScope unit="page" from="1391" to="1399" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Measurement Performance of Two Continuous Tissue Glucose Monitoring Systems</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Freckmann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Technol. Ther</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="541" to="549" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Comparative Accuracy of 17 Point-of-Care Glucose Meters</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Ekhlaspour</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="page" from="558" to="566" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Noninvasive Monitoring of Blood Glucose with Raman Spectroscopy</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Pandey</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Acc. Chem. Res</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="page" from="264" to="272" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Continuous Glucose Detection Using Boronic Acid-Substituted Viologens in Fluorescent Hydrogels: Linker Effects and Extension to Fiber Optics</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Gamsey</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">T</forename><surname>Suri</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Wessling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Singaram</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Langmuir</title>
+		<imprint>
+			<biblScope unit="volume">22</biblScope>
+			<biblScope unit="page" from="9067" to="9074" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<analytic>
+		<title level="a" type="main">Noninvasive blood glucose monitoring with optical coherence tomography: a pilot study in human subjects</title>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">V</forename><surname>Larin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">S</forename><surname>Eledrisi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Motamedi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">O</forename><surname>Esenaliev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Care</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="2263" to="2267" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<analytic>
+		<title level="a" type="main">Current and Emerging Technology for Continuous Glucose Monitoring</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Chen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Sensors</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Recent advances in noninvasive glucose monitoring</title>
+		<author>
+			<persName><forename type="first">C.-F</forename><surname>So</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K.-S</forename><surname>Choi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">K</forename><surname>Wong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">W</forename><surname>Chung</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Med. Devices Auckl. NZ</title>
+		<imprint>
+			<biblScope unit="volume">5</biblScope>
+			<biblScope unit="page" from="45" to="52" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Non-invasive glucose monitoring: Assessment of technologies and devices according to quantitative criteria</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Tura</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Maran</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Pacini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Res. Clin. Pract</title>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="page" from="16" to="40" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">A Novel Algorithm for Prediction and Detection of Hypoglycemia Based on Continuous Glucose Monitoring and Heart Rate Variability in Patients With Type 1 Diabetes</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">L</forename><surname>Cichosz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Frystyk</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">O</forename><forename type="middle">K</forename><surname>Hejlesen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Tarnow</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Fleischer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="731" to="737" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">Hypoglycemia Prediction Using Machine Learning Models for Patients With Type 2 Diabetes</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Sudharsan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Peeples</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Shomali</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="86" to="90" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<title level="a" type="main">Neural Network-Based Real-Time Prediction of Glucose in Patients with Insulin-Dependent Diabetes</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Pappada</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Technol. Ther</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="135" to="141" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Glucose Prediction Algorithms from Continuous Monitoring Data: Assessment of Accuracy via Continuous Glucose Error-Grid Analysis</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Zanderigo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Sparacino</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Kovatchev</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Cobelli</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="645" to="651" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Development of a Neural Network for Prediction of Glucose Concentration in Type 1 Diabetes Patients</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">M</forename><surname>Pappada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">D</forename><surname>Cameron</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">M</forename><surname>Rosman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="792" to="801" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Accuracy of a Novel Noninvasive Multisensor Technology to Estimate Glucose in Diabetic Subjects During Dynamic Conditions</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">I</forename><surname>Sobel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">J</forename><surname>Chomentowski</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Vyas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Andre</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">F</forename><forename type="middle">G</forename><surname>Toledo</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Diabetes Sci. Technol</title>
+		<imprint>
+			<biblScope unit="volume">8</biblScope>
+			<biblScope unit="page" from="54" to="63" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Free-living inferential modeling of blood glucose level using only noninvasive inputs</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">K</forename><surname>Rollins</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Process Control</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="95" to="107" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Non-invasive hypoglycemia monitoring system using extreme learning machine for Type 1 diabetes</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>San</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">ISA Trans</title>
+		<imprint>
+			<biblScope unit="volume">64</biblScope>
+			<biblScope unit="page" from="440" to="446" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Identification of Hypoglycemia and Hyperglycemia in Type 1 Diabetic patients using ECG parameters</title>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">L</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Su</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2012 Annual International Conference of the IEEE Engineering in Medicine and Biology Society</title>
+				<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="2716" to="2719" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Hypoglycemia detection based on cardiac repolarization features</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Lipponen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2011 Annual International Conference of the IEEE Engineering in Medicine and Biology Society</title>
+				<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="volume">4697</biblScope>
+			<biblScope unit="page">4700</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<analytic>
+		<title level="a" type="main">Genetic-Algorithm-Based Multiple Regression With Fuzzy Inference System for Detection of Nocturnal Hypoglycemic Episodes</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">S H</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Inf. Technol. Biomed</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="page" from="308" to="315" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Electrocardiographic alterations during hyperinsulinemic hypoglycemia in healthy subjects</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Laitinen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Ann. Noninvasive Electrocardiol. Off. J. Int. Soc. Holter Noninvasive Electrocardiol. Inc</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="page" from="97" to="105" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Effects of controlled hypoglycaemia on cardiac repolarisation in patients with type 1 diabetes</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">L</forename><surname>Koivikko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetologia</title>
+		<imprint>
+			<biblScope unit="volume">51</biblScope>
+			<biblScope unit="page" from="426" to="435" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Mechanisms of Abnormal Cardiac Repolarization During Insulin-Induced Hypoglycemia</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T C E</forename><surname>Robinson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes</title>
+		<imprint>
+			<biblScope unit="volume">52</biblScope>
+			<biblScope unit="page" from="1469" to="1474" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Dynamic estimation of cardiac repolarization characteristics during hypoglycemia in healthy and diabetic subjects</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Lipponen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physiol. Meas</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="649" to="660" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<analytic>
+		<title level="a" type="main">Comparative effect of human soluble insulin and insulin aspart upon hypoglycaemia-induced alterations in cardiac repolarization</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T C E</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Harris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Ireland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lindholm</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Heller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Br. J. Clin. Pharmacol</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="246" to="251" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<analytic>
+		<title level="a" type="main">Electrocardiographic Changes During Insulin-Induced Hypoglycemia in Healthy Subjects</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Meinhold</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Heise</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Rave</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Heinemann</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Horm. Metab. Res</title>
+		<imprint>
+			<biblScope unit="volume">30</biblScope>
+			<biblScope unit="page" from="694" to="697" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">K</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Atlas</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Electrocardiography</surname></persName>
+		</author>
+		<idno type="DOI">10.5005/jp/books/11969</idno>
+		<ptr target="https://doi.org/10.5005/jp/books/11969" />
+	</analytic>
+	<monogr>
+		<title level="j">P) Ltd</title>
+		<imprint>
+			<date type="published" when="2013">2013</date>
+			<publisher>Jaypee Brothers Medical Publishers</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">A Principal Component Regression Approach for Estimation of Ventricular Repolarization Characteristics</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">A</forename><surname>Lipponen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">P</forename><surname>Tarvainen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Laitinen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Lyyra-Laitinen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">A</forename><surname>Karjalainen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Biomed. Eng</title>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="page" from="1062" to="1069" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">Natural occurrence of nocturnal hypoglycemia detection using hybrid particle swarm optimized fuzzy reasoning model</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artif. Intell. Med</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page" from="177" to="184" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Non-invasive detection of hypoglycemic episodes in Type 1 diabetes using intelligent hybrid rough neural system</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>San</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Lam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Congress on Evolutionary Computation (CEC)</title>
+		<imprint>
+			<biblScope unit="page" from="1238" to="1242" />
+			<date type="published" when="2014">2014. 2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Measurement of high resolution ECG QT interval during controlled euglycaemia and hypoglycaemia</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Ireland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Heller</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Marques</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Harris</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physiol. Meas</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="295" to="303" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Glucose clamp technique: a method for quantifying insulin secretion and resistance</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Defronzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">D</forename><surname>Tobin</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Andres</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Am. J. Physiol</title>
+		<imprint>
+			<biblScope unit="volume">237</biblScope>
+			<biblScope unit="page" from="E214" to="223" />
+			<date type="published" when="1979">1979</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">The Normal ECG and its (Normal) Variants</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gertsch</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">The ECG: A Two-Step Approach to Diagnosis</title>
+				<meeting><address><addrLine>Berlin; Heidelberg</addrLine></address></meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="page" from="19" to="43" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">The normal variations in heart rate and QRS complex of healthy individuals in different age groups</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mahendrappa</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Sathyanarayana</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Int. J. Res. Med. Sci</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">861</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Exploiting multi-channels deep convolutional neural networks for multivariate time series classification</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zheng</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Q</forename><surname>Liu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Ge</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Zhao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Front. Comput. Sci</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="page" from="96" to="112" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<monogr>
+		<title level="m" type="main">Multi-Scale Convolutional Neural Networks for Time Series Classification</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Cui</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2016">ArXiv160306995 Cs (2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Time series classification from scratch with deep neural networks: A strong baseline</title>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Yan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Oates</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2017 International Joint Conference on Neural Networks (IJCNN)</title>
+				<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="1578" to="1585" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">The great time series classification bake off: a review and experimental evaluation of recent algorithmic advances</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bagnall</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Lines</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Bostrom</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Large</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Keogh</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Data Min. Knowl. Discov</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="55" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b61">
+	<analytic>
+		<title level="a" type="main">Convolutional recurrent neural networks for electrocardiogram classification</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Zihlmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Perekrestenko</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Tschannen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Computing in Cardiology (CinC)</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="4" />
+			<date type="published" when="2017">2017. 2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b62">
+	<analytic>
+		<title level="a" type="main">Real-Time Patient-Specific ECG Classification by 1-D Convolutional Neural Networks</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kiranyaz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Ince</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Gabbouj</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Biomed. Eng</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page" from="664" to="675" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b63">
+	<analytic>
+		<title level="a" type="main">Deep Convolutional Neural Networks and Learning ECG Features for Screening Paroxysmal Atrial Fibrillation Patients</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Pourbabaee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">J</forename><surname>Roshtkhari</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Khorasani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Syst. Man Cybern. Syst. PP</title>
+		<imprint>
+			<biblScope unit="page" from="1" to="10" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b64">
+	<analytic>
+		<title level="a" type="main">Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network</title>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">Y</forename><surname>Hannun</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Med</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page">65</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b65">
+	<analytic>
+		<title level="a" type="main">Screening for cardiac contractile dysfunction using an artificial intelligence-enabled electrocardiogram</title>
+		<author>
+			<persName><forename type="first">Z</forename><forename type="middle">I</forename><surname>Attia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Med</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page">70</biblScope>
+			<date type="published" when="2019">2019</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b66">
+	<analytic>
+		<title level="a" type="main">Artificial intelligence for the electrocardiogram</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Mincholé</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Rodriguez</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature Medicine</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page">22</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b67">
+	<analytic>
+		<title level="a" type="main">Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">R</forename><surname>Selvaraju</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">2017 IEEE International Conference on Computer Vision (ICCV)</title>
+				<imprint>
+			<date type="published" when="2017">2017</date>
+			<biblScope unit="page" from="618" to="626" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b68">
+	<analytic>
+		<title level="a" type="main">Representation Learning: A Review and New</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Courville</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Vincent</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Perspectives. IEEE Trans. Pattern Anal. Mach. Intell</title>
+		<imprint>
+			<biblScope unit="volume">35</biblScope>
+			<biblScope unit="page" from="1798" to="1828" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b69">
+	<analytic>
+		<title level="a" type="main">Visualizing Data using t-SNE</title>
+		<author>
+			<persName><forename type="first">L</forename><surname>Maaten</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Van Der &amp; Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">J. Mach. Learn. Res</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page" from="2579" to="2605" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b70">
+	<analytic>
+		<title level="a" type="main">QT interval prolongation during spontaneous episodes of hypoglycaemia in type 1 diabetes: the impact of heart rate correction</title>
+		<author>
+			<persName><forename type="first">T</forename><forename type="middle">F</forename><surname>Christensen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetologia</title>
+		<imprint>
+			<biblScope unit="volume">53</biblScope>
+			<biblScope unit="page" from="2036" to="2041" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b71">
+	<analytic>
+		<title level="a" type="main">Changes in cardiac repolarization during clinical episodes of nocturnal hypoglycaemia in adults with Type 1 diabetes</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">T C E</forename><surname>Robinson</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">D</forename><surname>Harris</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">H</forename><surname>Ireland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><forename type="middle">A</forename><surname>Macdonald</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">R</forename><surname>Heller</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetologia</title>
+		<imprint>
+			<biblScope unit="volume">47</biblScope>
+			<biblScope unit="page" from="312" to="315" />
+			<date type="published" when="2004">2004</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b72">
+	<analytic>
+		<title level="a" type="main">Risk of Cardiac Arrhythmias During Hypoglycemia in Patients With Type 2 Diabetes and Cardiovascular Risk</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Chow</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes</title>
+		<imprint>
+			<biblScope unit="volume">63</biblScope>
+			<biblScope unit="page" from="1738" to="1747" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b73">
+	<analytic>
+		<title level="a" type="main">Evolved fuzzy reasoning model for hypoglycaemic detection</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Nuryani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Int. Conf. IEEE Eng. Med. Biol. Soc</title>
+		<imprint>
+			<biblScope unit="page" from="4662" to="4665" />
+			<date type="published" when="2010">2010. 2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b74">
+	<analytic>
+		<title level="a" type="main">Hypoglycemia detection: multiple regression-based combinational neural logic approach</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>San</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">K</forename><surname>Lam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Soft Comput</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="543" to="553" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b75">
+	<analytic>
+		<title level="a" type="main">Deep learning framework for detection of hypoglycemic episodes in children with type 1 diabetes</title>
+		<author>
+			<persName><forename type="first">P</forename><forename type="middle">P</forename><surname>San</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">H</forename><surname>Ling</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annu. Int. Conf. IEEE Eng. Med. Biol. Soc</title>
+		<imprint>
+			<biblScope unit="page" from="3503" to="3506" />
+			<date type="published" when="2016">2016. 2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b76">
+	<analytic>
+		<title level="a" type="main">Altered ventricular repolarization during hypoglycaemia in patients with diabetes</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">L</forename><surname>Marques</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabet. Med. J. Br. Diabet. Assoc</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="page" from="648" to="654" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b77">
+	<analytic>
+		<title level="a" type="main">A convolutional neural network approach to detect congestive heart failure</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Porumb</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Iadanza</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Massaro</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Pecchia</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Biomed. Signal. Process. Control</title>
+		<imprint>
+			<biblScope unit="volume">55</biblScope>
+			<biblScope unit="page">101597</biblScope>
+			<date type="published" when="2020">2020</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b78">
+	<monogr>
+		<title level="m" type="main">Zephyr TM Performance Systems | Performance Monitoring Technology</title>
+		<ptr target="https://www.zephyranywhere.com/" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b79">
+	<monogr>
+		<ptr target="https://www.smartpatients.com/trials/NCT02548624" />
+		<title level="m">An Assessment of the Zephyr BioPatch and Its Ability to Monitor Patient Position | Smart Patients</title>
+				<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b80">
+	<monogr>
+		<title level="m" type="main">Performance Assessment of a Remote Patient Monitoring Device -ICH GCP -Clinical Trials Registry</title>
+		<ptr target="https://ichgcp.net/clinical-trials-registry/NCT02570906" />
+		<imprint/>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b81">
+	<analytic>
+		<title level="a" type="main">Freestyle Libre Glucose Monitoring System</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Blum</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Clin. Diabetes Publ. Am. Diabetes Assoc</title>
+		<imprint>
+			<biblScope unit="volume">36</biblScope>
+			<biblScope unit="page" from="203" to="204" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b82">
+	<analytic>
+		<title level="a" type="main">Coated glucose sensors dodge recalibration</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Zhang</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Cao</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nat. Biomed. Eng</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page">881</biblScope>
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b83">
+	<analytic>
+		<title level="a" type="main">Evaluation of subcutaneous glucose monitoring systems under routine environmental conditions in patients with type 1 diabetes</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Aberer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Obes. Metab</title>
+		<imprint>
+			<biblScope unit="volume">19</biblScope>
+			<biblScope unit="page" from="1051" to="1055" />
+			<date type="published" when="2017">2017</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b84">
+	<analytic>
+		<title level="a" type="main">Novel glucose-sensing technology and hypoglycaemia in type 1 diabetes: a multicentre, non-masked, randomised controlled trial</title>
+		<author>
+			<persName><forename type="first">J</forename><surname>Bolinder</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Antuna</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">P</forename><surname>Geelhoed-Duijvestijn</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kröger</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Weitgasser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Lancet Lond. Engl</title>
+		<imprint>
+			<biblScope unit="volume">388</biblScope>
+			<biblScope unit="page" from="2254" to="2263" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b85">
+	<monogr>
+		<title level="m" type="main">Circadian Pattern of T Wave Morphology</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Batchvarov</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/9780470987483.ch36</idno>
+		<ptr target="https://doi.org/10.1002/9780470987483.ch36" />
+		<editor>Malik, M. &amp; Camm, A. J.</editor>
+		<imprint>
+			<date type="published" when="2004">2004</date>
+			<publisher>Blackwell Publishing</publisher>
+			<biblScope unit="page" from="358" to="370" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b86">
+	<analytic>
+		<title level="a" type="main">Diurnal variation of ECG intervals and R or T amplitudes in healthy male subjects assessed by means of spectral and cosinor analysis</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">J</forename><surname>Koch</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Raschka</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><surname>Banzer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Jpn. Heart J</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="page" from="45" to="53" />
+			<date type="published" when="1999">1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b87">
+	<analytic>
+		<title level="a" type="main">Circadian rhythm of the signal averaged electrocardiogram and its relation to heart rate variability in healthy subjects</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Nakagawa</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Heart</title>
+		<imprint>
+			<biblScope unit="volume">79</biblScope>
+			<biblScope unit="page" from="493" to="496" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b88">
+	<analytic>
+		<title level="a" type="main">Classification and Diagnosis of Diabetes</title>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Care</title>
+		<imprint>
+			<biblScope unit="volume">40</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="S11" to="S24" />
+			<date type="published" when="2017">2017</date>
+			<publisher>American Diabetes Association</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b89">
+	<analytic>
+		<title level="a" type="main">A Novel Short-Term Event Extraction Algorithm for Biomedical Signals</title>
+		<author>
+			<persName><forename type="first">S</forename><surname>Yazdani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fallet</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Vesin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Trans. Biomed. Eng</title>
+		<imprint>
+			<biblScope unit="volume">65</biblScope>
+			<biblScope unit="page" from="754" to="762" />
+			<date type="published" when="2018">2018</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b90">
+	<monogr>
+		<title level="m" type="main">TensorFlow: Large-Scale Machine Learning on Heterogeneous Distributed Systems</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Abadi</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b91">
+	<analytic>
+		<title level="a" type="main">Understanding the difficulty of training deep feedforward neural networks</title>
+		<author>
+			<persName><forename type="first">X</forename><surname>Glorot</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Bengio</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics</title>
+				<meeting>the Thirteenth International Conference on Artificial Intelligence and Statistics</meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="249" to="256" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b92">
+	<analytic>
+		<title level="a" type="main">A Method for Stochastic Optimization</title>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">P</forename><surname>Kingma</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Ba</surname></persName>
+		</author>
+		<author>
+			<persName><surname>Adam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3rd International Conference on Learning Representations</title>
+				<meeting>the 3rd International Conference on Learning Representations</meeting>
+		<imprint>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b93">
+	<analytic>
+		<title level="a" type="main">Rectified Linear Units Improve Restricted Boltzmann Machines</title>
+		<author>
+			<persName><forename type="first">V</forename><surname>Nair</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Hinton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 27th International Conference on International Conference on Machine Learning</title>
+				<meeting>the 27th International Conference on International Conference on Machine Learning</meeting>
+		<imprint>
+			<publisher>Omnipress</publisher>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="807" to="814" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Validating Generic Metrics of Fairness in Game-based Resource Allocation Scenarios with Crowdsourced Annotations</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher/>
+				<availability status="unknown"><licence/></availability>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName><forename type="first">Corrado</forename><surname>Grappiolo</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department">Center for Computer Games Research</orgName>
+								<orgName type="institution">IT University of Copenhagen</orgName>
+								<address>
+									<country key="DK">Denmark</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Héctor</forename><forename type="middle">P</forename><surname>Martínez</surname></persName>
+							<email>hector.p.martinez@um.edu.mt</email>
+							<affiliation key="aff1">
+								<orgName type="department">Institute of Digital Games</orgName>
+								<orgName type="institution">University of Malta</orgName>
+								<address>
+									<country key="MT">Malta</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Georgios</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+							<email>georgios.yannakakis@um.edu.mt</email>
+							<affiliation key="aff1">
+								<orgName type="department">Institute of Digital Games</orgName>
+								<orgName type="institution">University of Malta</orgName>
+								<address>
+									<country key="MT">Malta</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Validating Generic Metrics of Fairness in Game-based Resource Allocation Scenarios with Crowdsourced Annotations</title>
+					</analytic>
+					<monogr>
+						<imprint>
+							<date/>
+						</imprint>
+					</monogr>
+					<idno type="MD5">BD894C23D384294CC2F153AB02407260</idno>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.7.3-SNAPSHOT" ident="GROBID" when="2023-02-09T21:24+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Fairness</term>
+					<term>Social Preference</term>
+					<term>Resource Allocation</term>
+					<term>Dictator Game</term>
+					<term>Crowdsourcing</term>
+					<term>Preference Learning</term>
+					<term>Support Vector Machines</term>
+					<term>Feature Selection</term>
+					<term>Genetic Algorithms</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Being able to effectively measure the notion of fairness is of vital importance as it can provide insight into the formation and evolution of complex patterns and phenomena, such as social preferences, collaboration, group structures and social conflicts. This paper presents a comparative study for quantitatively modelling the notion of fairness in one-to-many resource allocation scenarios -i.e. one provider agent has to allocate resources to multiple receiver agents. For this purpose, we investigate the efficacy of six metrics and cross-validate them on crowdsourced human ranks of fairness annotated through a computer game implementation of the one-to-many resource allocation scenario. Four of the fairness metrics examined are well-established metrics of data dispersion, namely standard deviation, normalised entropy, the Gini coefficient and the fairness index. The fifth metric, proposed by the authors, is an ad-hoc context-based measure which is based on key aspects of distribution strategies. The sixth metric, finally, is machine learned via ranking support vector machines (SVMs) on the crowdsourced human perceptions of fairness. Results suggest that all ad-hoc designed metrics correlate well with the human notion of fairness, and the context-based metrics we propose appear to have a predictability advantage over the other ad-hoc metrics. On the other hand, the normalised entropy and fairness index metrics appear to be the most expressive and generic for measuring fairness for the scenario adopted in this study and beyond. The SVM model can automatically model fairness more accurately than any ad-hoc metric examined (with an accuracy of 81.86%) but it is limited by its expressivity and generalisability.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="1">Introduction</head><p>The control and influence of virtual or artificial societies is a highly complex task, in part, due to the difficulty of predicting the reaction and evolution of the population to dynamic elements or changes. To monitor and predict evolution of a society such as a complex adaptive system <ref type="bibr" target="#b36">[37]</ref> one needs to monitor the behaviour of single individual agents within the society. The behaviour of the individuals collectively generates complex (and emergent) global dynamics and phenomena (e.g. friendship networks); these in turn affect the individuals, who will adapt their behaviour autonomously creating a loop that regulates how the society evolves. For example, the level of collaboration among the individuals in a local community can be utilised to develop a plan that allows for the integration of different ethnic group identities <ref type="bibr" target="#b52">[53]</ref>. Alternatively, in a virtual society (e.g. a serious multiplayer game) collaboration could be monitored to effectively teach soft social skills <ref type="bibr" target="#b60">[61]</ref>.</p><p>In this paper we investigate a number of metrics to measure the fairness that one individual agent manifests depending on its interactions with other agents. We claim that fairness is a key feature characterising the interactions, which could bring further insight into the ongoing complex dynamics. The computational models of fairness derived can assist in the inference of social preferences, collaboration, group structures and consequently social conflicts within artificial societies and complex networks. For instance, an individual who treats individuals differently might suggest the existence of preference; this would also have implications for the reciprocity of such treatment, and possibly for altruism, collaboration, and group identities <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b14">15]</ref>. We restrict our investigation to a virtual environment featuring a resource allocation scenario, which can allow us to simulate well and isolate scenarios which can be encountered in real-life situations. In the one-to-many scenario examined, an agent has to collect and share several resources among a population of agents divided into two visible groups. Although the scenario under investigation has features which are common to well-studied social dilemmas, such as the otherother game <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b34">35]</ref>, the dictator game <ref type="bibr" target="#b2">[3]</ref> and, partly, the ultimatum game <ref type="bibr" target="#b8">[9,</ref><ref type="bibr" target="#b14">15]</ref>, the perspective we take and the interpretation we give to the term "fairness" differs from those adopted in game theory studies. In particular, the metrics we investigate do not aim to model the utility of the actions performed (inequity aversion) <ref type="bibr" target="#b3">[4,</ref><ref type="bibr" target="#b15">16,</ref><ref type="bibr" target="#b16">17,</ref><ref type="bibr" target="#b47">48]</ref>, as we rather focus on identifying measures of equality of treatment towards multiple individuals independently of the provider's payoff. Furthermore, we are not making the canonical game theoretical assumption that the individuals considered in our scenarios are merely greedy <ref type="bibr" target="#b14">[15]</ref>, hence, we do not aim to investigate how the observed behaviours differ from some reference value (e.g. Nash equilibrium) <ref type="bibr" target="#b14">[15]</ref>. In other words, we aim to investigate a property of the interactions which is complementary to the concepts of social preference's "altruism" and "reciprocity" <ref type="bibr" target="#b14">[15]</ref>. Our concept of fairness assumes that individuals behave "well" (i.e. they are fair) within a subset of individuals of the population only: fairness aims to provide measures capable of identifying whether this inequality is occurring.</p><p>In this paper we test and compare four simple standard dispersion measures -namely standard deviation, normalised entropy <ref type="bibr" target="#b56">[57]</ref>, the Gini coefficient <ref type="bibr" target="#b40">[41]</ref>, and the fairness index <ref type="bibr" target="#b28">[29]</ref> -that approximate fairness based on the levels of satisfaction of resource acquisition manifested by the receiver individuals. We also propose a new, ad-hoc metric -hereafter called temporal group-based fairness -which is based on single interactions (resource allocations) and the ability of an individual agent to identify itself as part of a group <ref type="bibr" target="#b8">[9]</ref>. We validate the five metrics against the reports of an online crowdsourcing survey in which human participants ranked the level of fairness in a wide variety of resource allocation scenarios. Additionally, we propose a sixth, data-driven modelling approach, in which genetic-feature selection combined with ranking Support Vector Machines (SVMs) <ref type="bibr" target="#b29">[30]</ref> extract the most relevant context-based features of the scenario and infer a non-linear mapping between scenario attributes and the crowdsourced notions of fairness. Results obtained show that all ad-hoc metrics are highly consistent with the human notion of fairness as obtained from the crowdsourced data; the temporal group-based metric proposed, however, outperforms the other ad-hoc metrics in this scenario. Finally, the rank SVM, manages to produce a non-linear model that reaches 81.86% of accuracy in predicting fairness and proves to be the most consistent with the human notion of fairness.</p><p>This study is novel as, to the best of the authors' knowledge, there has not been any prior attempt to design, compare and cross-validate metrics of fairness against crowdsourced annotations of fairness. Moreover, this paper builds upon and extends the metric validation method proposed in <ref type="bibr" target="#b56">[57]</ref> by introducing rank-based crowdsourcing as a tool for annotating complex social dynamics such as fairness. Clearly, our crowdsourced cross-validation study would strengthen earlier work, which used the metrics we considered <ref type="bibr" target="#b21">[22]</ref><ref type="bibr" target="#b22">[23]</ref><ref type="bibr" target="#b23">[24]</ref><ref type="bibr" target="#b40">41]</ref>; moreover, the proposed metrics open a plethora of new applications. For instance, they can be used as a mechanism for evaluating and promoting fairness in educational (serious) games <ref type="bibr" target="#b21">[22]</ref> and, similarly, cooperation/altruism <ref type="bibr" target="#b6">[7]</ref>; they could also be used as metrics to understand and evaluate collaborative games <ref type="bibr" target="#b11">[12,</ref><ref type="bibr" target="#b48">49,</ref><ref type="bibr" target="#b53">54]</ref> -under the collective intelligence perspective -together with, or as an alternative to, the use of expert knowledge <ref type="bibr" target="#b49">[50]</ref>. They could be used in fields not strictly linked to computer games, such as social network analysis <ref type="bibr" target="#b12">[13,</ref><ref type="bibr" target="#b44">45]</ref> or, even further, as tools aimed to understand the goodness of the partitioning of (social) networks into community structures <ref type="bibr" target="#b19">[20,</ref><ref type="bibr" target="#b35">36]</ref>. Moreover, the combination of crowdsourcing with game-based scenarios introduces a first insight for categorising discrepancies between experiments conducted on artificial societies <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b13">14]</ref> and those on human participants <ref type="bibr" target="#b14">[15,</ref><ref type="bibr" target="#b24">25]</ref>. Additionally, the metrics could also be embedded within such artificial agents, e.g. together with inequity aversion <ref type="bibr" target="#b9">[10,</ref><ref type="bibr" target="#b55">56]</ref>, in order to generate believable, human-like adaptive artificial societies which manifest both greedy and group-based behaviours <ref type="bibr" target="#b46">[47]</ref>, allowing thus to further investigate the notion of evolution of (group-based) collaboration <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b24">25,</ref><ref type="bibr" target="#b25">26,</ref><ref type="bibr" target="#b43">44]</ref>.</p><p>The remainder of the paper is organised as follows: Section 2 lists some of the most relevant work to this study. Section 3 describes, formally, the one-to-many resource allocation interaction scenario used in our research; it illustrates how the scenario is implemented in a game-based virtual environment, and finally it delineates the design of the crowdsourcing protocol. Section 4 and Section 5 describe, respectively, the application of the ad-hoc generic metrics of fairness and the use of SVMs for the one-to-many scenario. Section 6 presents the key results of this study. Section 7 discusses the limitations and the generalisability of the key findings and Section 8 concludes the paper.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="2">Related Work</head><p>This study shares aspects of two main research fields: evolutionary game theory and game-based modelling. The studies on the ultimatum and the dictator game -linked to the resource allocation game we investigate in this paper -are numerous (see <ref type="bibr" target="#b2">[3,</ref><ref type="bibr" target="#b15">16,</ref><ref type="bibr" target="#b16">17]</ref> and <ref type="bibr" target="#b32">[33]</ref> among others). The aforementioned studies hold a pure game theoretical perspective: they aim to understand why the experiments conducted on human participants deviate from the Nash equilibrium -which assumes the existence of solely greedy individuals -towards more altruistic behaviours. The focus of our research, instead, is to provide metrics capable of capturing whether the individuals of a population are manifesting different levels of altruism, depending on who they interact with, as a key aspect of complex dynamics, such as the existence of group structures and group identities <ref type="bibr" target="#b8">[9]</ref>.</p><p>Possibly, even closer to our research aim, there exist studies focused on understanding the influence that group identities have on the behaviours of the participants of game theory experiments (see <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b4">5,</ref><ref type="bibr" target="#b5">6]</ref> and <ref type="bibr" target="#b33">[34]</ref> among others); however, our work differs from these in its investigation of non-payoff (utility) based measures. Similarly, Marzo et al. <ref type="bibr" target="#b41">[42]</ref> investigated how the existence of friendship structures affects the levels of altruism of human participants in Colored Trails <ref type="bibr" target="#b17">[18]</ref>, a computer game with similar mechanics to the ultimatum game. Their work puts the emphasis on describing how social relationships influence the behaviour of the participants in their experiment, which is in line with our assumptions about fairness; however, our work goes a step further by assuming the existence of such behaviours within the population and aiming to provide metrics capable of identifying them.</p><p>Studies on social preferences have benefited from the relatively novel agentbased modelling approach for simulating complex dynamics in artificial societies <ref type="bibr" target="#b13">[14,</ref><ref type="bibr" target="#b25">26]</ref>. This approach has a close, if not exact, relationship with the research fields of evolutionary dynamics, collective behaviour, and simulation studies, which aim to better understand how collaboration emerges from the repeated interactions among the agents <ref type="bibr" target="#b1">[2,</ref><ref type="bibr" target="#b27">28,</ref><ref type="bibr" target="#b43">44]</ref>. Although our global aim is the understanding of the evolution of collaboration and group structures, the study presented in this paper does not rely on simulations of artificial societies and on the search for behavioural rules embedded in the agents.</p><p>Relevant metrics to fairness, such as balance <ref type="bibr" target="#b37">[38]</ref> and symmetry <ref type="bibr" target="#b40">[41]</ref> -key concepts in computer games research and design -have been constructed as they intuitively have an impact on both the entertainment and learning goals of the game; however, we argue that the notion of fairness is both different and more complex than symmetry and balance as it factors in social, behavioural and relationship effects. The context-based metrics proposed in this paper follow both a top-down expert-driven and a bottom-up data-driven <ref type="bibr" target="#b59">[60]</ref> approach for cap-turing fairness inspired by methodologies for deriving accurate user-interaction metrics in games <ref type="bibr" target="#b56">[57]</ref>. While our expert-driven metrics are directly designed on key aspect of the one-to-many scenario in use, the evaluation and construction of the data-driven metric is based on game-based crowdsourced annotations.</p><p>The use of crowdsourcing and the correlation analysis we performed has been used in game artificial intelligence research, though centred on affect modelling in single player game environments <ref type="bibr" target="#b50">[51,</ref><ref type="bibr" target="#b56">57,</ref><ref type="bibr" target="#b58">59]</ref>. Our one-to-many interaction scenario, however, provides the basis for the investigation of multi-agent and multiplayer scenarios <ref type="bibr" target="#b20">[21,</ref><ref type="bibr" target="#b22">23,</ref><ref type="bibr" target="#b23">24]</ref>.</p><p>The Fairness Index (F I) we decided to consider in this study <ref type="bibr" target="#b28">[29]</ref> belongs to the vast research field of fairness of resource allocation in information networks (consider <ref type="bibr" target="#b10">[11,</ref><ref type="bibr" target="#b31">32,</ref><ref type="bibr" target="#b42">43,</ref><ref type="bibr" target="#b45">46,</ref><ref type="bibr" target="#b51">52]</ref> and <ref type="bibr" target="#b54">[55]</ref> as a non-exhaustive list). Generally speaking, the standard problem regards the fair allocation of resources (e.g. CPU and memory) to a set of requesting units (e.g. jobs) in order to e.g. maximise the overall system's utility. Although our scenario and aim is more targeted towards social and economical contexts, the positive correlation of F I with the perceived notion of fairness gathered in our crowdsourcing survey suggests that FI is relevant for our purposes.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3">Fairness Scenario and Crowdsourcing</head><p>This section presents the one-to-many resource allocation scenario on which we base our fairness modelling studies and describes the game-based virtual environment designed for encapsulating the key characteristics of the scenario. The section ends with a description of the protocol followed for crowdsourcing annotations of fairness through the virtual environment.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.1">One-to-many Resource Allocation Scenario</head><p>Formally, the one-to-many resource allocation scenario investigated in this paper can be described by the following tuple: scenario = (P, R, A, G, g, v, s)</p><p>where:</p><p>-P is the population (society) of n+1 individuals (agents), P = {a 0 , a 1 , . . . , a n }.</p><p>-R is the set of m resources R = {r 0 , r 1 , . . . , r m−1 }.</p><p>-A ⊆ R is the temporally ordered sequence of resources allocated by the provider agent, A = r t=1 i , r t=2 j , . . . . -G is the set of group structures present in P ; G constitutes a partition of P .</p><p>g : P → G is the group identity function mapping each agent in P to one group structure in G. The group identity of the provider agent is unknown to the observer of the distribution strategy; for simplicity, we will refer to the single group identity g(a i ) as g i .</p><p>v : R → (0, 1] is the resource value function which assigns a value to each resource in R. For simplicity we will refer to the resource value of resource r j as v j . s : P → [0, 1] is the receiver satisfaction function mapping each receiver agent in P to a satisfaction value between 0 and 1. For simplicity we will refer to the satisfaction value of a i , as s i .</p><p>All the agents a i have their satisfaction values s i decreasing over time by a constant value δ, s i ← max(s i − δ, 0). An agent a i receiving a resource r j will have its satisfaction value updated as follows: s i ← min(s i + v j , 1). Intuitively, s i gives an indication of the amount of resources acquired by a i .</p><p>One agent takes the role of the provider agent (we will refer to it as a p ∈ P ), and the remaining n individuals take the role of the receiver agents. The provider agent has the duty to fill up A by allocating 0 ≤ |A| ≤ m resources among the n receiver agents in |A| steps (i.e. one resource at a time, the provider agent may not distribute any resources, a receiver agent may obtain more than one resource). Each receiver agent a i has a goal which corresponds to the maximisation of its s i . However, the receiver agents cannot acquire the resources by themselves; they will only acquire the resources distributed by the provider agent.</p><p>The features describing the scenario allow the provider agent to adopt many different strategies to define A, which would suggest, to an external observer, different levels of fairness towards the receiver agents and, possibly, also receiver groups.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.2">The Resource Allocation Game</head><p>To obtain a test-bed to evaluate the ad-hoc fairness metrics, and machine learning alternative data-driven metric, the one-to-many resource allocation scenario described in Section 3.1 was implemented as a three-dimensional (3D), single player game-based virtual environment; a virtual camera follows the movement of the provider agent, creating a third-person perspective of the gameplay. The provider agent finds himself in the environment together with receiver agents and resources; his duty is to allocate the resources among the receiver agents within a time limit by carrying only one resource at a time.</p><p>The satisfaction values of each receiver agent, which decrease constantly over time, can be inferred by observing their yellow hats, which range in transparency levels: the more transparent, the lower the satisfaction. When the receiver agent acquires a resource, its satisfaction level is increased (i.e. its yellow hat gets more opaque) by the value of the resource obtained. The resources are represented as purple balls and their values are represented by their size: the smaller the ball, the smaller its value provided.</p><p>The receiver agents have a coloured body which represents the group they belong to (group identity). For the study presented in this paper, we examine the presence of only two group structures, namely the red and the blue group. A single distribution scenario (Equation <ref type="formula" target="#formula_0">1</ref>) is interpreted, in our game-based environment, as a game level. A snapshot of the resource allocation game can be observed in Figure <ref type="figure" target="#fig_0">1</ref>.</p><p>The decision to consider only two groups in our study is motivated by several arguments, both theoretical and practical. First, the red and blue groups can be easily linked to the in-group vs. out-group dichotomy <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b8">9]</ref>: the detection of unfair treatments -even across the whole population, i.e. independently on the agent colours/groups -could be augmented by further detection of the targeted subset of the population which received the most generous treatments, and hence the subsequent identification of the colour/group the provider agent belongs to <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b23">24]</ref>. Second, the fact that some of the most relevant studies on group behaviour and inequity aversion in human-centred experiments <ref type="bibr" target="#b5">[6,</ref><ref type="bibr" target="#b33">34,</ref><ref type="bibr" target="#b41">42]</ref> are based on two groups would allow for a possibly easier bridging between the two different interpretations given to fairness. Finally, we did not want to introduce any further complexity to the game-based scenario, which could bring difficulties with respect to the perception of group-based unfair treatments (see Subsection 4.5), given the novelty of the approach we decided to adopt.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="3.3">Crowdsourcing Experimental Protocol</head><p>The game-based virtual environment was then used in a crowdsourcing survey. In the survey, participants watched and annotated a sequence of strategy videos, which reproduce resource distribution tasks (strategies) of our game. We have relied on the ability of participants to compare and rank gameplay strategies given in pairs (pairwise preference scheme) rather than having participants rating the strategies, for a number of advantages including the elimination of the subjective notion of scaling and effects related to reporting order <ref type="bibr" target="#b57">[58]</ref>. Six different strategies were recorded for four different scenarios -consisting of 2, 3, 4 and 5 receiver agents -resulting in 24 strategy videos in total <ref type="foot" target="#foot_0">3</ref> . The set of game-playing strategy videos used in the survey was defined in order to show resource distribution strategies as different from each other as possible. With respect to the game features we have described in Section 3.2, each gameplaying strategy is limited to 30 seconds. Table <ref type="table" target="#tab_0">1</ref> illustrates the key features of the four different scenarios designed: number of red receiver agents ("n red " column), number of blue receiver agents ("n blue " column), number of resources ("m" column), initial satisfaction values of the receiver agents ("s red " and "s blue " columns) and value of the resources ("v R " column). As can be noted, the four scenarios present unbalanced initial conditions, both with respect to the single agents and to the average group satisfaction values.</p><p>The key protocol steps of the survey are as follows:</p><p>1. The participant fills in a demographic questionnaire (age, gender, experience in playing games, whether the participant has already taken part in the survey) and reads the instructions of the survey, which describe the resource allocation scenario and the ways to provide feedback about the strategies. 2. A pair of strategy videos, A and B, is selected and presented on the same screen (see Figure <ref type="figure" target="#fig_2">2</ref>) -there is a 50% probability that the order of appearance (left or right) of two strategies is inverted. The pair of strategy videos presented to the participants belong to the same scenario (i.e. same number of receivers). and is free to take part in another session of the survey, ensuring that he does not watch the same pair of strategy videos; otherwise the survey ends. Considering that we have designed six strategies per scenario, and that we show pairs of different strategies of the same scenario, we get C 6,2 = 15 possible combinations of video pairs by excluding repetitions and order of appearance on screen (left or right). Any possible order effects are minimised via the randomisation of the video ordering previously described.</p><p>For each of the four scenarios and the 15 possible combinations, we collected four pairwise preferences. Thus, in total, our analysis is based on 4 • 15 • 4 = 240 strategy pairs that are labelled by our participants. The participants were gathered through advertisement of the experiment on the well-know Facebook<ref type="foot" target="#foot_1">4</ref> social network online platform, in order to achieve the most diverse audience. The number of unique participants out of the 240 reports are 141, 74% of which are male and 50.3% consider themselves gamers. The average age is 30.24 years and its standard deviation is 6.84. Furthermore, 77% of the participants declared themselves as being either not a gamer or occasional gamers (i.e. playing up to 2 hours per week), 11% declared playing games from 2 to 5 hours per week, 8% play from 5 to 10 hours per week, and 4% play for more than 10 hours per week.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4">Ad-Hoc Metrics of Fairness</head><p>This section first introduces the four generic metrics of dispersion of the data used in our study, given the particular scenario described by the tuple defined in Equation <ref type="formula" target="#formula_0">1</ref>. The section ends with the definition of a new, ad-hoc designed fairness metric proposed by the authors, which is tightened to the scenario investigated.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.1">Standard Deviation</head><p>At the end of the distribution task, we calculate the average satisfaction of all receiver agents as follows:</p><formula xml:id="formula_1">µ = 1 n n i=1 s i<label>(2)</label></formula><p>The standard deviation is therefore defined as follows:</p><formula xml:id="formula_2">σ = 1 n n i=1 (s i − µ) 2<label>(3)</label></formula><p>Since the upper bound of σ is 1 -both µ and s i values range within the [0, 1] interval -we can subtract σ from its maximum value in order to give it a positive connotation of fairness:</p><formula xml:id="formula_3">SD = 1 − σ<label>(4)</label></formula><p>In presence of fairness, the s i values are similar to each other, making σ close to zero and SD high. In contrast, in presence of unfair treatments, the s i values are very different from each other, making σ high and SD low.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.2">Normalised Entropy</head><p>The Normalised Entropy <ref type="bibr" target="#b56">[57]</ref> is calculated at the end of each distribution task as follows:</p><formula xml:id="formula_4">N H = − 1 log(n) n i=1</formula><p>ŝi log ŝi <ref type="bibr" target="#b4">(5)</ref> where ŝi represents the normalised satisfaction value of each receiver agents:</p><formula xml:id="formula_5">ŝi = s i n j=1 s j<label>(6)</label></formula><p>In presence of fairness, the ŝi values are similar to each other, thus yielding a high normalised entropy. In contrast, in presence of unfair treatments, the ŝi values are very different from each other, yielding low normalised entropy values.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.3">Gini Coefficient</head><p>The Gini Coefficient <ref type="bibr" target="#b18">[19]</ref> is a well-known measure of equality used in economic studies. Providing that, at the end of each level, the s i values of the receiver agents are ordered by increasing values, that is:</p><formula xml:id="formula_6">s k i ≤ s k+1 j , i, j ∈ [1, n]<label>(7)</label></formula><p>The calculation of the Gini Coefficient in our game-based scenario is done as follows:</p><formula xml:id="formula_7">GI = 1 n − 1 n + 1 − 2 n k=1 (n + 1 − k) s k n k=1 s k<label>(8)</label></formula><p>Note that we have omitted the indices i in the representation for s k for simplicity. GI lies within the [0, 1] interval: the lower the coefficient, the higher the fairness. Hence, similarly to the SD implementation, we will take into consideration the inverse of the Gini Coefficient:</p><formula xml:id="formula_8">GC = 1 − GI<label>(9)</label></formula></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.4">Fairness Index</head><p>The Fairness Index <ref type="bibr" target="#b28">[29]</ref> is a well-known measure of equality of resource allocation vastly used in information networks. The metric is calculated at the end of each distribution task as follows:</p><formula xml:id="formula_9">F I = ( n i=1 s i ) 2 n n i=1 s 2 i<label>(10)</label></formula><p>F I has value one in presence of completely fair treatments among the whole population, and it decreases as the disparity increases towards a subset of few individuals.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="4.5">Temporal Group-based Metrics of Fairness</head><p>We here propose a new metric of fairness -which is not as generic as the four aforementioned metrics previously introduced -whose design is based on (and bounded by) the following three constraints (or criteria):</p><p>(C1) The group identities of the receiver agents are not hidden from the provider agent. The provider agent can be influenced by such information and therefore aim to deliver the resources based on the existing group structures, rather than just focusing on the receiver agents' satisfaction values. (C2) The complex (and dynamic) structure of the scenario might have an impact on the willingness of the provider agent to be either fair or unfair. The metrics calculation should take into account the intermediate steps of the distribution task, rather than solely focusing on the calculation at the end of the scenario. (C3) The initial configuration of each scenario might already depict an unfair distribution of s i values. A provider agent, who is willing to maximise the satisfaction values of the whole population, should not avoid the delivery of resources.</p><p>In our game, which considers two group structures -the red and blue agents, see Section 3.2 -constraint (C1) is satisfied by the average satisfaction of the red and the blue groups:</p><formula xml:id="formula_10">µ red = 1 n red n red i=0 s i , µ blue = 1 n blue n blue i=0 s i<label>(11)</label></formula><p>where, n red + n blue = n is the number of receiver agents belonging to the red and the blue group, respectively. The between-group fairness is defined as the absolute value:</p><formula xml:id="formula_11">|µ red − µ blue |<label>(12)</label></formula><p>Constraint (C2) is satisfied by averaging the between-group difference across the 0 &lt; |A| ≤ m distributions:</p><formula xml:id="formula_12">1 |A| |A| t=1 µ t red − µ t blue (<label>13</label></formula><formula xml:id="formula_13">)</formula><p>Where µ t red and µ t blue represent, respectively, the between-group satisfaction values of the red and the blue groups after the t-th resource allocation. Finally, we consider the case |A| = 0 in order to satisfy (C3):</p><formula xml:id="formula_14">T GB = 0 if |A| = 0 1 − 1 |A| |A| t=1 |µ t red − µ t blue | if 0 &lt; |A| ≤ m<label>(14)</label></formula><p>In presence of group-based fairness throughout the whole distribution task, the µ red and µ blue values are, on average, similar to each other, thus yielding high T GB values. In contrast, in presence of group-based unfair treatments throughout the whole distribution task, the µ red and µ blue are, on average, different from each other, generating low T GB values.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5">Data-Driven Approach: Preference Learning</head><p>We propose a data-driven method to model fairness as an alternative to the hand-crafted metrics defined in Section 4. This approach imposes minimal expert knowledge on the metrics which are instead shaped according to a specific dataset containing strategies with different levels of fairness compared by human judges.</p><p>A data-driven technique, as opposed to hand-crafted metrics, can handle large amounts of user data and learn patterns that human experts may have overseen.</p><p>We use ranking Support Vector Machines (SVMs) <ref type="bibr" target="#b26">[27,</ref><ref type="bibr" target="#b30">31]</ref>, a well-known method for learning non-linear estimators of user pairwise preferences such as those present in the experimental data used in this paper. This method requires that each input sample (i.e. strategy) is coded as a vector of numeric features given by the designer. To reduce the human bias that could be introduced in this step, we use a large vector to describe each distribution strategy within a scenario and later reduce it by automatic feature selection. The remainder of this section describes the feature extraction process, the SVM, and the genetic-search feature selection algorithm used.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.1">Fairness Strategy Feature Extraction</head><p>To capture most aspects of the scenario in a format suitable for data-driven modelling we extract a large number of features which could represent both its initial conditions and its intermediate ones. In total, we extracted 24 features, presented in Table <ref type="table">5</ref>.1.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.2">Ranking Support Vector Machines</head><p>A Support Vector Machine is a binary classifier consisting of a linear combination of training vectors:</p><formula xml:id="formula_15">w = x i ∈D α i φ(x i )<label>(15)</label></formula><p>The hyper-plane defined by this combination separates the data samples x i into two classes in projected space φ(X). In this paper we are not interested in a binary classifier but rather a function that maps data samples (strategies) into a real-valued variable (estimation of fairness); additionally, our data samples are associated with pairwise comparisons instead of discrete classes. Thus, we used a variant of SVMs known as ranking SVM <ref type="bibr" target="#b26">[27,</ref><ref type="bibr" target="#b30">31]</ref>, which is tailored to problems with the same formulation. The model is still a linear combination of transformed training vectors which is trained by optimising the following problem: minimise:</p><formula xml:id="formula_16">1 2 ||w|| 2 + C ξ i subject to: ∀(x i P , x i N ) ∈ D, w • (φ(x i P ) − φ(x i N )) ≥ 1 − ξ i ∀i ξ i ≥ 0 (<label>16</label></formula><formula xml:id="formula_17">)</formula><p>where D is the complete set of training samples, (x i P , x i N ) are pairs of training samples such that the feature vector x i P was preferred (reported as more fair in this paper) over the feature vector x i N , ξ i are non-negative variables, C a weighting parameter, w the trained decision boundary and ||w|| its module.</p><p>Once w is trained, given a pair of samples {x i , x j } the SVM predicts that x i is preferred over x j if w•φ(x i ) &gt; w•φ(x j ); thus, w•φ(x) is a computational predictor of fairness. Although the SVM creates a linear separation, this is defined on the transformed space defined by φ, which yields more complex functions in the input space. As the transformation of the space can lead to an infinite number of dimensions <ref type="bibr" target="#b26">[27]</ref>, and also in order to reduce computational costs, the predictor is redefined in terms of the training examples and a kernel function:</p><formula xml:id="formula_18">w • φ(x) = (x i P ,x i N )∈D α i (κ(x, x i P ) − κ(x, x i N )) (<label>17</label></formula><formula xml:id="formula_19">)</formula><p>where α i are non-negative coefficients, κ(x j x j ) is the kernel function and (x i P , x i N ) are pairs of training samples.</p><p>For all experiments reported in this paper, we use a Gaussian projection (i.e. Gaussian kernel) as it can generate a wide range of non-linear functions while it contains one single parameter (γ). We set C = 0.001 and γ = 1.0 after systematic adjustment of their values.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="5.3">Automatic Feature Selection</head><p>Feature selection is a procedure commonly used in data mining to reduce the dimensionality of training data by removing features that seemingly do not contain relevant information about the function modelled. The basic procedure consists of evaluating several combinations of features using a predefined fitness function. In this paper we use a genetic algorithm to search the space of all possible combinations of features -this is known as Genetic-search Feature Selection (GFS) <ref type="bibr" target="#b39">[40]</ref>. We use a population of 19 bit-chromosomes -their length being the total number of features extracted -that represent whether a particular feature is selected <ref type="bibr" target="#b0">(1)</ref> or not (0). Across 15 iterations, pairs of feature subsets are selected based on a ranking selection method (the higher the fitness of a feature subset, the greater the probability of being selected) and recombined via uniform crossover (probability of 0.8) to generate new feature subsets (offspring). A mutation operator adds or removes one feature to the offspring's chromosome with probability 0.01.</p><p>The fitness of each subset of features is calculated as the average 10-fold cross-validation (CV) accuracy of an SVM employing a Gaussian kernel trained on the available data using only the selected subset of features.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6">Results and Analysis</head><p>To measure the degree of agreement between the values provided by SD, N H, GC, F I and T GB and the crowdsourced self-reports, we calculate the correlation coefficients between them, following the statistical analysis procedure for pairwise preference data presented in <ref type="bibr" target="#b56">[57]</ref> using the test statistic:</p><formula xml:id="formula_20">c(z) = N i=1 {z i /N } (<label>18</label></formula><formula xml:id="formula_21">)</formula><p>where N is the total number of samples to correlate, z i = +1, if the video reported as more fair in pair i yields a higher metric than the video reported as less fair, and z i = −1, if the video reported as more fair in pair i yields a lower metric than the video reported as less fair. In the calculation of c(z) we only take into account clear preferences, that is, we only consider pairs in which a clear preference -A is more fair than B or B is more fair than A (2-AFC) -is expressed, that is, N = 147. The p-values of c(z) are obtained via the binomial distribution. Tables 3(a), 3(b), 3(c), 3(d) and 3 present the c(z) values and their corresponding p-values, for each scenario and in total, for the metrics SD, N H, CG, F I and T GB respectively. The first three columns (after the "Scenario" column) report the number of choices for the alternatives of the 4-AFC. Columns "Match" and "Mismatch" represent the number of 2-AFC preferences that respectively, match and mismatch the metric value.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.1">Validating the Ad-hoc Metrics of Fairness</head><p>The first observable result is that all four metrics (SD, N H, GC and F Isee Tables 3(a), 3(b), 3(c) and 3(d)) appear to be consistent with the reported preferences. N H -and consequently F I, which presents the exact same results -yield correlation values above 0.7 for the 4 receivers scenario, whilst the c(z) values are not as high (just above 0.4) for the 2, 3, and 5 receiver scenarios. A similar behaviour and c(z) values are observed for the GC metric.</p><p>Even though SD appears to be consistent with the notion of fairness, not surprisingly, it is the metric which scores the lowest correlation coefficients, since standard deviation is a measure of dispersion of the data with respect to a reference mean value. Although SD correlates well with the human notion of fairness when highly fair and unfair strategies are existent, this does not necessarily hold for strategies of intermediate levels of fairness. Overall, T GB (see Table <ref type="table" target="#tab_2">3</ref>) scores a correlation coefficient higher (but not significantly higher) than any other ad-hoc metric. Therefore, we can state that T GB, N H -and consequently GC and F I -represent the notion of fairness for the one-to-many interaction scenario equally well overall. T GB yields correlation values above 0.7 for the 3 and 4 receivers scenario, whilst the c(z) values are not as high (just above 0.4) for the 2 and the 5 receivers scenarios.</p><p>Compared to N H and F I, T GB manages to improve the correlation with the perceived fairness for the 3 receivers scenario, however, at a cost of more mismatches for the 2 and the 5 receivers scenarios. The 2 and 4 receivers scenarios are those for which the c(z) values of T GB, N H, GC and F I are almost identical. There is no doubt that 3 receivers is the most complex scenario among the 4 we have considered in our experimental setup: there is a difference in the group sizes (n red = 2 and n blue = 1), a high amount of resources (m = 4), a big difference in satisfaction within the red group itself, and finally, the resource values are generally low, except for one, for which v i = 0.9 -see Table <ref type="table" target="#tab_0">1</ref>. The 3 receiver scenario appears to have instigated different and complicated perceptions of fairness among the participants, which can be better captured by T GB, as opposed to the other metrics.</p><p>N H, GC and F I outperform T GB in the 5 receivers scenario as the metrics generate two very different orderings of the strategies. It appears that the large population size and the many available resources lead to a lower impact of existing group structures on the perception of fairness. In support of this hypothesis many submitted comments of the participants suggest that a fair distribution strategy should first prioritise the fulfilment of all receivers' satisfaction independently of their group identities and, only subsequently, distribute the resources according to a group-based strategy.</p><p>The crowdsourced reports highlight that it is easier to report a clear fairness preference (i.e. 2-AFC) for scenarios with a lower population (2 and 3 receivers) rather than scenarios with a high population (4 and 5 receivers). This finding suggests that there might be potential difficulties in observing and distinguishing complex distribution strategies within our 3D game design. It is worth noting in this respect that we received only three additional comments related to the difficulty to perceive the distribution strategies; however, these were submitted by inexperienced players, who spent only up to two hours on gaming per week, as we could retrieve from their demographic entries.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="6.2">Modelling Fairness via Preference Learning</head><p>As an alternative to ad-hoc metric design, we investigated the inverse approach and followed a data-driven methodology to construct a model that is directly built on the crowdsourced pairwise preferences, to be compared to the ad-hoc metrics. For that purpose, we run GFS 10 times and pick the feature subset that feeds an SVM model (as described in Section 5) which yields the highest 10-fold CV accuracy on the pairwise preference data. In order to reduce the impact of non-determinism existent in the separation of the data into folds, we run 10 trials of the algorithm using three different feature sets: the best-performing feature set, the set that contains all 19 features extracted, and randomly selected features. Table <ref type="table" target="#tab_3">4</ref> reports the average and highest accuracies and the corresponding c(z) values of the three different feature sets. The best performing feature set yields accuracies which are significantly higher (tested via a t-test) when compared to the full feature set (p-value &lt; 0.01) and the randomly-selected feature subset (p-value &lt; 0.01). Thus, it appears that genetic feature selection (GFS) improves the accuracy of the model, on average, (79.33%) as it outperforms randomly selected features (73.54%) and all features (74.95%) considered. The best-feature set (c(z) = 0.63) supports a model that outperforms the correlation coefficient of the T GB metric. This model predicts 81.86% of the pairwise fairness reports correctly relying on five features selected by GFS: the initial average satisfaction value for the blue group (µ 0 blue ); the average satisfaction of the red group after the second delivery (µ 2 red ); the average satisfaction of the blue group after the second and third delivery (µ 2 blue and µ 3 blue , respectively); and the satisfaction provided at the third delivery (v 3 j ). The selected feature subset suggests that particular resource deliveries to particular groups are of key importance for determining and approximating fairness.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="7">Discussion</head><p>The T GB, N H, GC and F I ad-hoc metrics manage to represent the notion of fairness well, as the cross-validation analysis performed with the data gathered from the crowdsourcing experiment showed high consistency and strong statistical significance. The question of how to quantitatively model fairness precisely, in order to subsequently infer the presence of social preferences, collaboration and global patterns such as group identities has been answered, though only in part.</p><p>The key findings of the paper can evidently contribute to further investigations for addressing the aforementioned question.</p><p>The difference in performance between T GB and the N H, GC and F I metrics suggests that the context-based, expert-driven metric T GB, might have introduced some bias over-fitting to the examined scenario. It seems therefore intuitive that, prior to considering T GB as a universal metric for one-to-many interaction scenarios, similarly to N H, GC and F I, more studies should be conducted. For instance, with respect to the scenario's formal definition (Eq. 1), studies based on a higher number of agents, groups, resources, and resource allocations, could be made. On the other hand, N H, GC and F I showed good efficacy with respect to modelling fairness, even in the one-to-many scenario. Finally, SD showed a low correlation with the perceived notion of fairness; this is explained by the nature of the metric, which describes the dispersion of the data based on a reference mean value. This suggests that fairness is an absolute notion, rather than being relative to a reference satisfaction value. As a consequence, it is likely that similar measures of fairness, e.g. the coefficient of variation <ref type="bibr" target="#b28">[29]</ref>, would show similar performances.</p><p>By following our assumption that fairness is a feature of interactions which can help with the identification of preferred individuals in the population, hence group structures, we have been investigating methods to use fairness as a feature for collaboration learning in order to detect the formation and consolidation of group identities in complex artificial societies of believable, human-like artificial agents <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b23">24]</ref>. These agents manifested reciprocal and altruistic social preferences, interacting with each other, iteratively, by means of the ultimatum game. The interaction scenario was interpreted as a sequence of one-to-many interactions between one provider agent and many receiver agents, and N H was used to calculate the fairness of the providers' offers. The results obtained showed that N H can help with the detection of existing group structures and is robust across different population sizes, group structure typologies, and in presence of diverse locality of interactions among the agents.</p><p>Future work would intuitively focus on the investigation of other metrics of fairness. We hereby suggest either the definition of new metrics, or the identification of existing ones which would put an emphasis on the sequence of the resources being distributed, which is only partly achieved by T GB. Moreover, fairness can also be associated with a number of other complex notions, such as balance <ref type="bibr" target="#b37">[38]</ref> and asymmetry <ref type="bibr" target="#b40">[41]</ref>. Finally, due to the positive correlation coefficients scored by the Fairness Index (F I), future studies will aim to investigate how well other F I-related metrics <ref type="bibr" target="#b42">[43]</ref> are linked to our scenario and how well they would correlate to the crowdsourced self-reports.</p><p>While the SVM approach yielded high-performing fairness models (model accuracy &gt; 80%) that surpass the correlation of ad-hoc metrics with the crowdsourced data, the generalisability of the model to other settings is likely to be lower as it is built on data and features from a particular environment. Nevertheless, as the accuracy is evaluated on data unseen during training, it is expected to maintain its superiority within similar settings. Furthermore, the expressivity of the metrics over the black-box Gaussian SVM model provides a key advantage for their use. On that basis, more preference learning algorithms will be tested and compared: possible candidates for learning the mapping between pairwise preferences and social dynamics in the game include bayesian <ref type="bibr" target="#b7">[8]</ref> and neuro-evolutionary preference learning <ref type="bibr" target="#b38">[39]</ref>. Towards the data-driven approach to modelling fairness, more experimental data will be required from diverse and dissimilar game scenarios containing variant numbers of agents, groups of agents and initial conditions.</p><p>The self-reports and some of the extra comments filled by the participants suggest that, particularly for occasional and non-gamers, the 3D game-based implementation of the one-to-many resource allocation scenario, with an emphasis on how to represent the levels of satisfaction of the agents, might add a bottleneck with respect to the perception of fairness. This could also be the reason why the participants are more confident to report clear preferences (A is more fair than B or B is more fair than A) in scenarios with smaller populations. This drawback could be reduced by allowing the participants to have a more active role, rather than just following the provider agent and observing its allocation strategy. For instance, future work could be focused on letting the participants play the role of the provider agent, distribute resources, and subsequently describe the strategies they adopted. Although this approach might introduce challenges on the quantification of the strategy descriptions, it could on the other hand allow for the discovery of alternative, highly complex distribution strategies.</p><p>The introduction of group identities in the population was motivated by the intention to represent the existence of social preferences under the perspective of the provider agent. The differences of group identities are to be found, solely, on the colour of the body of the receiver agents. Moreover, the provider agent, as depicted in both Figure <ref type="figure" target="#fig_0">1</ref> and Figure <ref type="figure" target="#fig_2">2</ref>, does not explicitly belong neither to the red nor to the blue group. Although there is a vast corpus of studies suggesting that group behaviours and identities can be observed independently on how arbitrarily the groups are instantiated (see <ref type="bibr" target="#b0">[1,</ref><ref type="bibr" target="#b4">5,</ref><ref type="bibr" target="#b5">6,</ref><ref type="bibr" target="#b8">9]</ref> among others), the game design we adopted might not represent real-life, global structures, e.g. ethnicity or friendship well and might explain why N H, GC and F I -which are group-independent -correlate well with the self-reported data. Further work on the enrichment of the graphical representation of the group identities would be considered.</p><p>Although some of the motivations which led us to consider only two groups were driven by the need to represent the dichotomy in-group vs. out-group <ref type="bibr" target="#b8">[9]</ref> (see Section 3.2), it might be possible that some of the metrics, especially T GB, might not be able to scale well in presence of more complex scenarios. On the other hand, more complex scenarios would lead to the increase of the number of features describing the distribution strategies. As a consequence, it might be possible that those features extracted via GFS for rank SVM would become more generic, as opposed to those used by the best performing rank SVM for the current two-group scenario (see Section 6.2). Given that we cannot clearly foresee the changes in the consistency of N H, GC and F I -since more complex scenarios would lead to a wider plethora of group-based distribution strategies, and hence their human perception -future work based on scenarios with more than two will be considered.</p><p>The proposed crowdsourcing approach for metric design proves that it is possible to design accurate measures of fairness. Beyond our resource allocation scenario, the proposed crowdsourcing approach can be used as a validation tool to explain the discrepancies between the results obtained in evolutionary games (i.e. based on artificial societies) and those found in nature <ref type="bibr" target="#b24">[25]</ref>. Preliminary results, based on artificial societies <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b23">24]</ref>, suggest that fairness is a feature of interactions which would expose the preference of individuals. Thus, the metrics T GB, N H, GC and F I (or any other metrics which correlate well to those) can be used to detect unfair treatments which may lead to social conflicts <ref type="bibr" target="#b6">[7,</ref><ref type="bibr" target="#b60">61]</ref>. Similarly, fairness metrics can be used to extract student profiles in collaborative educational games <ref type="bibr" target="#b20">[21,</ref><ref type="bibr" target="#b60">61]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head n="8">Conclusions</head><p>This paper addressed the problem of quantitatively measuring fairness, under the perspective of one individual who interacts with multiple other individuals (i.e. one-to-many interaction scenario). Given that fairness is an abstract and ambiguous term with fuzzy boundaries, we have relied on crowdsourced data obtained via pairwise preference self-reports, and used it to cross validate six metrics of fairness. The first four metrics are well-established metrics of the dispersion of data, namely standard deviation, normalised entropy, the Gini coefficient, and the Fairness Index. The fifth metric, called temporal group-based fairness (T GB), is a new metric proposed by the authors, is ad-hoc designed for the one-to-many interaction scenario, and takes into consideration contextbased aspects of the distribution task, such as the sequence of distribution and the presence of group structures within the receiver agents. Finally, the sixth metric is machine learned on the preference data via ranking Support Vector Machines (SVM).</p><p>The results obtained show that all metrics are highly consistent (though with different degrees of consistency) with the perception of fairness of hundreds of our survey participants. It seems, however, that the temporal group-based metric is expressive enough and captures fairness more accurately than the other adhoc metrics. Even though the SVM model yields the most accurate fairness measure, the T GB metric is far more expressive and usable. The normalised entropy and fairness index metrics, however, appear to be the most appropriate for context-free and generic use, as the T GB metric is based on (and tightened to) the context of the one-to-many resource allocations scenario. Preliminary results have shown the efficacy of N H in capturing fairness and collaboration in artificial societies of agents that play the social ultimatum game <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b23">24]</ref>.</p><p>The fairness metrics proposed can be used in both simulated scenarios of artificial agent societies to investigate global phenomena, such as collaboration and the emergence of group structures <ref type="bibr" target="#b22">[23,</ref><ref type="bibr" target="#b23">24]</ref>, or in educational collaborative virtual environments, in which human-controlled avatars interact with each other <ref type="bibr" target="#b20">[21,</ref><ref type="bibr" target="#b60">61]</ref>.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0"><head>Fig. 1 .</head><label>1</label><figDesc>Fig. 1. A snapshot of the resource allocation game: 3 receiver agents (2 belonging to the blue group and 1 belonging to the red group) and their satisfaction levels (yellow hats), 4 resources of different sizes and the provider agent are depicted.</figDesc><graphic coords="7,186.64,115.84,242.07,135.82" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1"><head>3 .</head><label>3</label><figDesc>The participant watches the videos and provides feedback through a 4alternative forced choice questionnaire (4-AFC), which asks the participant if the behaviour of the provider was: (a) more fair in video A; (b) more fair in video B; (c) equally fair in both video A and video B; (d) unfair in both video A and video B. In order to allow the participant to fully grasp the distribution dynamics, each video can be paused at any time and replayed unlimitedly. 4. The participant can write additional comments via a free-response text box</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_2"><head>Fig. 2 .</head><label>2</label><figDesc>Fig. 2. A snapshot of the online survey</figDesc><graphic coords="9,186.64,115.84,242.08,185.78" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0"><head>Table 1 .</head><label>1</label><figDesc>Initial conditions of the four different scenarios of the survey. The si values are partitioned according to the two red and blue group identities.</figDesc><table><row><cell>Scenario</cell><cell cols="3">n red n blue m</cell><cell>s red</cell><cell>s blue</cell><cell>vR</cell></row><row><cell>2 receivers</cell><cell>1</cell><cell>1</cell><cell>2</cell><cell>0.1</cell><cell>0.5</cell><cell>0.5, 0.9</cell></row><row><cell>3 receivers</cell><cell>2</cell><cell>1</cell><cell>4</cell><cell>0.1, 0.5</cell><cell>0.5</cell><cell>0.1, 0.3, 0.5, 0.9</cell></row><row><cell>4 receivers</cell><cell>2</cell><cell>2</cell><cell>3</cell><cell>1, 0.8</cell><cell>0.2, 0.1</cell><cell>0.8, 0.4, 0.2</cell></row><row><cell>5 receivers</cell><cell>3</cell><cell>2</cell><cell>4</cell><cell>0.1, 0.3, 0.5</cell><cell>0.7, 0.9</cell><cell>0.3, 0.5, 0.7, 0.9</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1"><head>Table 2 .</head><label>2</label><figDesc>Full feature list extracted for each allocation video across the four scenarios. Bold feature numbers indicate the best extracted features by SVM's the genetic feature selection phase.</figDesc><table><row><cell cols="2">Feature Name Description</cell></row><row><cell cols="2">n red /n, n blue /n number of red/blue agents</cell></row><row><cell>|A|/m</cell><cell>number of deliveries</cell></row><row><cell>n red /3, n blue /2</cell><cell>number of red/blue agents divided by 3/2, i.e. their maximum number across all scenarios</cell></row><row><cell>n red /5, n blue /5</cell><cell>number of red/blue agents divided by 5, i.e. the maximum number of agents across all scenarios</cell></row><row><cell>m/4</cell><cell>number of resources divided by 4, i.e. their maximum number across all scenarios</cell></row><row><cell>|A|/4</cell><cell>number of deliveries divided by 4, i.e. the maximum number of possible deliveries across all scenarios</cell></row><row><cell>µ 0 red , µ 0 blue</cell><cell>initial average happiness of the red/blue agents</cell></row><row><cell>m j=1 vj</cell><cell>average satisfaction value of the resources</cell></row><row><cell>v t</cell><cell></cell></row><row><cell></cell><cell>for t = 1, 2, 3, 4, average happiness of the blue agents</cell></row><row><cell>µ t blue</cell><cell>after the t-th delivery. If the resource was delivered to the red group, then µ t blue = µ t−1 blue − δ. If |A| &lt; t</cell></row><row><cell></cell><cell>then the feature has value zero.</cell></row></table><note>jfor t = 1, 2, 3, 4, the value of the t-th resource delivered. If |A| &lt; t then the feature has value zero. µ t red for t = 1, 2, 3, 4, average happiness of the red agents after the t-th delivery. If the resource was delivered to the blue group, then µ t red = µ t−1 red − δ. If |A| &lt; t then the feature has value zero.</note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_2"><head>Table 3 .</head><label>3</label><figDesc>Analysis of correlation c(z) between fairness metrics and reported fairness. Significant c(z) values appear in bold -significance is 5%.</figDesc><table><row><cell></cell><cell></cell><cell></cell><cell>(a) SD</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Scenario</cell><cell>2-AFC Preference</cell><cell>Equally Fair</cell><cell>Both Unfair</cell><cell cols="2">Match Mismatch</cell><cell>c(z) p-value</cell></row><row><cell>2 receivers</cell><cell>38</cell><cell>9</cell><cell>13</cell><cell>28</cell><cell>10</cell><cell>0.47 0.03</cell></row><row><cell>3 receivers</cell><cell>41</cell><cell>4</cell><cell>15</cell><cell>24</cell><cell>17</cell><cell>0.17 0.45</cell></row><row><cell>4 receivers</cell><cell>36</cell><cell>11</cell><cell>13</cell><cell>31</cell><cell>5</cell><cell>0.72 &lt; 0.01</cell></row><row><cell>5 receivers</cell><cell>32</cell><cell>6</cell><cell>22</cell><cell>24</cell><cell>8</cell><cell>0.50 0.01</cell></row><row><cell>Total</cell><cell>147</cell><cell>30</cell><cell>63</cell><cell>107</cell><cell>40</cell><cell>0.46 0.02</cell></row><row><cell></cell><cell></cell><cell></cell><cell>(b) N H</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Scenario</cell><cell>2-AFC Preference</cell><cell>Equally Fair</cell><cell>Both Unfair</cell><cell cols="2">Match Mismatch</cell><cell>c(z) p-value</cell></row><row><cell>2 receivers</cell><cell>38</cell><cell>9</cell><cell>13</cell><cell>29</cell><cell>9</cell><cell>0.53 0.01</cell></row><row><cell>3 receivers</cell><cell>41</cell><cell>4</cell><cell>15</cell><cell>29</cell><cell>12</cell><cell>0.41 0.05</cell></row><row><cell>4 receivers</cell><cell>36</cell><cell>11</cell><cell>13</cell><cell>31</cell><cell>5</cell><cell>0.72 &lt; 0.01</cell></row><row><cell>5 receivers</cell><cell>32</cell><cell>6</cell><cell>22</cell><cell>25</cell><cell>7</cell><cell>0.56 &lt; 0.01</cell></row><row><cell>Total</cell><cell>147</cell><cell>30</cell><cell>63</cell><cell>114</cell><cell>33</cell><cell>0.55 &lt; 0.01</cell></row><row><cell></cell><cell></cell><cell></cell><cell>(c) GC</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Scenario</cell><cell>2-AFC Preference</cell><cell>Equally Fair</cell><cell>Both Unfair</cell><cell cols="2">Match Mismatch</cell><cell>c(z) p-value</cell></row><row><cell>2 receivers</cell><cell>38</cell><cell>9</cell><cell>13</cell><cell>29</cell><cell>9</cell><cell>0.53 0.01</cell></row><row><cell>3 receivers</cell><cell>41</cell><cell>4</cell><cell>15</cell><cell>29</cell><cell>12</cell><cell>0.42 0.05</cell></row><row><cell>4 receivers</cell><cell>36</cell><cell>11</cell><cell>13</cell><cell>30</cell><cell>6</cell><cell>0.67 &lt; 0.01</cell></row><row><cell>5 receivers</cell><cell>32</cell><cell>6</cell><cell>22</cell><cell>25</cell><cell>7</cell><cell>0.56 &lt; 0.01</cell></row><row><cell>Total</cell><cell>147</cell><cell>30</cell><cell>63</cell><cell>113</cell><cell>34</cell><cell>0.54 &lt; 0.01</cell></row><row><cell></cell><cell></cell><cell></cell><cell>(d) F I</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Scenario</cell><cell>2-AFC Preference</cell><cell>Equally Fair</cell><cell>Both Unfair</cell><cell cols="2">Match Mismatch</cell><cell>c(z) p-value</cell></row><row><cell>2 receivers</cell><cell>38</cell><cell>9</cell><cell>13</cell><cell>29</cell><cell>9</cell><cell>0.53 0.01</cell></row><row><cell>3 receivers</cell><cell>41</cell><cell>4</cell><cell>15</cell><cell>29</cell><cell>12</cell><cell>0.41 0.05</cell></row><row><cell>4 receivers</cell><cell>36</cell><cell>11</cell><cell>13</cell><cell>31</cell><cell>5</cell><cell>0.72 &lt; 0.01</cell></row><row><cell>5 receivers</cell><cell>32</cell><cell>6</cell><cell>22</cell><cell>25</cell><cell>7</cell><cell>0.56 &lt; 0.01</cell></row><row><cell>Total</cell><cell>147</cell><cell>30</cell><cell>63</cell><cell>114</cell><cell>33</cell><cell>0.55 &lt; 0.01</cell></row><row><cell></cell><cell></cell><cell></cell><cell>(e) T GB</cell><cell></cell><cell></cell><cell></cell></row><row><cell>Scenario</cell><cell>2-AFC Preference</cell><cell>Equally Fair</cell><cell>Both Unfair</cell><cell cols="2">Match Mismatch</cell><cell>c(z) p-value</cell></row><row><cell>2 receivers</cell><cell>38</cell><cell>9</cell><cell>13</cell><cell>27</cell><cell>11</cell><cell>0.42 0.06</cell></row><row><cell>3 receivers</cell><cell>41</cell><cell>4</cell><cell>15</cell><cell>35</cell><cell>6</cell><cell>0.71 &lt; 0.01</cell></row><row><cell>4 receivers</cell><cell>36</cell><cell>11</cell><cell>13</cell><cell>31</cell><cell>5</cell><cell>0.72 &lt; 0.01</cell></row><row><cell>5 receivers</cell><cell>32</cell><cell>6</cell><cell>22</cell><cell>23</cell><cell>9</cell><cell>0.44 0.04</cell></row><row><cell>Total</cell><cell>147</cell><cell>30</cell><cell>63</cell><cell>116</cell><cell>31</cell><cell>0.58 0.01</cell></row></table></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_3"><head>Table 4 .</head><label>4</label><figDesc>Average and best performance across 10 trials of the rank SVM algorithm. Performance accuracy is assessed through 10-fold cross-validation. Correlation values (c(z)) are derived from the 10-fold CV accuracy.</figDesc><table><row><cell>Feature Set</cell><cell></cell><cell>Accuracy (%)</cell><cell cols="2">Matches Mismatches</cell><cell>c(z)</cell></row><row><cell>Random Features</cell><cell>Average Best</cell><cell>73.54 77.09</cell><cell>108 113</cell><cell>39 34</cell><cell>0.47 0.54</cell></row><row><cell>All Features</cell><cell>Average Best</cell><cell>74.95 76.81</cell><cell>110 112</cell><cell>37 35</cell><cell>0.50 0.52</cell></row><row><cell>Best Feature Subset</cell><cell>Average Best</cell><cell>79.33 81.86</cell><cell>117 120</cell><cell>30 27</cell><cell>0.59 0.63</cell></row></table></figure>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="3" xml:id="foot_0">The videos of the 24 Scenarios can be found on the following link: http://itu.dk/people/cogr/FairnessExperiment/TCCI_index.php</note>
+			<note xmlns="http://www.tei-c.org/ns/1.0" place="foot" n="4" xml:id="foot_1">http://www.facebook.com</note>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Acknowledgments. This work has been supported, in part, by the FP7 ICT projects SIREN (project no: 258453) and ILearnRW (project no: 318803). The authors would like to thank all participants of the crowdsourcing experiment. Special thanks to Yana Knight for proofreading.</p></div>
+			</div>
+
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct xml:id="b0">
+	<analytic>
+		<title/>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">A</forename><surname>Akerlof</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">E</forename><surname>Kranton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Economics and Identity. The Quarterly Journal of Economics</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="715" to="753" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b1">
+	<monogr>
+		<author>
+			<persName><forename type="first">R</forename><surname>Axelrod</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">D</forename><surname>Hamilton</surname></persName>
+		</author>
+		<title level="m">The Evolution of Cooperation</title>
+				<imprint>
+			<date type="published" when="1981">1981</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Dictator Game Giving: Rules of Fairness Versus Acts of Kindness</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">E</forename><surname>Bolton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Katok</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Zwick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Game Theory</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="page" from="269" to="299" />
+			<date type="published" when="1998">1998</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Understanding Social Preferences with Simple Tests</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Charness</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rabin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The Quarterly Journal of Economics</title>
+		<imprint>
+			<biblScope unit="volume">117</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="817" to="869" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Individual Behavior and Group Membership</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Charness</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><surname>Rigotti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Rustichini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Available at SSRN</title>
+		<imprint>
+			<biblScope unit="volume">894685</biblScope>
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b5">
+	<analytic>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Chen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">X</forename><surname>Li</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Group Identity and Social Preferences</title>
+				<imprint>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="431" to="457" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b6">
+	<analytic>
+		<title level="a" type="main">A Computational Approach Towards Conflict Resolution for Serious Games</title>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">G</forename><surname>Cheong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Khaled</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Grappiolo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Campos</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Martinho</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">P D</forename><surname>Ingram</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paiva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Sixth International Conference on the Foundations of Digital Games</title>
+				<meeting>the Sixth International Conference on the Foundations of Digital Games</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b7">
+	<analytic>
+		<title level="a" type="main">Preference Learning with Gaussian Processes</title>
+		<author>
+			<persName><forename type="first">W</forename><surname>Chu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Z</forename><surname>Ghahramani</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 22nd International Conference on Machine learning</title>
+				<meeting>the 22nd International Conference on Machine learning</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Social Dilemmas</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">M</forename><surname>Dawes</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Messick</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">International Journal of Psychology</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="issue">35</biblScope>
+			<biblScope unit="page" from="111" to="116" />
+			<date type="published" when="2000">2000</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Artificial Agents Learning Human Fairness</title>
+		<author>
+			<persName><forename type="first">De</forename><surname>Jong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Tuyls</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Verbeeck</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 7th International Joint Conference on Autonomous Agents and Multiagent Systems</title>
+				<meeting>the 7th International Joint Conference on Autonomous Agents and Multiagent Systems</meeting>
+		<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page" from="863" to="870" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b10">
+	<analytic>
+		<title level="a" type="main">A New Fairness Index for Radio Resource Allocation in Wireless Networks</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Dianati</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">X</forename><surname>Shen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Naik</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Wireless Communications and Networking Conference</title>
+				<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="712" to="717" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b11">
+	<monogr>
+		<author>
+			<persName><forename type="first">N</forename><surname>Ducheneaut</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><surname>Yee</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Nickell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">J</forename><surname>Moore</surname></persName>
+		</author>
+		<title level="m">Alone Together? Exploring the Social Dynamics of Massively Multiplayer Online Games</title>
+				<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="page" from="407" to="416" />
+		</imprint>
+	</monogr>
+	<note>Proceedings of the SIGCHI Conference on Human Factors in Computing Systems</note>
+</biblStruct>
+
+<biblStruct xml:id="b12">
+	<analytic>
+		<title level="a" type="main">Inferring Friendship Network Structure by Using Mobile Phone Data</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Eagle</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">S</forename><surname>Pentland</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Lazer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of the National Academy of Sciences</title>
+		<imprint>
+			<biblScope unit="volume">106</biblScope>
+			<biblScope unit="issue">36</biblScope>
+			<biblScope unit="page" from="15274" to="15278" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Growing Artificial Societies: Social Science from the Bottom Up (Complex Adaptive Systems)</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">M</forename><surname>Epstein</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">L</forename><surname>Axtell</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1996">1996</date>
+			<publisher>The MIT Press</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b14">
+	<analytic>
+		<title level="a" type="main">Why Social Preferences Matter -The Impact of Non-Selfish Motives on Competition, Cooperation and Incentives</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Fehr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">U</forename><surname>Fischbacher</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Economic Journal</title>
+		<imprint>
+			<biblScope unit="volume">112</biblScope>
+			<biblScope unit="page" from="1" to="33" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b15">
+	<analytic>
+		<title level="a" type="main">A Theory Of Fairness, Competition, And Cooperation</title>
+		<author>
+			<persName><forename type="first">E</forename><surname>Fehr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">M</forename><surname>Schmidt</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The Quarterly Journal of Economics</title>
+		<imprint>
+			<biblScope unit="volume">114</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="817" to="868" />
+			<date type="published" when="1999-08">August 1999</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b16">
+	<analytic>
+		<title level="a" type="main">Fairness in Simple Bargaining Experiments</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Forsythe</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Games and Economic Behavior</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="347" to="369" />
+			<date type="published" when="1994">1994</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Colored Trails: a Formalism for Investigating Decision-making in Strategic Environments</title>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Gal</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Grosz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Kraus</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pfeffer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Shieber</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2005 IJCAI Workshop on Reasoning, Representation, and Learning in Computer Games</title>
+				<meeting>the 2005 IJCAI Workshop on Reasoning, Representation, and Learning in Computer Games</meeting>
+		<imprint>
+			<date type="published" when="2005">2005</date>
+			<biblScope unit="page" from="25" to="30" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Measurement of Inequality of Incomes</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Gini</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">The Economic Journal</title>
+		<imprint>
+			<biblScope unit="volume">31</biblScope>
+			<biblScope unit="issue">121</biblScope>
+			<biblScope unit="page" from="124" to="126" />
+			<date type="published" when="1921-03">March 1921</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Community structure in social and biological networks</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Girvan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">E</forename><surname>Newman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings of the National Academy of Sciences</title>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="7821" to="7826" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Modelling Global Pattern Formation for Collaborative Learning Environments</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Grappiolo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">G</forename><surname>Cheong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Khaled</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE International Conference on Advanced Learning Technologies</title>
+				<meeting>the IEEE International Conference on Advanced Learning Technologies</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Towards Player Adaptivity in a Serious Game for Conflict Resolution</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Grappiolo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><forename type="middle">G</forename><surname>Cheong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Togelius</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Khaled</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3rd IEEE International Conference in Games and Virtual Worlds for Serious Applications</title>
+				<meeting>the 3rd IEEE International Conference in Games and Virtual Worlds for Serious Applications</meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="192" to="198" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Interaction-based Group Identity Detection via Reinforcement Learning and Artificial Evolution</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Grappiolo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Togelius</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Evolutionary Computation and Multi-agent Systems and Simulation workshop, Genetic and Evolutionary Computation Conference</title>
+				<meeting>the Evolutionary Computation and Multi-agent Systems and Simulation workshop, Genetic and Evolutionary Computation Conference</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="1423" to="1430" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Towards Detecting Group Identities in Complex Artificial Societies</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Grappiolo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the Simulation of Adaptive Behaviour Conference</title>
+				<meeting>the Simulation of Adaptive Behaviour Conference</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="421" to="430" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Evolutionary Games and the Study of Cooperation: Why Has So Little Progress Been Made?</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">W</forename><surname>Greenwood</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Ashlock</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE World Congress on Computational Intelligence</title>
+				<meeting>the IEEE World Congress on Computational Intelligence</meeting>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b25">
+	<analytic>
+		<title level="a" type="main">The Evolution of Ethnocentrism</title>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">A</forename><surname>Hammond</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Axelrod</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Conflict Resolution</title>
+		<imprint>
+			<biblScope unit="volume">50</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="926" to="936" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Support Vector Learning for Ordinal Regression</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Herbrich</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Graepel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Obermayer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the International Conference on Artificial Neural Networks</title>
+				<meeting>the International Conference on Artificial Neural Networks</meeting>
+		<imprint>
+			<date type="published" when="1999">1999</date>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="97" to="102" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b27">
+	<analytic>
+		<title level="a" type="main">Evolutionary Games and Computer Simulations</title>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">A</forename><surname>Huberman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">N</forename><forename type="middle">S</forename><surname>Glance</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Proceedings National Academy of Science</title>
+		<imprint>
+			<biblScope unit="volume">90</biblScope>
+			<biblScope unit="issue">16</biblScope>
+			<biblScope unit="page" from="7716" to="7718" />
+			<date type="published" when="1993">1993</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b28">
+	<monogr>
+		<title level="m" type="main">A Quantitative Measure of Fairness and Discrimination for Resource Allocation in Shared Computer System</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Jain</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><forename type="middle">M</forename><surname>Chiu</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">W</forename><forename type="middle">R</forename><surname>Hawe</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1984">1984</date>
+			<publisher>Digital Equipment Corporation</publisher>
+			<pubPlace>Eastern Research Laboratory</pubPlace>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b29">
+	<monogr>
+		<author>
+			<persName><forename type="first">T</forename><surname>Joachims</surname></persName>
+		</author>
+		<title level="m">Learning to Classify Text Using Support Vector Machines -Methods, Theory, and Algorithms</title>
+				<imprint>
+			<publisher>Kluwer/Springer</publisher>
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b30">
+	<analytic>
+		<title level="a" type="main">Optimizing Search Engines Using Clickthrough Data</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Joachims</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 8th SIGKDD International Conference on Knowledge Discovery and Data Mining</title>
+				<meeting>the 8th SIGKDD International Conference on Knowledge Discovery and Data Mining</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2002">2002</date>
+			<biblScope unit="page" from="133" to="142" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b31">
+	<analytic>
+		<title level="a" type="main">Multi-resource Allocation: Fairnessefficiency Tradeoffs in a Unifying Framework</title>
+		<author>
+			<persName><forename type="first">C</forename><surname>Joe-Wong</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sen</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Lan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Chiang</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE International Conference on Computer Communications</title>
+				<meeting>the IEEE International Conference on Computer Communications</meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="1206" to="1214" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b32">
+	<analytic>
+		<title level="a" type="main">Fairness in Ultimatum Games with Asymmetric Information and Asymmetric Payoffs</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Kagel</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">C</forename><surname>Kim</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Moser</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Games and Economic Behavior</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="100" to="110" />
+			<date type="published" when="1996">1996</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b33">
+	<analytic>
+		<title level="a" type="main">The Role of Identity in Intra-and Inter-Group Bargaining in the Ultimatum Game</title>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">H</forename><surname>Kim</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Undergraduate Economic Review</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">6</biblScope>
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b34">
+	<analytic>
+		<author>
+			<persName><forename type="first">R</forename><surname>Kranton</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Pease</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Sanders</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Huettel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Group Conflict, and Social Preferences</title>
+				<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+	<note type="report_type">Working Paper</note>
+</biblStruct>
+
+<biblStruct xml:id="b35">
+	<analytic>
+		<title level="a" type="main">Limits of Modularity Maximization in Community Detection</title>
+		<author>
+			<persName><forename type="first">A</forename><surname>Lancichinetti</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Fortunato</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Physical Review E</title>
+		<imprint>
+			<biblScope unit="volume">84</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page">66122</biblScope>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b36">
+	<analytic>
+		<title level="a" type="main">Complex Adaptive Systems</title>
+		<author>
+			<persName><forename type="first">S</forename><forename type="middle">J</forename><surname>Lansing</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Annual Review of Anthropology</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="183" to="204" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b37">
+	<analytic>
+		<title level="a" type="main">Modelling and Evaluation of Complex Scenarios with the Strategy Game Description Language</title>
+		<author>
+			<persName><forename type="first">T</forename><surname>Mahlmann</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Togelius</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the IEEE Conference for Computational Intelligence and Games</title>
+				<meeting>the IEEE Conference for Computational Intelligence and Games<address><addrLine>Seoul, KR</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b38">
+	<analytic>
+		<title level="a" type="main">Mining multimodal sequential patterns: a case study on affect detection</title>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">P</forename><surname>Martínez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of International Conference on Multimodal Interfaces (ICMI)</title>
+				<meeting>International Conference on Multimodal Interfaces (ICMI)</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="page" from="3" to="10" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b39">
+	<analytic>
+		<title level="a" type="main">Genetic Search Feature Selection for Affective Modeling: a Case Study on Reported Preferences</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Martínez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Yannakakis</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 3rd International Workshop on Affective Interaction in Natural Environments</title>
+				<meeting>the 3rd International Workshop on Affective Interaction in Natural Environments</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="15" to="20" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b40">
+	<analytic>
+		<title level="a" type="main">Modelling Symmetry of Activity as an Indicator of Collocated Group Collaboration</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Martinez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Kay</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Wallace</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Yacef</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">User Modeling, Adaption and Personalization</title>
+				<imprint>
+			<publisher>Springer Berlin / Heidelberg</publisher>
+			<date type="published" when="2011">2011</date>
+			<biblScope unit="volume">6787</biblScope>
+			<biblScope unit="page" from="207" to="218" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b41">
+	<analytic>
+		<title level="a" type="main">Social preferences in Relational Contexts</title>
+		<author>
+			<persName><forename type="first">F</forename><surname>Marzo</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><forename type="middle">J</forename><surname>Grosz</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Pfeffer</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Fourth Conference in Collective Intentionality</title>
+				<imprint>
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b42">
+	<monogr>
+		<title level="m" type="main">Fairness of Resource Allocation in Cellular Networks: A Survey</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Montuno</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">Y</forename><surname>Zhacfi</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="2006">2006</date>
+			<biblScope unit="page" from="249" to="266" />
+		</imprint>
+	</monogr>
+	<note>Resource Allocation in Next Generation Wireless Networks</note>
+</biblStruct>
+
+<biblStruct xml:id="b43">
+	<analytic>
+		<title level="a" type="main">Five Rules for the Evolution of Cooperation</title>
+		<author>
+			<persName><forename type="first">M</forename><forename type="middle">A</forename><surname>Nowak</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Science</title>
+		<imprint>
+			<biblScope unit="volume">314</biblScope>
+			<biblScope unit="issue">5805</biblScope>
+			<biblScope unit="page" from="1560" to="1563" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b44">
+	<analytic>
+		<title level="a" type="main">Quantifying Social Group Evolution</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Palla</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><forename type="middle">L</forename><surname>Barabási</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">T</forename><surname>Vicsek</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Nature</title>
+		<imprint>
+			<biblScope unit="volume">446</biblScope>
+			<biblScope unit="issue">7136</biblScope>
+			<biblScope unit="page" from="664" to="667" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b45">
+	<analytic>
+		<title level="a" type="main">Fairness Issues in Resource Allocation Schemes for Wireless Visual Sensor Networks</title>
+		<author>
+			<persName><forename type="first">K</forename><surname>Pandremmenou</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">L</forename><forename type="middle">P</forename><surname>Kondi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><forename type="middle">E</forename><surname>Parsopoulos</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IS&amp;T/SPIE Electronic Imaging</title>
+				<imprint>
+			<publisher>International Society for Optics and Photonics</publisher>
+			<date type="published" when="2013">2013</date>
+			<biblScope unit="page" from="866601" to="866601" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b46">
+	<analytic>
+		<title level="a" type="main">Teaming Up Humans with Autonomous synthetic Characters</title>
+		<author>
+			<persName><forename type="first">R</forename><surname>Prada</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paiva</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Artificial Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">173</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="80" to="103" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b47">
+	<monogr>
+		<title level="m" type="main">Incorporating Fairness into Game Theory and Economics. The American Economic Review</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Rabin</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1993">1993</date>
+			<biblScope unit="page" from="1281" to="1302" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b48">
+	<monogr>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">B</forename><surname>Rocha</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Mascarenhas</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Prada</surname></persName>
+		</author>
+		<title level="m">Game Mechanics for Cooperative Games</title>
+				<imprint>
+			<date type="published" when="2008">2008</date>
+			<biblScope unit="page" from="73" to="80" />
+		</imprint>
+		<respStmt>
+			<orgName>Universidade do Minho</orgName>
+		</respStmt>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b49">
+	<analytic>
+		<title level="a" type="main">Understanding and Evaluating Cooperative Games</title>
+		<author>
+			<persName><forename type="first">Seif</forename><surname>El-Nasr</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Aghabeigi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Milam</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Erfani</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">M</forename><surname>Lameman</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">B</forename><surname>Maygoli</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><surname>Mah</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 28th International Conference on Human Factors in Computing Systems</title>
+				<meeting>the 28th International Conference on Human Factors in Computing Systems</meeting>
+		<imprint>
+			<publisher>ACM</publisher>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="253" to="262" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b50">
+	<analytic>
+		<title level="a" type="main">Crowd-Sourcing the Aesthetics of Platform Games</title>
+		<author>
+			<persName><forename type="first">N</forename><surname>Shaker</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">G</forename><surname>Yannakakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Togelius</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Computational Intelligence and AI in Games</title>
+		<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b51">
+	<analytic>
+		<title level="a" type="main">A Fairness Model for Resource Allocation in Wireless Networks</title>
+		<author>
+			<persName><forename type="first">H</forename><surname>Shi</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><forename type="middle">V</forename><surname>Prasad</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">V</forename><forename type="middle">S</forename><surname>Rao</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">I</forename><surname>Niemegeers</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Networking Workshops</title>
+				<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2012">2012</date>
+			<biblScope unit="page" from="1" to="9" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b52">
+	<analytic>
+		<title level="a" type="main">Policy Simulation and E-Governance</title>
+		<author>
+			<persName><forename type="first">P</forename><surname>Sonntagbauer</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Aizstrauts</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">E</forename><surname>Ginters</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">D</forename><surname>Aizstrauta</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">IADIS International Conference e-Society</title>
+				<imprint>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b53">
+	<analytic>
+		<title level="a" type="main">Measuring Social Dynamics in a Massive Multiplayer Online Game</title>
+		<author>
+			<persName><forename type="first">M</forename><surname>Szell</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">S</forename><surname>Thurner</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Social Networks</title>
+		<imprint>
+			<biblScope unit="volume">32</biblScope>
+			<biblScope unit="page" from="313" to="329" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b54">
+	<analytic>
+		<title level="a" type="main">Time-based Fairness Improves Performance in Multi-Rate WLANs</title>
+		<author>
+			<persName><forename type="first">G</forename><surname>Tan</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><forename type="middle">V</forename><surname>Guttag</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">USENIX Annual Technical Conference</title>
+				<imprint>
+			<date type="published" when="2004">2004</date>
+			<biblScope unit="page" from="269" to="282" />
+		</imprint>
+	</monogr>
+	<note>General Track</note>
+</biblStruct>
+
+<biblStruct xml:id="b55">
+	<analytic>
+		<title level="a" type="main">Social Preference, Incomplete Information, and the Evolution of Ultimatum Game in the Small World Networks: An Agent-Based Approach</title>
+		<author>
+			<persName><forename type="first">B</forename><surname>Xianyu</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Artificial Societies and Social Simulation</title>
+		<imprint>
+			<biblScope unit="volume">13</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page">7</biblScope>
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b56">
+	<analytic>
+		<title level="a" type="main">Towards Optimizing Entertainment in Computer Games</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hallam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">Applied Artificial Intelligence</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="933" to="971" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b57">
+	<analytic>
+		<title level="a" type="main">Rating vs. Preference: A Comparative Study of Self-reporting</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Hallam</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings of the 2011 Affective Computing and Intelligent Interaction Conference</title>
+				<meeting>the 2011 Affective Computing and Intelligent Interaction Conference</meeting>
+		<imprint>
+			<publisher>Springer</publisher>
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b58">
+	<analytic>
+		<title level="a" type="main">Towards Affective Camera Control in Games</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">H</forename><forename type="middle">P</forename><surname>Martnez</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jhala</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">User Modeling and User-Adapted Interaction</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="page" from="313" to="340" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b59">
+	<analytic>
+		<title level="a" type="main">Experience-Driven Procedural Content Generation</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Togelius</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j">IEEE Transactions on Affective Computing</title>
+		<imprint>
+			<biblScope unit="volume">2</biblScope>
+			<biblScope unit="page" from="147" to="161" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct xml:id="b60">
+	<analytic>
+		<title level="a" type="main">Siren: Towards Adaptive Serious Games for Teaching Conflict Resolution</title>
+		<author>
+			<persName><forename type="first">G</forename><forename type="middle">N</forename><surname>Yannakakis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">J</forename><surname>Togelius</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">R</forename><surname>Khaled</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Jhala</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">K</forename><surname>Karpouzis</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Paiva</surname></persName>
+		</author>
+		<author>
+			<persName><forename type="first">A</forename><surname>Vasalou</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m">Proceedings European Conference on Games-Based Learning (ECGBL)</title>
+				<meeting>European Conference on Games-Based Learning (ECGBL)<address><addrLine>Copenhagen</addrLine></address></meeting>
+		<imprint>
+			<date type="published" when="2010">2010</date>
+			<biblScope unit="page" from="412" to="417" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>
