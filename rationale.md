@@ -41,7 +41,7 @@ Pip is a package manager for installing and managing Python software packages
 ### Installing lxml
 
 ```bash
-  pip install beautifulsoup4
+  pip install lxml
 ```
 
 ### Installing Image
