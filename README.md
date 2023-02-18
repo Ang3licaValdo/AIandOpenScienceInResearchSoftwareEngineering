@@ -2,7 +2,7 @@
 
 This repository has been created with the purpose of uploading all the deliverables of the subject called "AI and Open Science In Research Software Engineering".
 
-## DOI to the repository
+## DOI of the repository
 https://zenodo.org/badge/latestdoi/596545346
 
 ## First Assigment
