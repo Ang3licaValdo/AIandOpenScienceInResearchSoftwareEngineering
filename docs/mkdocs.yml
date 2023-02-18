@@ -1,9 +1,0 @@
-site_name: Software for Data Visualization obtained with text analysis tools documentation
-site_url: https://example.com/
-nav:
-    - Home: index.md
-    - Requirements: requirements.md
-    - How to run the first task Python file: firstassigment.md
-    - How to run the second task Python file: secondassigment.md
-    - How to run the third task Python file: thirdassigment.md
-theme: readthedocs
