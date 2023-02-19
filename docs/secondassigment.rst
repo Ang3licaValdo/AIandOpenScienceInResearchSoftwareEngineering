@@ -17,7 +17,7 @@ For executing the ‘visualization.py’ file:
 As an output you’ll get a bar graph, each bar represents how many
 figures there are in each article.
 
-Output visualization:
----------------------
+Output visualization: |Output example|
+
 
 .. |Output example| image:: /images/graph.png
