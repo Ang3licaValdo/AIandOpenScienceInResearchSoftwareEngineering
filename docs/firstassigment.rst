@@ -25,6 +25,7 @@ As an output you’ll get eleven .png files, ten of them are a cloud with
 the keywords of each paper and the one named ‘wordcloud_output.png’
 contains the keywords of the ten papers.
 
-## Output example: |Output example|
+Output example: |Output example|
+###############
 
 .. |Output example| image:: /images/wordcloud_paper1.png
