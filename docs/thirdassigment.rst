@@ -26,4 +26,7 @@ each pdf.
 Output example:
 ---------------
 
+|Output example|
+
+
 .. |Output example| image:: /images/links.png
