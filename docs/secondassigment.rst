@@ -19,4 +19,6 @@ figures there are in each article.
 
 
 Output visualization: |Output example|
+
+
 .. |Output example| image:: /images/graph.png
