@@ -23,6 +23,7 @@ For executing the ‘link.py’ file:
 As an output you’ll get a .txt file that’ll contain the link found in
 each pdf.
 
-##Output example: |Output example|
+Output example:
+---------------
 
 .. |Output example| image:: /images/links.png
