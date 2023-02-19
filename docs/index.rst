@@ -24,4 +24,4 @@ Software for Data Visualization obtained with text analysis tools documentation
 .. toctree::
     :caption: How to run the third task Python file
 
-    thirdsassigment
+    thirdassigment
