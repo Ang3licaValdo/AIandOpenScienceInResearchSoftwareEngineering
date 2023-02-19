@@ -20,5 +20,5 @@ figures there are in each article.
 
 Output visualization: 
 
-|Output example|
+oooo |Output example|
 .. |Output example| image:: /images/graph.png
