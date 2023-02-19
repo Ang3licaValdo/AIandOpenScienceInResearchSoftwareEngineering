@@ -20,6 +20,7 @@ figures there are in each article.
 
 Output visualization: 
 ---------------------
+
 |Output example|
 
 
