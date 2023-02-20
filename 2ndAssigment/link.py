@@ -1,5 +1,19 @@
 from bs4 import BeautifulSoup
-#Deefining  lists
+
+def findingDOI(doi_all, list_of_words,f):
+    i = 0
+
+    for doi in range(len(doi_all)):
+        i = i+1
+        if len(doi_all) != 0: 
+            doi_noxml = BeautifulSoup(str(doi_all[doi]), "lxml").text
+            list_of_words.append(doi_noxml)
+            f.write(doi_noxml + '\n')
+    if i == len(doi_all):
+        return "All DOI links added"
+    
+
+#Defining  lists
 list_of_xml = ['Papers/1Report.xml','Papers/2Report.xml','Papers/3Report.xml','Papers/4Report.xml','Papers/5Report.xml','Papers/6Report.xml','Papers/7Report.xml','Papers/8Report.xml','Papers/10Report.xml','Papers/11Report.xml']
 list_of_links = []
 list_of_words = []
@@ -42,12 +56,8 @@ for paper in range(len(list_of_xml)):
 
     #Finding all of the DOI in each paper
     doi_all = parser_data.find_all('idno', type ='DOI')
+    findingDOI(doi_all, list_of_words,f)
 
-    for doi in range(len(doi_all)):
-        if len(doi_all) != 0: 
-            doi_noxml = BeautifulSoup(str(doi_all[doi]), "lxml").text
-            list_of_words.append(doi_noxml)
-            f.write(doi_noxml + '\n')
     #Links listed on the references
     for links in parser_data.find_all('ptr'):
         f.write(links.get('target') + '\n')
