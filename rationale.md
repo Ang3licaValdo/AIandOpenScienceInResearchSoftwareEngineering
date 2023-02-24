@@ -107,7 +107,7 @@ For it to run in your computer, follow the next steps:
 **IMPORTANT:** Make sure that you have docker compose downloaded on your machine so you can execute this project using containers.
 
 1. Download the directory called Docker from this respository.
-2. Open your console and change directories until you are inside the docker directory and then change directories once more to the directory inside 'Docker' called 'compose'
+2. Open your console and change directories until you are inside the docker directory and then change directories once more to the directory inside 'Docker' called 'compose'.
 ```bash
   cd Docker
   cd compose
@@ -116,6 +116,6 @@ For it to run in your computer, follow the next steps:
 ```bash
   docker-compose up --build
 ```
-4. After you've run the prior command all of the output files from each of the Python files should be found on the directory called 'result_files' that can be found inside the directory 'compose'
+4. After you've run the prior command all of the output files from each of the Python files should be found on the directory called 'result_files' that can be found inside the directory 'compose'.
 
-
+And that's it! Now you have all of the output files in your computer :)
