@@ -15,7 +15,7 @@ Consists of analysing each paper and doing what's asked of me in the following s
 - Create a visualization showing the numbre of figures per article.
 - Create a list of links found in each paper. 
 
-Each step for how to make each of the three Python files work will be all explained in the file "rationale.md"
+Each step for how to make each of the three Python files work will be all explained in the file **"rationale.md"**
 
 ## Documentation
 You can check out this software's documentation on the next link:
