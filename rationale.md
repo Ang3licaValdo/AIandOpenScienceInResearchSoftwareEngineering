@@ -23,9 +23,7 @@ Each of these files can be found in the folder called '2ndAssigment'.
 
 ## Installing the Requirements in a virtual enviroment
 
-### Installing pip for Linux Python 3
-
-Fist of all, you need to have pip instal. Pip is a package manager for installing and managing Python software packages
+Fist of all, you need to have pip installed. Pip is a package manager for installing and managing Python software packages
 
 
 ```bash
@@ -48,29 +46,29 @@ Then you will like to create a virtual enviroment to run the scripts, for this, 
 ```
 5. As a final step, you'll need to install the next libraries inside the virtual enviroment, so after you see parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries requiered listed next. 
 
-### Installing BeautifulSoup
+- Installing BeautifulSoup
 
 ```bash
   pip install beautifulsoup4
 ```
   
-### Installing lxml
+- **Installing lxml**
 
 ```bash
   pip install lxml
 ```
 
-### Installing Image
+- **Installing Image**
 
 ```bash
   pip install image
 ```
-### Installing NumPy
+- **Installing NumPy**
 
 ```bash
   pip install numpy
 ```
-### Installing WordCloud
+- **Installing WordCloud**
 ```bash
   pip install wordcloud
 ```
