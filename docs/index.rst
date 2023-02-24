@@ -27,3 +27,9 @@ Software for Data Visualization obtained with text analysis tools documentation
 
     thirdassigment
     
+   
+.. toctree::
+    :caption: How to run in Docker
+
+    run_docker
+    
