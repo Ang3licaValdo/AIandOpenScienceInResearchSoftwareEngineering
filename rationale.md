@@ -21,7 +21,24 @@ Each of these files can be found in the folder called '2ndAssigment'.
 - Install Image
 - Installing Numpy
 
-## Installing the Requirements
+## Installing the Requirements in a virtual enviroment
+
+Firs of all, you will like to create a virtual enviroment to run the scripts, for this, follow the next steps:
+1. After you've downloaded the '2ndAssigment' directory, open your terminal and change directories until you are located inside the '2ndAssigment' directory.
+2. type the next command to install virtual enviroments:
+```bash
+  python3 -m pip install --user virtualenv
+```
+3. Set up ithe virtual enviroment (give it any name you like, inn this next command the name is 'test'
+```bash
+  python3 -m venv test
+```
+4. Activate your enviroment:
+```bash
+  source env_3.10/bin/activate
+```
+5. As a final step, you'll need to install the next libraries inside the virtual enviroment, so after you see parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries requiered listed next. 
+
 
 ### Installing pip for Linux Python 3
 
