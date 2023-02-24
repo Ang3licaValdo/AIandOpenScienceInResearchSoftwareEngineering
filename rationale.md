@@ -95,7 +95,7 @@ For executing the 'link.py' file:
 
 As an output you'll get a .txt file that'll contain the link found in each pdf.
 
-## How to run with docker
+# How to execute this project with docker
 
 Docker allows to create containers for applications, so they can be run in any computer without having issues with libraries and dependencies.
 Since this project consists of three different Python scripts, it is good practice to have them each in a different container. Docker offers an option so you can run different applications at the same time, it's called Docker compose, to use it, you have to create a docker-compose.yml file and declare each application, its location in the file system and whatever else you want to add, like volumes.
