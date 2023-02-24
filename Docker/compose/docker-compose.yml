@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  link:
+    build: ./links
+    volumes:
+      - type: bind
+        source: ./result_files
+        target: /para_la_prueba/files
+  cloud:
+    build: ./clouds
+    volumes:
+      - type: bind
+        source: ./result_files
+        target: /para_la_prueba/files
+  figures:
+    build: ./figures
+    volumes:
+      - type: bind
+        source: ./result_files
+        target: /para_la_prueba/files 
