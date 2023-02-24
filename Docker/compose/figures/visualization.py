@@ -35,6 +35,7 @@ ax.set_ylabel('Number of figures per paper')
 ax.set_title('Number of figures in each paper.')
 
 #saving the graph
+plt.gcf().set_size_inches(10, 5)
 plt.savefig('files/graph_figures.png')
 
 
