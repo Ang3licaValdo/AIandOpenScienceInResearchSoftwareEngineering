@@ -22,10 +22,12 @@ for installing and managing Python software packages
      sudo apt install python3-pip
 
 Then you will like to create a virtual enviroment to run the scripts,
-for this, follow the next steps: 1. After you’ve downloaded the
-‘2ndAssigment’ directory, open your terminal and change directories
-until you are located inside the ‘2ndAssigment’ directory. 2. type the
-next command to install virtual enviroments:
+for this, follow the next steps: 
+
+1. After you’ve downloaded then‘2ndAssigment’ directory, open your terminal and change directories
+until you are located inside the ‘2ndAssigment’ directory. 
+
+2. type the next command to install virtual enviroments:
 
 .. code:: bash
 
