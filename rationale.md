@@ -23,7 +23,16 @@ Each of these files can be found in the folder called '2ndAssigment'.
 
 ## Installing the Requirements in a virtual enviroment
 
-Firs of all, you will like to create a virtual enviroment to run the scripts, for this, follow the next steps:
+### Installing pip for Linux Python 3
+
+Fist of all, you need to have pip instal. Pip is a package manager for installing and managing Python software packages
+
+
+```bash
+  sudo apt install python3-pip
+```
+
+Then you will like to create a virtual enviroment to run the scripts, for this, follow the next steps:
 1. After you've downloaded the '2ndAssigment' directory, open your terminal and change directories until you are located inside the '2ndAssigment' directory.
 2. type the next command to install virtual enviroments:
 ```bash
@@ -38,16 +47,6 @@ Firs of all, you will like to create a virtual enviroment to run the scripts, fo
   source env_3.10/bin/activate
 ```
 5. As a final step, you'll need to install the next libraries inside the virtual enviroment, so after you see parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries requiered listed next. 
-
-
-### Installing pip for Linux Python 3
-
-Pip is a package manager for installing and managing Python software packages
-
-
-```bash
-  sudo apt install python3-pip
-```
 
 ### Installing BeautifulSoup
 
