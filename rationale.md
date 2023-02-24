@@ -131,5 +131,9 @@ For it to run in your computer, follow the next steps:
   docker-compose up --build
 ```
 4. After you've run the prior command all of the output files from each of the Python files should be found on the directory called 'result_files' that can be found inside the directory 'compose'.
+5. Now, type the next command:
+```bash
+  docker-compose down
+```
 
 And that's it! Now you have all of the output files in your computer :)
