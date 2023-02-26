@@ -1,17 +1,18 @@
 
 # Second assigment 
 
-This is the file that'll be used to describe the making of the second assigment of the subject, mentioned on the README file, which consists in propogramming the next three points with Python:
+This is the file that'll be used to describe the making of the second assigment of the subject mentioned on the README file, which consists in programming the next three points using Python:
 
 1. Draw a keyword cloud based on the abstract information.
 2. Create a visualization showing the number of figures per article.
 3. Create a list of links found in each paper.
 
-To complete this task GROBID was used to obtain the xml file of each pdf that is being analyzed for this assigment, each pdf and each corresponding xml can be found in the 'Papers' folder.
+To complete this task GROBID is used to obtain the xml files of each pdf that is being analyzed for the assigment.
+
 
 ## Where to find the Python files
 
-Each of these files can be found in the folder called '2ndAssigment'.
+There is one python file for each of the three tasks mentioned above. Each of these files can be found inside the folder called '2ndAssigment'.
 
 ## Requirements
 - Having Python installed. 
@@ -21,7 +22,7 @@ Each of these files can be found in the folder called '2ndAssigment'.
 - Install Image
 - Installing Numpy
 
-## Installing the Requirements in a virtual enviroment
+## How to run the three python scripts with a virtual enviroment
 
 Fist of all, you need to have pip installed. Pip is a package manager for installing and managing Python software packages
 
@@ -31,12 +32,12 @@ Fist of all, you need to have pip installed. Pip is a package manager for instal
 ```
 
 Then you will like to create a virtual enviroment to run the scripts, for this, follow the next steps:
-1. After you've downloaded the '2ndAssigment' directory, open your terminal and change directories until you are located inside the '2ndAssigment' directory.
+1. After you've downloaded the contents of this repository, open your terminal and change directories until you are located inside the '2ndAssigment' directory.
 2. type the next command to install virtual enviroments:
 ```bash
   python3 -m pip install --user virtualenv
 ```
-3. Set up ithe virtual enviroment (give it any name you like, inn this next command the name is 'test'
+3. Set up the virtual enviroment (give it any name you like, inn this next command the name is 'test'
 ```bash
   python3 -m venv test
 ```
