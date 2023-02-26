@@ -133,6 +133,29 @@ As an output you'll get a .txt file that'll contain the link found in each pdf.
 
 # How to execute this project with docker
 
+First you have to make sure that you have your xmls ready to execute they Python scripts in a Docker container, for this, follow the next steps:
+
+## How to get your xmls from your own pdfs 
+1. Make sure you have GROBID server running, you can do this using Docker make sure you have it installed and the run the next commands in your terminal:
+- Pull the GROBID image: 
+```bash
+  docker pull lfoppiano/grobid:0.7.2
+```
+- Run the image:
+```bash
+  docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
+```
+The web service will be running in http://localhost:8070/
+
+2. Now copy and paste your pdfs into the directory called 'Papers', that you'll find inside the directory called 'compose', which location is: './AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose' if you are inside the directory that was downloaded when downloading this repository.
+ 
+3. Now make sure that you are inside the directory 'compose' which location is: './AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose', and run the next command:
+```bash
+  python request_grobid.py
+```
+This runs a Python script that'll connect to the GROBID server and download all of the XML of the pdfs inside the 'Papers' directory.
+
+## Running the Python scripts with Docker compose
 Docker allows to create containers for applications, so they can be run in any computer without having issues with libraries and dependencies.
 Since this project consists of three different Python scripts, it is good practice to have them each in a different container. Docker offers an option so you can run different applications at the same time, it's called Docker compose, to use it, you have to create a docker-compose.yml file and declare each application, its location in the file system and whatever else you want to add, like volumes.
 
