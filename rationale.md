@@ -21,6 +21,7 @@ There is one python file for each of the three tasks mentioned above. Each of th
 - Python parser: lxml 
 - Install Image
 - Installing Numpy
+- Installing Docker
 
 ## How to run the three python scripts with a virtual enviroment
 
@@ -45,7 +46,7 @@ Then you will like to create a virtual enviroment to run the scripts, for this, 
 ```bash
   source env_3.10/bin/activate
 ```
-5. As a final step, you'll need to install the next libraries inside the virtual enviroment, so after you see parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries requiered listed next. 
+5. You'll need to install the next libraries inside the virtual enviroment, so after you see parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries requiered listed next. 
 
 - Installing BeautifulSoup
 
@@ -73,6 +74,26 @@ Then you will like to create a virtual enviroment to run the scripts, for this, 
 ```bash
   pip install wordcloud
 ```
+## How to get your xmls from your own pdfs 
+1. Make sure you have GROBID server running, you can do this using Docker make sure you have it installed and the run the next commands in your terminal:
+- Pull the GROBID image: 
+```bash
+  docker pull lfoppiano/grobid:0.7.2
+```
+- Run the image:
+```bash
+  docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.7.2
+```
+The web service will be running in http://localhost:8070/
+
+2. Now copy and paste your pdfs inside the directory called 'Papers' that's inside the directory '2ndAssigment' that you downloaded when downloaded this repository.
+3. Now change directories in your terminal until you are inside the '2ndAssigment' directory and run the next command:
+```bash
+  python request_grobid.py
+```
+This runs a Python script that'll connect to the GROBID server and download all of the XML of the pdfs inside the 'Papers' directory.
+4. Chech the 'Papers' directory to make sure that all of the xmls are there and to stop the docker Grobid server pres ctrl + pq, after that, you can run each of the python scripts for each task, mentioned next:
+
 ## First task
 
 The first task is about presenting the most important words found in the abstarct of each article in a word cloud, for this to happen, thanks to GROBID we have an xml from each of the pdfs chosen, to find what we need it's easy to analyze and xml with the Python library called BeautifulSoup, to get the text from the 'abstract' tag, first i had to find the tag with the method called 'find_all' and afterwards with the BeautifulSoup constructor and .text we got a string free of xml tags, then that string is used as a parameter for the method generate(string) that belongs to the wordcloud python library, that's the one in charge of creating the word cloud.
@@ -122,10 +143,9 @@ For it to run in your computer, follow the next steps:
 **IMPORTANT:** Make sure that you have docker compose downloaded on your machine so you can execute this project using containers.
 
 1. Download the directory called Docker from this respository.
-2. Open your console and change directories until you are inside the docker directory and then change directories once more to the directory inside 'Docker' called 'compose'.
+2. Open your console and change directories until you are inside the directory named 'Docker' and then change directories once more to the directory inside 'Docker' called 'compose'.
 ```bash
-  cd Docker
-  cd compose
+  cd Docker/compose
 ```
 3. Once you are inside the 'compose' directory, run the next command on your terminal:
 ```bash
