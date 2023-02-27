@@ -33,21 +33,26 @@ Fist of all, you need to have pip installed. Pip is a package manager for instal
 ```
 
 Then you will like to create a virtual enviroment to run the scripts, for this, follow the next steps:
-1. After you've downloaded the contents of this repository, open your terminal and change directories until you are located inside the '2ndAssigment' directory.
+1. After you've downloaded the contents of this repository, open your terminal and change directories until you are located inside the '2ndAssigment' directory (you'll need to find the 'AIandOpenScienceInResearchSoftwareEngineering-main' directory wherever you dowloaded this repository first because the '2ndAssigment' directory is inside of it).
 2. type the next command to install virtual enviroments:
 ```bash
   python3 -m pip install --user virtualenv
 ```
-3. Set up the virtual enviroment (give it any name you like, inn this next command the name is 'test'
+3. Set up the virtual enviroment (give it any name you like, inn this next command the name is 'test'):
 ```bash
   python3 -m venv test
 ```
 4. Activate your enviroment:
 ```bash
-  source env_3.10/bin/activate
+  source test/bin/activate
 ```
 5. You'll need to install the next libraries inside the virtual enviroment, so after you see parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries requiered listed next. 
+To make this step easier in faster just type the next command in your terminal (you should be inside the '2ndAssigment' directory):
 
+```bash
+  pip install -r requirements.txt
+```
+If you want to install one by one, run the next commands:
 - Installing BeautifulSoup
 
 ```bash
