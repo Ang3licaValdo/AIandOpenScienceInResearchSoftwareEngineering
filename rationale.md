@@ -38,7 +38,7 @@ Then you will like to create a virtual enviroment to run the scripts, for this, 
 ```bash
   python3 -m pip install --user virtualenv
 ```
-3. Set up the virtual enviroment (give it any name you like, inn this next command the name is 'test'):
+3. Set up the virtual enviroment (give it any name you like, in this next command the name is 'test'):
 ```bash
   python3 -m venv test
 ```
@@ -46,8 +46,7 @@ Then you will like to create a virtual enviroment to run the scripts, for this, 
 ```bash
   source test/bin/activate
 ```
-5. You'll need to install the next libraries inside the virtual enviroment, so after you see parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries requiered listed next. 
-To make this step easier in faster just type the next command in your terminal (you should be inside the '2ndAssigment' directory):
+5. You'll need to install the next libraries inside the virtual enviroment, so after you see the parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries requiered listed next, or to make this step easier and faster just type the next command in your terminal (you should be inside the '2ndAssigment' directory):
 
 ```bash
   pip install -r requirements.txt
@@ -80,7 +79,7 @@ If you want to install one by one, run the next commands:
   pip install wordcloud
 ```
 ## How to get your xmls from your own pdfs 
-1. Make sure you have GROBID server running, you can do this using Docker make sure you have it installed and the run the next commands in your terminal:
+1. Make sure you have GROBID server running, you can do this using Docker (make sure you have it installed), and the run the next commands in another terminal:
 - Pull the GROBID image: 
 ```bash
   docker pull lfoppiano/grobid:0.7.2
@@ -91,13 +90,15 @@ If you want to install one by one, run the next commands:
 ```
 The web service will be running in http://localhost:8070/
 
-2. Now copy and paste your pdfs inside the directory called 'Papers' that's inside the directory '2ndAssigment' that you downloaded when downloaded this repository.
-3. Now change directories in your terminal until you are inside the '2ndAssigment' directory and run the next command:
+2. Now copy and paste your pdfs inside the directory called 'Papers' that's inside the directory '2ndAssigment' that you downloaded when downloading this repository.
+3. Now change directories in your terminal until you are inside the './AIandOpenScienceInResearchSoftwareEngineering-main/**2ndAssigment**' directory and run the next command:
 ```bash
   python request_grobid.py
 ```
-This runs a Python script that'll connect to the GROBID server and download all of the XML of the pdfs inside the 'Papers' directory.
-4. Chech the 'Papers' directory to make sure that all of the xmls are there and to stop the docker Grobid server pres ctrl + pq, after that, you can run each of the python scripts for each task, mentioned next:
+This runs a Python script that'll connect to the GROBID server and download all of the XML of the pdfs inside the 'Papers' directory, it maight take a few minutes.
+**NOTE: if the grobid server it's taking long just stop the container and start it again, and the run the prior command once more.
+
+4. Chech the 'Papers' directory to make sure that all of the xmls are there and stop the docker container, after that, you can run each of the python scripts for each task, mentioned next:
 
 ## First task
 
@@ -105,7 +106,7 @@ The first task is about presenting the most important words found in the abstarc
 
 The code that does all of the things above is in a Python file called 'cloud.py' 
 
-For executing the 'cloud.py' file:
+For executing the 'cloud.py' file, inside the '2ndAssigment' directory, run:
 ```bash
   python cloud.py
 ```
@@ -114,9 +115,9 @@ As an output you'll get eleven .png files, ten of them are a cloud with the keyw
 
 ## Second task
 
-For this task we have to represent in some way how many figures there are in each paper, for that i used a bar graph which data comes from finding all of the 'figure' tags with the method 'find_all' from BeautifulSoup and then counting the number of tags per paper and appending that number to a list. You'll get the bar graph aas soons as you execute the Python file called 'visualization.py' 
+For this task we have to represent in some way how many figures there are in each paper, for that i used a bar graph which data comes from finding all of the 'figure' tags with the method 'find_all' from BeautifulSoup and then counting the number of tags per paper and appending that number to a list. You'll get the bar graph as soon as you execute the Python file called 'visualization.py' 
 
-For executing the 'visualization.py' file:
+For executing the 'visualization.py' file, inside the '2ndAssigment' directory, run:
 ```bash
   python visualization.py
 ```
@@ -129,12 +130,14 @@ For this task we have list the links encountered in each paper, i did it by firs
 
 The code to obtain the .txt that contains the links to each paper is called 'link.py' 
 
-For executing the 'link.py' file:
+For executing the 'link.py' file, inside the '2ndAssigment' directory, run:
 ```bash
   python link.py
 ```
 
 As an output you'll get a .txt file that'll contain the link found in each pdf.
+
+You'll find all of the prior outputs in a directory inside '2ndAssigment' called 'output_files'.
 
 # How to execute this project with docker
 
@@ -154,11 +157,11 @@ The web service will be running in http://localhost:8070/
 
 2. Now copy and paste your pdfs into the directory called 'Papers', that you'll find inside the directory called 'compose', which location is: './AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose' if you are inside the directory that was downloaded when downloading this repository.
  
-3. Now make sure that you are inside the directory 'compose' which location is: './AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose', and run the next command:
+3. Now in your terminal, make sure that you are inside the directory 'compose' which location is: './AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose', and run the next command:
 ```bash
   python request_grobid.py
 ```
-This runs a Python script that'll connect to the GROBID server and download all of the XML of the pdfs inside the 'Papers' directory.
+This runs a Python script that'll connect to the GROBID server and download all of the XML of the pdfs inside the 'Papers' directory, this might take a few minutes.
 
 ## Running the Python scripts with Docker compose
 Docker allows to create containers for applications, so they can be run in any computer without having issues with libraries and dependencies.
