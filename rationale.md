@@ -141,9 +141,12 @@ You'll find all of the prior outputs in a directory inside '2ndAssigment' called
 
 # How to execute this project with docker
 
-First you have to make sure that you have your xmls ready to execute they Python scripts in a Docker container, for this, follow the next steps:
+First you have to make sure that you have your xmls ready to execute the Python scripts in a Docker container, for this, follow the next steps:
 
 ## How to get your xmls from your own pdfs 
+
+** NOTE:** If you already executed this project without docker, please still follow the next instructions and run the commands in the proper directories indicated next.
+
 1. Make sure you have GROBID server running, you can do this using Docker make sure you have it installed and the run the next commands in your terminal:
 - Pull the GROBID image: 
 ```bash
