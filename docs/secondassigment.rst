@@ -8,7 +8,8 @@ BeautifulSoup and then counting the number of tags per paper and
 appending that number to a list. You’ll get the bar graph aas soons as
 you execute the Python file called ‘visualization.py’
 
-For executing the ‘visualization.py’ file:
+For executing the ‘visualization.py’ file, inside the ‘2ndAssigment’ directory,
+run:
 
 .. code:: bash
 
