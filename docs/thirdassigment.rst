@@ -14,7 +14,8 @@ file.
 The code to obtain the .txt that contains the links to each paper is
 called ‘link.py’
 
-For executing the ‘link.py’ file:
+For executing the ‘link.py’ file, inside the ‘2ndAssigment’ directory,
+run:
 
 .. code:: bash
 
