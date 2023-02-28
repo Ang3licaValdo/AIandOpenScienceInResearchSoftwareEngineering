@@ -16,7 +16,7 @@ def openXML(xmlName):
             data =  f.read()
         return data
 
-def createWordcloud(cloudText):
+def createWordcloud(cloudText, i):
     #FOR THE WORDCLOUD OF EACH PAPER
 
     #frequent words that dont need to be included
@@ -33,7 +33,7 @@ def createWordcloud(cloudText):
     wc.generate(cloudText)
 
     #creating an image of the wordcloud
-    wc.to_file('./output_files/wordcloud_paper' + str(i) + '.png')
+    wc.to_file('./output_files/wordcloud_paper' + i + '.png')
 
 
 concat = ""
@@ -72,4 +72,4 @@ for paper in range(len(list_of_xml)):
 concat_definite = BeautifulSoup(concat, "lxml").text
 
 #creating a wordcloud of all of the pdf abstracts
-createWordcloud(concat_definite)
+createWordcloud(concat_definite, "_all_papers")
