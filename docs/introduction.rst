@@ -14,3 +14,5 @@ The three tasks ask for some sort of **visualization of data**, this
 data is obtained from the **XML** of 10 different pdfs, the XMLs were
 obtained by using the text analysis tool called **GROBID**.
 
+.. |DOI| image:: https://zenodo.org/badge/596545346.svg
+   :target: https://zenodo.org/badge/latestdoi/596545346
