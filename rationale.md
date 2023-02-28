@@ -91,7 +91,7 @@ If you want to install one by one, run the next commands:
 The web service will be running in http://localhost:8070/
 
 2. Now copy and paste your pdfs inside the directory called 'Papers' that's inside the directory '2ndAssigment' that you downloaded when downloading this repository.
-3. Now change directories in your terminal until you are inside the './AIandOpenScienceInResearchSoftwareEngineering-main/**2ndAssigment**' directory and run the next command:
+3. Now if you are not inside the '2ndAssigment' directory in your terminal already, change directories until you are inside the './AIandOpenScienceInResearchSoftwareEngineering-main/**2ndAssigment**' directory and run the next command:
 ```bash
   python request_grobid.py
 ```
