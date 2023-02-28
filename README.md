@@ -4,9 +4,6 @@
 
 This repository has been created with the purpose of uploading all the deliverables of the subject called "AI and Open Science In Research Software Engineering".
 
-## DOI of the repository
-https://zenodo.org/badge/latestdoi/596545346
-
 ## First Assigment
 The first homework consists on collecting ten papers for them to be analyzed with a text analysis tool called Grobid.
 
