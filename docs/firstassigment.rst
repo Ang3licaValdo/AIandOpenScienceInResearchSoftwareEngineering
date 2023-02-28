@@ -15,7 +15,8 @@ of creating the word cloud.
 The code that does all of the things above is in a Python file called
 ‘cloud.py’
 
-For executing the ‘cloud.py’ file:
+For executing the ‘cloud.py’ file, inside the ‘2ndAssigment’ directory,
+run:
 
 .. code:: bash
 
