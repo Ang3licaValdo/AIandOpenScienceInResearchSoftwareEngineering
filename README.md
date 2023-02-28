@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/596545346.svg)](https://zenodo.org/badge/latestdoi/596545346)
+
 # AI and Open Science In Research Software Engineering subject repository with deliverables 
 
 This repository has been created with the purpose of uploading all the deliverables of the subject called "AI and Open Science In Research Software Engineering".
