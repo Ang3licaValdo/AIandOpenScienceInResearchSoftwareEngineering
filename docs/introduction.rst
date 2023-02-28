@@ -1,3 +1,5 @@
+|DOI|
+
 Software for Data Visualization obtained with text analysis tools documentation
 ===============================================================================
 
@@ -9,10 +11,6 @@ there’s one Python script for each of the next tasks:
 3. Create a list of links found in each paper.
 
 The three tasks ask for some sort of **visualization of data**, this
-data is obtained from the **XML** of 10 different pdfs, the XMLs wer
+data is obtained from the **XML** of 10 different pdfs, the XMLs were
 obtained by using the text analysis tool called **GROBID**.
 
-DOI of the repository
----------------------
-
-https://zenodo.org/badge/latestdoi/596545346
