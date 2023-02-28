@@ -176,17 +176,16 @@ For it to run in your computer, follow the next steps:
 
 **IMPORTANT:** Make sure that you have docker compose downloaded on your machine so you can execute this project using containers.
 
-1. Download the directory called Docker from this respository.
-2. Open your console and change directories until you are inside the directory named 'Docker' and then change directories once more to the directory inside 'Docker' called 'compose'.
+1. Open your console and change directories until you are inside the directory named 'Docker' and then change directories once more to the directory inside 'Docker' called 'compose' ('./AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose)'.
 ```bash
   cd Docker/compose
 ```
-3. Once you are inside the 'compose' directory, run the next command on your terminal:
+2. Once you are inside the 'compose' directory, run the next command on your terminal:
 ```bash
   docker-compose up --build
 ```
-4. After you've run the prior command all of the output files from each of the Python files should be found on the directory called 'result_files' that can be found inside the directory 'compose'.
-5. Now, type the next command:
+3. After you've run the prior command all of the output files from each of the Python files should be found on the directory called 'result_files' that can be found inside the directory 'compose'.
+4. Now, type the next command:
 ```bash
   docker-compose down
 ```
