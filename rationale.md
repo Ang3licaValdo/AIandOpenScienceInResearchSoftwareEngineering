@@ -96,7 +96,7 @@ The web service will be running in http://localhost:8070/
   python request_grobid.py
 ```
 This runs a Python script that'll connect to the GROBID server and download all of the XML of the pdfs inside the 'Papers' directory, it maight take a few minutes.
-**NOTE: if the grobid server it's taking long just stop the container and start it again by running the prior command once more.
+**NOTE:** if the grobid server it's taking long just stop the container and start it again by running the prior command once more.
 
 4. Chech the 'Papers' directory to make sure that all of the xmls are there and stop the docker container, after that, you can run each of the python scripts for each task, mentioned next:
 
@@ -145,7 +145,7 @@ First you have to make sure that you have your xmls ready to execute the Python 
 
 ## How to get your xmls from your own pdfs 
 
-** NOTE:** If you already executed this project without docker, please still follow the next instructions and run the commands in the proper directories indicated next.
+**NOTE:** If you already executed this project without docker, please still follow the next instructions and run the commands in the proper directories indicated next.
 
 1. Make sure you have GROBID server running, you can do this using Docker make sure you have it installed and the run the next commands in your terminal:
 - Pull the GROBID image: 
