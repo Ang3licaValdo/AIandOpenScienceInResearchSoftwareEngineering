@@ -11,7 +11,7 @@ there’s one Python script for each of the next tasks:
 3. Create a list of links found in each paper.
 
 The three tasks ask for some sort of **visualization of data**, this
-data is obtained from the **XML** of 10 different pdfs, the XMLs were
+data is obtained from the **XML** of 10 different pdfs, the XMLs are
 obtained by using the text analysis tool called **GROBID**.
 
 .. |DOI| image:: https://zenodo.org/badge/596545346.svg
