@@ -6,7 +6,7 @@ are in each paper, for that i used a bar graph which data comes from
 finding all of the ‘figure’ tags with the method ‘find_all’ from
 BeautifulSoup and then counting the number of tags per paper and
 appending that number to a list. You’ll get the bar graph as soons as
-you execute the Python file called ‘visualization.py’as a png.
+you execute the Python file called ‘visualization.py’ as a png.
 
 For executing the ‘visualization.py’ file, inside the ‘2ndAssigment’ directory,
 run:
