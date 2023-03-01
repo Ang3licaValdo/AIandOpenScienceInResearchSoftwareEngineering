@@ -95,14 +95,14 @@ The web service will be running in http://localhost:8070/
 ```bash
   python request_grobid.py
 ```
-This runs a Python script that'll connect to the GROBID server and download all of the XML of the pdfs inside the 'Papers' directory, it maight take a few minutes.
+This runs a Python script that'll connect to the GROBID server using the Python client given by GROBID, and downloads all of the XML of the pdfs inside the 'Papers' directory, it might take a few minutes.
 **NOTE:** if the grobid server it's taking long just stop the container and start it again by running the prior command once more.
 
 4. Chech the 'Papers' directory to make sure that all of the xmls are there and stop the docker container, after that, you can run each of the python scripts for each task, mentioned next:
 
 ## First task
 
-The first task is about presenting the most important words found in the abstarct of each article in a word cloud, for this to happen, thanks to GROBID we have an xml from each of the pdfs chosen, to find what we need it's easy to analyze and xml with the Python library called BeautifulSoup, to get the text from the 'abstract' tag, first i had to find the tag with the method called 'find_all' and afterwards with the BeautifulSoup constructor and .text we got a string free of xml tags, then that string is used as a parameter for the method generate(string) that belongs to the wordcloud python library, that's the one in charge of creating the word cloud.
+The first task is about presenting the most important words found in the abstarct of each article in a word cloud, for this to happen, thanks to GROBID we have an xml from each of the pdfs chosen, to find what we need it's easy to analyze an xml with the Python library called BeautifulSoup, to get the text from the 'abstract' tag, first i had to find the tag with the method called 'find_all' and afterwards with the BeautifulSoup constructor and .text got a string free of xml tags, then that string is used as a parameter for the method generate(string) that belongs to the wordcloud python library, that's the one in charge of creating the word cloud.
 
 The code that does all of the things above is in a Python file called 'cloud.py' 
 
