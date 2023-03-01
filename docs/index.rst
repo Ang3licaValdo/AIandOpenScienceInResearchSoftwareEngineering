@@ -27,6 +27,12 @@ Software for Data Visualization obtained with text analysis tools documentation
 
     thirdassigment
     
+    
+.. toctree::
+    :caption: Where to find the output files of each Python script
+
+    where_to_find
+    
    
 .. toctree::
     :caption: How to run in Docker
