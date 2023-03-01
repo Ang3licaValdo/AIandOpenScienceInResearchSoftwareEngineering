@@ -46,7 +46,7 @@ The web service will be running in http://localhost:8070/
 
      python request_grobid.py
 
-This runs a Python script that’ll connect to the GROBID server and
+This runs a Python script that’ll connect to the GROBID server using the Grobid Python client and
 download all of the XML of the pdfs inside the ‘Papers’ directory, this
 might take a few minutes.
 
@@ -92,7 +92,8 @@ machine so you can execute this project using containers.
 
 3. After you’ve run the prior command all of the output files from each
    of the Python files should be found on the directory called
-   ‘result_files’ that can be found inside the directory ‘compose’.
+   **‘result_files’** that can be found inside the directory ‘compose’.
+   
 4. Now, type the next command:
 
 .. code:: bash
