@@ -62,7 +62,7 @@ for paper in range(len(list_of_xml)):
 
         if paragraph+1 == len(find_tag):
             #creating the wordcloud for each paper
-            createWordcloud(concat_def)
+            createWordcloud(concat_def,i)
 
             i = i+1
 
