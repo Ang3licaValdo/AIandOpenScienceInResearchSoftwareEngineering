@@ -111,22 +111,22 @@ For executing the 'cloud.py' file, inside the '2ndAssigment' directory, run:
   python cloud.py
 ```
 
-As an output you'll get eleven .png files, ten of them are a cloud with the keywords of each paper and the one named 'wordcloud_output.png' contains the keywords of the ten papers.
+As an output you'll get eleven .png files, ten of them are a cloud with the keywords of each paper and the one named 'wordcloud_paper_all_papers.png' contains the keywords of the ten papers.
 
 ## Second task
 
-For this task we have to represent in some way how many figures there are in each paper, for that i used a bar graph which data comes from finding all of the 'figure' tags with the method 'find_all' from BeautifulSoup and then counting the number of tags per paper and appending that number to a list. You'll get the bar graph as soon as you execute the Python file called 'visualization.py' 
+For this task we have to represent in some way how many figures there are in each paper, for that i used a bar graph which data comes from finding all of the 'figure' tags with the method 'find_all' from BeautifulSoup and then counting the number of tags per paper and appending that number to a list. You'll get the bar graph as soon as you execute the Python file called 'visualization.py' as a png.
 
 For executing the 'visualization.py' file, inside the '2ndAssigment' directory, run:
 ```bash
   python visualization.py
 ```
 
-As an output you'll get a bar graph, each bar represents how many figures there are in each article.
+As an output you'll get a png file called 'graph_figures.png'.
 
 ## Third task
 
-For this task we have list the links encountered in each paper, i did it by first checking the xml and observing how GROBID identified the links, cause some of them were found inside paragraph, others were DOI and others were identified with the tag 'ptr' which belong to the references that have links where the information came from, after realizing this, i used the method 'find_all' from the BeautifulSoup library and obtained the attribute of the tag which contained the url or simply the text in case of the DOI and all of it was written into a file.
+For this task we have list the links encountered in each paper, i did it by first checking the xml and observing how GROBID identified the links, cause some of them were found inside paragraphs, others were DOI and others were identified with the tag 'ptr' which belong to the references that have links where the information came from, after realizing this, i used the method 'find_all' from the BeautifulSoup library and obtained the attribute of the tag which contained the url or simply the text in case of the DOI and all of it was written into a file.
 
 The code to obtain the .txt that contains the links to each paper is called 'link.py' 
 
@@ -135,9 +135,10 @@ For executing the 'link.py' file, inside the '2ndAssigment' directory, run:
   python link.py
 ```
 
-As an output you'll get a .txt file that'll contain the link found in each pdf.
+As an output you'll get a .txt file called 'links.txt', that'll contain the link found in each pdf.
 
-You'll find all of the prior outputs in a directory inside '2ndAssigment' called 'output_files'.
+
+**You'll find all of the prior outputs in a directory inside '2ndAssigment' called 'output_files'.**
 
 # How to execute this project with docker
 
@@ -164,13 +165,13 @@ The web service will be running in http://localhost:8070/
 ```bash
   python request_grobid.py
 ```
-This runs a Python script that'll connect to the GROBID server and download all of the XML of the pdfs inside the 'Papers' directory, this might take a few minutes.
+This runs a Python script that'll connect to the GROBID server using the Grobid Python client library, and downloads all of the XML of the pdfs inside the 'Papers' directory, this might take a few minutes.
 
 ## Running the Python scripts with Docker compose
 Docker allows to create containers for applications, so they can be run in any computer without having issues with libraries and dependencies.
 Since this project consists of three different Python scripts, it is good practice to have them each in a different container. Docker offers an option so you can run different applications at the same time, it's called Docker compose, to use it, you have to create a docker-compose.yml file and declare each application, its location in the file system and whatever else you want to add, like volumes.
 
-For this project Docker compose was the easiest way of containerizing my Python files, because it allows for all of them to run at the same time and also adding a bind mount which is used to retrieve the output files that each file creates and stroing them in a directory in the host machine so the user can see the output since containers don't have a graphic enviroment.
+For this project Docker compose was the easiest way of containerizing my Python files, because it allows for all of them to run at the same time and also adding a bind mount which is used to retrieve the output files that each file creates and store them in a directory in the host machine so the user can see the output since containers don't have a graphic enviroment.
 
 For it to run in your computer, follow the next steps:
 
@@ -185,6 +186,7 @@ For it to run in your computer, follow the next steps:
   docker-compose up --build
 ```
 3. After you've run the prior command all of the output files from each of the Python files should be found on the directory called 'result_files' that can be found inside the directory 'compose'.
+
 4. Now, type the next command:
 ```bash
   docker-compose down
