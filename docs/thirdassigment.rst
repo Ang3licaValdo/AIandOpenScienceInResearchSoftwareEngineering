@@ -21,7 +21,7 @@ run:
 
      python link.py
 
-As an output you’ll get a .txt file that’ll contain the link found in
+As an output you’ll get a .txt file called 'links.txt' that’ll contain the link found in
 each pdf.
 
 Output example:
