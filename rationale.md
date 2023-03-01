@@ -46,7 +46,7 @@ Then you will like to create a virtual enviroment to run the scripts, for this, 
 ```bash
   source test/bin/activate
 ```
-5. You'll need to install the next libraries inside the virtual enviroment, so after you see the parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries requiered listed next, or to make this step easier and faster just type the next command in your terminal (you should be inside the '2ndAssigment' directory):
+5. You'll need to install the next libraries inside the virtual enviroment, so after you see the parenthesis in your console with the name of your enviroment, just type the commands shown for each of the libraries required listed next, or to make this step easier and faster just type the next command in your terminal (you should be inside the '2ndAssigment' directory):
 
 ```bash
   pip install -r requirements.txt
