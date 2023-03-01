@@ -22,20 +22,22 @@ for installing and managing Python software packages
      sudo apt install python3-pip
 
 Then you will like to create a virtual enviroment to run the scripts,
-for this, follow the next steps: 1. After you’ve downloaded the contents
+for this, follow the next steps: 
+
+1. After you’ve downloaded the contents
 of this repository, open your terminal and change directories until you
 are located inside the ‘2ndAssigment’ directory (you’ll need to find the
 ‘AIandOpenScienceInResearchSoftwareEngineering-main’ directory wherever
 you dowloaded this repository first because the ‘2ndAssigment’ directory
-is inside of it). 2. type the next command to install virtual
-enviroments:
+is inside of it). 
+
+2. type the next command to install virtual enviroments:
 
 .. code:: bash
 
      python3 -m pip install --user virtualenv
 
-3. Set up the virtual enviroment (give it any name you like, in this
-   next command the name is ‘test’):
+3. Set up the virtual enviroment (give it any name you like, in this next command the name is ‘test’):
 
 .. code:: bash
 
