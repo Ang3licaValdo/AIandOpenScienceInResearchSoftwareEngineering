@@ -16,6 +16,9 @@ Consists of analysing each paper and doing what's asked of me in the following s
 
 Each step for how to make each of the three Python files work will be all explained in the file **"rationale.md"**
 
+##Test
+The test used in this project can be found inside the '2ndAssigment' directory.
+
 ## Documentation
 You can check out this software's documentation on the next link:
 
