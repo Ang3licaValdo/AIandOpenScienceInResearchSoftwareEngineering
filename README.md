@@ -19,6 +19,9 @@ Each step for how to make each of the three Python files work will be all explai
 ## Tests
 The unittests used to make this project worked succesfully can be found inside the '2ndAssigment' directory.
 
+## Workflow diagram
+![title](Images/workflow_diagram.png)
+
 ## Documentation
 You can check out this software's documentation on the next link:
 
