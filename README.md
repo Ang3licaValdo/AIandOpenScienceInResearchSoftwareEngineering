@@ -24,6 +24,7 @@ There is one python file for each of the three tasks mentioned above. Each of th
 - Install Image
 - Installing Numpy
 - Installing Docker
+- Docker compose
 
 ## How to run the three python scripts with a virtual enviroment
 
@@ -111,7 +112,7 @@ Execute the 'cloud.py' file inside the '2ndAssigment' directory on your terminal
 
 As an output you'll get eleven .png files, ten of them are a cloud with the keywords of each paper and the one named 'wordcloud_paper_all_papers.png' contains the keywords of the ten papers.
 
-## Second task
+## How to run the Python file of the second task
 
 Execute the 'visualization.py' file inside the '2ndAssigment' directory on your terminal, run the next command:
 ```bash
@@ -120,7 +121,7 @@ Execute the 'visualization.py' file inside the '2ndAssigment' directory on your 
 
 As an output you'll get a png file called 'graph_figures.png'.
 
-## Third task
+## How to run the Python file of the third task
 
 Execute the 'link.py' file inside the '2ndAssigment' directory on your terminal, run the next command:
 ```bash
@@ -151,13 +152,13 @@ First you have to make sure that you have your xmls ready to execute the Python 
 ```
 The web service will be running in http://localhost:8070/
 
-2. Now copy and paste your pdfs into the directory called 'Papers', that you'll find inside the directory called 'compose', which location is: './AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose' if you are inside the directory that was downloaded when downloading this repository.
+2. Now copy and paste your pdfs into the directory called 'Papers', that you'll find inside the directory called 'compose', which location is: './AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose'.
  
 3. Now in your terminal, make sure that you are inside the directory 'compose' which location is: './AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose', and run the next command:
 ```bash
   python request_grobid.py
 ```
-This runs a Python script that'll connect to the GROBID server using the Grobid Python client library, and downloads all of the XML of the pdfs inside the 'Papers' directory, this might take a few minutes.
+This runs a Python script that'll connect to the GROBID server using the Grobid Python client library, and downloads all of the XML of the pdfs inside the 'Papers' directory, this might take a few minutes, if it takes too long stop the Grobid container, start it again and execute request_grobid.py again.
 
 ## Running the Python scripts with Docker compose
 
