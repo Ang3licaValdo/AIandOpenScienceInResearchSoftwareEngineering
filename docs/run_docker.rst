@@ -36,6 +36,13 @@ The web service will be running in http://localhost:8070/
    ‘./AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose’
    if you are inside the directory that was downloaded when downloading
    this repository.
+   
+   The next image show a flow for you to identify where the Papers directory is easier:
+   
+|docker:|
+
+
+.. |docker:| image:: /images/docker_paper.png
 
 3. Now in your terminal, make sure that you are inside the directory
    ‘compose’ which location is:
@@ -48,7 +55,7 @@ The web service will be running in http://localhost:8070/
 
 This runs a Python script that’ll connect to the GROBID server using the Grobid Python client and
 download all of the XML of the pdfs inside the ‘Papers’ directory, this
-might take a few minutes.
+might take a few minutes (if it takes way too long, just delete the container, create it again an rerun the python script).
 
 Running the Python scripts with Docker compose
 ----------------------------------------------
