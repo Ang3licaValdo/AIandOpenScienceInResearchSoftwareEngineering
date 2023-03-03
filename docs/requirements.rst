@@ -112,6 +112,13 @@ How to get your xmls from your own pdfs
 
 The web service will be running in http://localhost:8070/
 
+On your terminal it can look like this when GROBID server is running:
+----------------------------------------------------------------------
+On your terminal it can look like this when GROBID server is running:|
+
+
+.. |On your terminal it can look like this when GROBID server is running:| image:: /images/grobid.png
+
 2. Now copy and paste your pdfs inside the directory called ‘Papers’
    that’s inside the directory ‘2ndAssigment’ that you downloaded when
    downloading this repository.
