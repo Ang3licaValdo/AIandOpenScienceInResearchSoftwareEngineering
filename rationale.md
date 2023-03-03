@@ -1,5 +1,5 @@
 
-# Second assigment 
+# How I solved each of the three tasks
 
 This is the file that'll be used to describe how i decided to approach each of the next three tasks: 
 
