@@ -52,7 +52,7 @@ For example:
 
      source test/bin/activate
    
- Now your terminal should look similar to the the one on the next figure:
+Now your terminal should look similar to the the one on the next figure:
  
    
 |terminalthree:|
@@ -71,7 +71,7 @@ For example:
 
      pip install -r requirements.txt
      
- Installing the libraries inside the enviroment should looks like this:
+Installing the libraries inside the enviroment should looks like this:
  
      
 |terminalfour:|
@@ -147,6 +147,8 @@ Your terminal will likely look like the one on the next figure when the GROBID s
 
 
 .. |papers:| image:: /images/paper_2.png
+
+
 3. Now if you are not inside the ‘2ndAssigment’ directory in your
    terminal already, change directories until you are inside the
    ‘./AIandOpenScienceInResearchSoftwareEngineering-main/**2ndAssigment**’
