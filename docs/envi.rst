@@ -20,10 +20,12 @@ is inside of it).
 
 For example:
 
-|terminal1:|
+
+|terminalone:|
 
 
-.. |terminal1:| image:: /images/terminal1.png
+.. |terminalone:| image:: /images/terminal1.png
+
 
 2. type the next command to install virtual enviroments:
 
@@ -37,10 +39,12 @@ For example:
 
      python3 -m venv test
      
- |terminal2:|
+     
+|terminaltwo:|
 
 
-.. |terminal2:| image:: /images/terminal.png
+.. |terminaltwo:| image:: /images/terminal2.png
+
 
 4. Activate your enviroment:
 
@@ -49,11 +53,12 @@ For example:
      source test/bin/activate
    
  Now your terminal should look similar to the the one on the next figure:
+ 
    
- |terminal3:|
+ |terminalthree:|
 
 
-.. |terminal3:| image:: /images/terminal3.png  
+.. |terminalthree:| image:: /images/terminal3.png  
 
 5. You’ll need to install the next libraries inside the virtual
    enviroment, so after you see the parenthesis in your console with the
@@ -67,11 +72,13 @@ For example:
      pip install -r requirements.txt
      
  Installing the libraries inside the enviroment should looks like this:
+ 
      
- |terminal4:|
+ |terminalfour:|
 
 
-.. |terminal4:| image:: /images/terminal4.png
+.. |terminalfour:| image:: /images/terminal4.png
+
 
 If you want to install one by one, run the next commands: - Installing
 BeautifulSoup
