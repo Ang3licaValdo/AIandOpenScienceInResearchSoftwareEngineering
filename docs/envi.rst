@@ -55,7 +55,7 @@ For example:
  Now your terminal should look similar to the the one on the next figure:
  
    
- |terminalthree:|
+|terminalthree:|
 
 
 .. |terminalthree:| image:: /images/terminal3.png  
@@ -74,7 +74,7 @@ For example:
  Installing the libraries inside the enviroment should looks like this:
  
      
- |terminalfour:|
+|terminalfour:|
 
 
 .. |terminalfour:| image:: /images/terminal4.png
