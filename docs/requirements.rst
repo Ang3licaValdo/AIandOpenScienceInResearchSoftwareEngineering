@@ -123,7 +123,7 @@ Your terminal will likely look like the one on the next figure when the GROBID s
    that’s inside the directory ‘2ndAssigment’ that you downloaded when
    downloading this repository.
    For example:
-   
+   ------------
    |papers:|
 
 
