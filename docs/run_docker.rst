@@ -53,10 +53,12 @@ The web service will be running in http://localhost:8070/
 
      python request_grobid.py
      
+     
 |terminalseven:|
 
 
 .. |terminalseven:| image:: /images/terminal7.png
+
 
 This runs a Python script that’ll connect to the GROBID server using the Grobid Python client and
 download all of the XML of the pdfs inside the ‘Papers’ directory, this
