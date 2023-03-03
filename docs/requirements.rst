@@ -10,6 +10,7 @@ The requirements for running the Python scripts
 -  Python parser: lxml
 -  Install Image
 -  Installing Numpy
+-  Installing Docker and Docker compose
 
 How to run the three python scripts with a virtual enviroment
 -------------------------------------------------------------
