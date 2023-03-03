@@ -37,7 +37,7 @@ The web service will be running in http://localhost:8070/
    if you are inside the directory that was downloaded when downloading
    this repository.
    
-   The next image show a flow for you to identify where the Papers directory is easier:
+   The next image shows a flow for you to identify where the Papers directory is in an easier way:
    
 |docker:|
 
@@ -52,6 +52,11 @@ The web service will be running in http://localhost:8070/
 .. code:: bash
 
      python request_grobid.py
+     
+|terminalseven:|
+
+
+.. |terminalseven:| image:: /images/terminal7.png
 
 This runs a Python script that’ll connect to the GROBID server using the Grobid Python client and
 download all of the XML of the pdfs inside the ‘Papers’ directory, this
@@ -89,6 +94,15 @@ machine so you can execute this project using containers.
 .. code:: bash
 
      cd Docker/compose
+     
+ For example:
+ 
+ 
+|terminalfive:|
+
+
+.. |terminalfive:| image:: /images/terminal5.png
+ 
 
 2. Once you are inside the ‘compose’ directory, run the next command on
    your terminal:
@@ -96,10 +110,36 @@ machine so you can execute this project using containers.
 .. code:: bash
 
      docker-compose up --build
+    
+It'll look something like this:
+
+|terminalsix:|
+
+
+.. |terminalsix:| image:: /images/terminal6.png
+
+
+And when it's executed succesfully it'll look like this:
+
+
+|terminalsixtwo:|
+
+
+.. |terminalsixtwo:| image:: /images/terminal62.png
+
 
 3. After you’ve run the prior command all of the output files from each
    of the Python files should be found on the directory called
    **‘result_files’** that can be found inside the directory ‘compose’.
+   
+   The result_files directory will look like this with all of the output files:
+   
+   
+|output:|
+
+
+.. |output:| image:: /images/output.png
+
    
 4. Now, type the next command:
 
