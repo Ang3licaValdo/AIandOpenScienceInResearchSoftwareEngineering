@@ -18,6 +18,13 @@ are located inside the ‘2ndAssigment’ directory (you’ll need to find the
 you dowloaded this repository first because the ‘2ndAssigment’ directory
 is inside of it). 
 
+For example:
+
+|terminal1:|
+
+
+.. |terminal1:| image:: /images/terminal1.png
+
 2. type the next command to install virtual enviroments:
 
 .. code:: bash
@@ -29,12 +36,24 @@ is inside of it).
 .. code:: bash
 
      python3 -m venv test
+     
+ |terminal2:|
+
+
+.. |terminal2:| image:: /images/terminal.png
 
 4. Activate your enviroment:
 
 .. code:: bash
 
      source test/bin/activate
+   
+ Now your terminal should look similar to the the one on the next figure:
+   
+ |terminal3:|
+
+
+.. |terminal3:| image:: /images/terminal3.png  
 
 5. You’ll need to install the next libraries inside the virtual
    enviroment, so after you see the parenthesis in your console with the
@@ -46,6 +65,13 @@ is inside of it).
 .. code:: bash
 
      pip install -r requirements.txt
+     
+ Installing the libraries inside the enviroment should looks like this:
+     
+ |terminal4:|
+
+
+.. |terminal4:| image:: /images/terminal4.png
 
 If you want to install one by one, run the next commands: - Installing
 BeautifulSoup
@@ -131,10 +157,10 @@ command once more.
 
 After running the python script, your terminal should look like this one on the next figure, it won't finish executing until all of the pdfs inside the 'Papers' directory have been turned into XMLs:
 
-   |server:|
+   |grobid2:|
 
 
-.. |server:| image:: /images/server.png
+.. |grobid2:| image:: /images/grobid2.png
 
 4. Check the ‘Papers’ directory to make sure that all of the xmls are
    there and stop the docker container, after that, you can run each of
