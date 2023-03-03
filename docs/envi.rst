@@ -60,6 +60,7 @@ Now your terminal should look similar to the the one on the next figure:
 
 .. |terminalthree:| image:: /images/terminal3.png  
 
+
 5. You’ll need to install the next libraries inside the virtual
    enviroment, so after you see the parenthesis in your console with the
    name of your enviroment, just type the commands shown for each of the
