@@ -129,7 +129,7 @@ maight take a few minutes. **NOTE:** if the grobid server it’s taking
 long just stop the container and start it again by running the prior
 command once more.
 
-After running the python sccript, your terminal should look like this one on the next figure, it won't finish executing until all of the pdfs inside the 'Papers' directory have been turned into XMLs:
+After running the python script, your terminal should look like this one on the next figure, it won't finish executing until all of the pdfs inside the 'Papers' directory have been turned into XMLs:
 
    |server:|
 
