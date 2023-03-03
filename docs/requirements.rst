@@ -112,9 +112,8 @@ How to get your xmls from your own pdfs
 
 The web service will be running in http://localhost:8070/
 
-On your terminal it can look like this when GROBID server is running:
-----------------------------------------------------------------------
-On your terminal it can look like this when GROBID server is running:|
+
+|On your terminal it can look like this when GROBID server is running:|
 
 
 .. |On your terminal it can look like this when GROBID server is running:| image:: /images/grobid.png
