@@ -126,7 +126,7 @@ Your terminal will likely look like the one on the next figure when the GROBID s
    |papers:|
 
 
-.. |papers:| image:: /images/papers_2.png
+.. |papers:| image:: /images/paper_2.png
 3. Now if you are not inside the ‘2ndAssigment’ directory in your
    terminal already, change directories until you are inside the
    ‘./AIandOpenScienceInResearchSoftwareEngineering-main/**2ndAssigment**’
