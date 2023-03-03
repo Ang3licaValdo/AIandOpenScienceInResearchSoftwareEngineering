@@ -95,7 +95,7 @@ machine so you can execute this project using containers.
 
      cd Docker/compose
      
- For example:
+For example:
  
  
 |terminalfive:|
