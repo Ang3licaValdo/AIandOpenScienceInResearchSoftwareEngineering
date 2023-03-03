@@ -81,6 +81,7 @@ Installing the libraries inside the enviroment should looks like this:
 .. |terminalfour:| image:: /images/terminal4.png
 
 
+
 If you want to install one by one, run the next commands: - Installing
 BeautifulSoup
 
