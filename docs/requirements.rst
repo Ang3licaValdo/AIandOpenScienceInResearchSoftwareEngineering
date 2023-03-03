@@ -142,6 +142,19 @@ maight take a few minutes. **NOTE:** if the grobid server it’s taking
 long just stop the container and start it again by running the prior
 command once more.
 
-4. Chech the ‘Papers’ directory to make sure that all of the xmls are
+After running the python sccript, your terminal should look like this one on the next figure, it won't finish executing until all of the pdfs inside the 'Papers' directory have been turned into XMLs:
+
+   |server:|
+
+
+.. |server:| image:: /images/server.png
+
+4. Check the ‘Papers’ directory to make sure that all of the xmls are
    there and stop the docker container, after that, you can run each of
-   the python scripts for each task, mentioned next:
+   the python scripts for each task, mentioned on the next section.
+   The directory should look similar to this now:
+   
+   |xml:|
+
+
+.. |xml:| image:: /images/xml.png
