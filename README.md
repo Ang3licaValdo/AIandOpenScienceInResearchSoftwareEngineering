@@ -28,7 +28,7 @@ There is one python file for each of the three tasks mentioned above. Each of th
 
 ## How to run the three python scripts with a virtual enviroment
 
-Fist of all, you need to have pip installed. Pip is a package manager for installing and managing Python software packages
+First of all, you need to have pip installed. Pip is a package manager for installing and managing Python software packages
 
 
 ```bash
