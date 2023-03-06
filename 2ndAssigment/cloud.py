@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup4
+from bs4 import BeautifulSoup
 from wordcloud import WordCloud, STOPWORDS
 import numpy as np
 from PIL import Image
@@ -47,7 +47,7 @@ list_of_xml = identify_xml.identifying_xml("./Papers")
 for paper in range(len(list_of_xml)):
     
     #Storing the returned information
-    parser_data = BeautifulSoup4(openXML(list_of_xml[paper]), "xml")
+    parser_data = BeautifulSoup(openXML(list_of_xml[paper]), "xml")
 
     #Finding all instaces of the indicated tag
 
@@ -58,7 +58,7 @@ for paper in range(len(list_of_xml)):
         concat = concat + str(find_tag[paragraph])
 
         concat_ind = concat_ind + str(find_tag[paragraph])
-        concat_def = BeautifulSoup4(concat_ind, "lxml").text
+        concat_def = BeautifulSoup(concat_ind, "lxml").text
 
         if paragraph+1 == len(find_tag):
             #creating the wordcloud for each paper
@@ -69,7 +69,7 @@ for paper in range(len(list_of_xml)):
     concat_ind = ""   
 
 #For removing xml tags:
-concat_definite = BeautifulSoup4(concat, "lxml").text
+concat_definite = BeautifulSoup(concat, "lxml").text
 
 #creating a wordcloud of all of the pdf abstracts
 createWordcloud(concat_definite, "_all_papers")
