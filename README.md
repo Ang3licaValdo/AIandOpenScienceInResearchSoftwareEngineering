@@ -12,9 +12,8 @@ The assigment consists of analysing each paper and doing what's asked of me in t
 
 The explanation of how I solved the three tasks mentioned above is in the file called **"rationale.md"**
 
-## Where to find the Python files
+**DISCLAIMER: YOU CAN RUN THIS SOFTWARE USING A VIRTUAL ENVIROMENT OR DOCKER, THE INSTRUCTIONS FOR RUNNING IT WITH DOCKER CAN BE FOUND ALMOST AT THE BOTTOM OF THIS READ ME FILE FROM THE 'How to execute this project with docker' SUBTITLE, ALSO YOU CAN CHECK IT OUT WITH EXAMPLES ON THIS DOCUMENTATION LINK: http://aiandopenscienceinresearchsoftwareengineering.readthedocs.io/**
 
-There is one python file for each of the three tasks mentioned above. Each of these files can be found inside the folder called '2ndAssigment'.
 
 ## Requirements
 - Having Python installed. 
@@ -133,6 +132,7 @@ As an output you'll get a .txt file called 'links.txt', that'll contain the link
 
 **You'll find all of the prior outputs in a directory inside '2ndAssigment' called 'output_files'.**
 
+
 # How to execute this project with docker
 
 First you have to make sure that you have your xmls ready to execute the Python scripts in a Docker container, for this, follow the next steps:
@@ -160,7 +160,7 @@ The web service will be running in http://localhost:8070/
 ```
 This runs a Python script that'll connect to the GROBID server using the Grobid Python client library, and downloads all of the XML of the pdfs inside the 'Papers' directory, this might take a few minutes, if it takes too long stop the Grobid container, start it again and execute request_grobid.py again.
 
-## Running the Python scripts with Docker compose
+## Now run the Python scripts with Docker compose
 
 For this project Docker compose was the easiest way of containerizing my Python files, because it allows for all of the three separate Python files to run at the same time and also adding a bind mount which is used to retrieve the output files that each file creates and store them in a directory in the host machine so the user can see the output since containers don't have a graphic enviroment.
 
