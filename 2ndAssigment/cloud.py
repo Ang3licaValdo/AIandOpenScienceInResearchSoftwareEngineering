@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup4
 from wordcloud import WordCloud, STOPWORDS
 import numpy as np
 from PIL import Image
