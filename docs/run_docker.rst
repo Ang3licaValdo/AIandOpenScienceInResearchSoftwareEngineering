@@ -58,8 +58,10 @@ This runs a Python script that’ll connect to the GROBID server using the Grobi
 download all of the XML of the pdfs inside the ‘Papers’ directory, this
 might take a few minutes (if it takes way too long, just delete the container, create it again an rerun the python script).
 
-Now run the Python scripts with Docker compose
-----------------------------------------------
+After request_grobid.py has finished executing, check that all of the XMLs are inside the 'Papers' directory and continue with the next steps:
+
+Now that you have all of your XMLs, run the Python scripts with Docker compose
+------------------------------------------------------------------------------
 
 For this project Docker compose was the easiest way of containerizing my
 Python files, because it allows for all of them to run at the same time
