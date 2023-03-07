@@ -162,7 +162,7 @@ Your terminal will likely look like the one on the next figure when the GROBID s
 
 This runs a Python script that’ll connect to the GROBID server and
 download all of the XML of the pdfs inside the ‘Papers’ directory, it
-maight take a few minutes. **NOTE:** if the grobid server it’s taking
+might take a few minutes. **NOTE:** if the grobid server it’s taking
 long just stop the container and start it again by running the prior
 command once more.
 
