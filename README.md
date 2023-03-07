@@ -27,14 +27,14 @@ The explanation of how I solved the three tasks mentioned above is in the file c
 
 ## How to run the three python scripts with a virtual enviroment
 
-If you want to run this project using a virtual enviroment instead of Docker, go over to this link: https://aiandopenscienceinresearchsoftwareengineering.readthedocs.io/en/latest/envi.html and you'll find all of the instruction on how to do it from the 'How to execute in a virtual enviroment' section to the 'Where to find the output files of each Python script' one.
+If you want to run this project using a virtual enviroment instead of Docker, go over to this link: https://aiandopenscienceinresearchsoftwareengineering.readthedocs.io/en/latest/envi.html and you'll find all of the instructions on how to do it from the 'How to execute in a virtual enviroment' section to the 'Where to find the output files of each Python script' one.
 
 # How to execute this project with docker
 
 **If you want to follow the next instructions with examples head over to this next link:
 https://aiandopenscienceinresearchsoftwareengineering.readthedocs.io/en/latest/run_docker.html, if not, just keep reading**
 
-First you have to make sure that you have your xmls ready to execute the Python scripts in a Docker container, for this, follow the next steps:
+First you have to make sure that you have your xmls ready so you can execute the Python scripts using Docker containers, for this, follow the next steps:
 
 ## How to get your xmls from your own pdfs 
 
@@ -55,7 +55,7 @@ The web service will be running in http://localhost:8070/
 ```bash
   python request_grobid.py
 ```
-This runs a Python script that'll connect to the GROBID server using the Grobid Python client library, and downloads all of the XML of the pdfs inside the 'Papers' directory, this might take a few minutes, if it takes too long stop the Grobid container, start it again and execute request_grobid.py again.
+This runs a Python script that'll connect to the GROBID server using the Grobid Python client library, it downloads all of the XML of the pdfs inside the 'Papers' directory, this might take a few minutes, if it takes too long stop the Grobid container, start it again and execute request_grobid.py again.
 
 ## Now run the Python scripts with Docker compose
 
@@ -65,7 +65,7 @@ For it to run in your computer, follow the next steps:
 
 1. Open your console and change directories until you are inside the directory named 'Docker' and then change directories once more to the directory inside 'Docker' called 'compose' ('./AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose)'.
 ```bash
-  cd Docker/compose
+  cd AIandOpenScienceInResearchSoftwareEngineering-main/Docker/compose
 ```
 2. Once you are inside the 'compose' directory, run the next command on your terminal:
 ```bash
