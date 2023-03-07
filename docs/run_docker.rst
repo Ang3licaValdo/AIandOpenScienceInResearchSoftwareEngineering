@@ -6,7 +6,7 @@ Python scripts using Docker containers, for this, follow the next steps:
 
 .. _how-to-get-your-xmls-from-your-own-pdfs-1:
 
-How to get your xmls from your own pdfs
+How to get the xmls from your own pdfs
 ---------------------------------------
 
 1. Make sure you have GROBID server running, you can do this using
