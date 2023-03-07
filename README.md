@@ -27,7 +27,7 @@ The explanation of how I solved the three tasks mentioned above is in the file c
 
 ## How to run the three python scripts with a virtual enviroment
 
-If you want to run this project using a virtual enviroment instead of Docker, go over to this link: https://aiandopenscienceinresearchsoftwareengineering.readthedocs.io/en/latest/envi.html and you'll find all of the instruction on how to do it from the 'How to execute in a virtual enviroment section to the 'Where to find the output files of each Python script' one.
+If you want to run this project using a virtual enviroment instead of Docker, go over to this link: https://aiandopenscienceinresearchsoftwareengineering.readthedocs.io/en/latest/envi.html and you'll find all of the instruction on how to do it from the 'How to execute in a virtual enviroment' section to the 'Where to find the output files of each Python script' one.
 
 # How to execute this project with docker
 
