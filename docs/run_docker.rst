@@ -1,8 +1,8 @@
 How to execute this project with docker
 =======================================
 
-First you have to make sure that you have your xmls ready to execute the
-Python scripts using a Docker container, for this, follow the next steps:
+First you have to make sure that you have your xmls ready so you can execute the
+Python scripts using Docker containers, for this, follow the next steps:
 
 .. _how-to-get-your-xmls-from-your-own-pdfs-1:
 
