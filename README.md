@@ -12,7 +12,7 @@ The assigment consists of analysing each paper and doing what's asked of me in t
 
 The explanation of how I solved the three tasks mentioned above is in the file called **"rationale.md"**
 
-**DISCLAIMER: YOU CAN RUN THIS SOFTWARE USING A VIRTUAL ENVIROMENT OR **DOCKER**, THE INSTRUCTIONS FOR RUNNING IT WITH DOCKER CAN BE FOUND ALMOST AT THE BOTTOM OF THIS READ ME FILE FROM THE 'How to execute this project with docker' SUBTITLE, ALSO YOU CAN CHECK IT OUT WITH EXAMPLES ON THIS DOCUMENTATION LINK: https://aiandopenscienceinresearchsoftwareengineering.readthedocs.io/en/latest/run_docker.html**
+**DISCLAIMER: YOU CAN RUN THIS SOFTWARE USING A VIRTUAL ENVIROMENT OR **DOCKER**, THE INSTRUCTIONS FOR RUNNING IT WITH DOCKER CAN BE FOUND FROM THE 'How to execute this project with docker' SUBTITLE OF THIS README FILE, ALSO YOU CAN CHECK IT OUT WITH EXAMPLES ON THIS DOCUMENTATION LINK: https://aiandopenscienceinresearchsoftwareengineering.readthedocs.io/en/latest/run_docker.html**
 
 
 ## Requirements
