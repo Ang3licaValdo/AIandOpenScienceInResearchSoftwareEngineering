@@ -36,7 +36,7 @@ https://aiandopenscienceinresearchsoftwareengineering.readthedocs.io/en/latest/r
 
 First you have to make sure that you have your xmls ready so you can execute the Python scripts using Docker containers, for this, follow the next steps:
 
-## How to get your xmls from your own pdfs 
+## How to get the xmls from your own pdfs 
 
 1. Make sure you have GROBID server running, you can do this using Docker make sure you have it installed and the run the next commands in your terminal:
 - Pull the GROBID image: 
